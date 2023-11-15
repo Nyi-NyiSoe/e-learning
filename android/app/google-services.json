@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "277442579623",
+    "project_id": "edulearn-nns",
+    "storage_bucket": "edulearn-nns.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277442579623:android:ad0a8d3df9f8ccb70cdf82",
+        "android_client_info": {
+          "package_name": "com.example.edulearn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiKCzbDPGL0y4t_3e0BptdzHmxOheho3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

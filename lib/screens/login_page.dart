@@ -1,9 +1,8 @@
-import 'dart:ui';
-
 import 'package:edulearn/screens/signup_page.dart';
 import 'package:edulearn/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/widgets/text_field.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LoginPage extends StatelessWidget {
@@ -42,7 +41,7 @@ class LoginPage extends StatelessWidget {
                 child: Center(
                     child: Padding(
                   padding: const EdgeInsets.only(bottom: 100),
-                  child: Container(
+                  child: SizedBox(
                       child: const Text(
                     'Edu Learn',
                     style: TextStyle(color: Colors.white, fontSize: 40),
@@ -61,101 +60,128 @@ class LoginPage extends StatelessWidget {
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
                   child: Container(
                       decoration: const BoxDecoration(
-                        color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       height: MediaQuery.of(context).size.height * 0.8,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'Login',
-                            style: TextStyle(
-                                fontSize: 35, color: Colors.blueAccent),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              CustomTextField(
-                                  keyboardType: TextInputType.emailAddress,
-                                  controller: emailController,
-                                  obscureText: false,
-                                  labelText: 'Email'),
-                             const  SizedBox(
-                                height: 50,
-                              ),
-                              Consumer(
-                                builder: (context, ref, child) {
-                                  final passwordVisible =
-                                      ref.watch(passwordVisibleProvider);
-
-                                  return CustomTextField(
-                                    keyboardType: TextInputType.visiblePassword,
-                                    controller: passwordController,
-                                    obscureText: passwordVisible,
-                                    labelText: 'Password',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          ref
-                                              .read(passwordVisibleProvider
-                                                  .notifier)
-                                              .state = !passwordVisible;
-                                        },
-                                        icon: passwordVisible
-                                            ? const Icon(Icons.visibility_off)
-                                            : const Icon(Icons.visibility)),
-                                  );
-                                },
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: GestureDetector(
-                                  onTap: () {},
-                                  child: const Text(
-                                    'Forgot your password?',
-                                    style: TextStyle(color: Colors.blueAccent),
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CustomButton(
-                                buttonName: 'LOGIN',
-                                onPressed: () {
-                                  print(emailController.text);
-                                   print(passwordController.text);
-                                },
-                              ),
-                               const SizedBox(
-                                    height: 15,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                      child: KeyboardVisibilityBuilder(
+                        builder: (context, isKeyboardVisible) {
+                          return SingleChildScrollView(
+                            physics: isKeyboardVisible
+                                ?const AlwaysScrollableScrollPhysics()
+                                :const NeverScrollableScrollPhysics(),
+                            child: SizedBox(
+                              height: isKeyboardVisible
+                                  ? MediaQuery.of(context).size.height * 0.9
+                                  : MediaQuery.of(context).size.height * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                                 children: [
                                   const Text(
-                                    'Don\'t have an account?',
-                                    style: TextStyle(color: Colors.blueAccent),
+                                    'Login',
+                                    style: TextStyle(
+                                        fontSize: 35, color: Colors.blueAccent),
                                   ),
-                                  const SizedBox(
-                                    width: 10,
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        CustomTextField(
+                                            keyboardType:
+                                                TextInputType.emailAddress,
+                                            controller: emailController,
+                                            obscureText: false,
+                                            labelText: 'Email'),
+                                        const SizedBox(
+                                          height: 50,
+                                        ),
+                                        Consumer(
+                                          builder: (context, ref, child) {
+                                            final passwordVisible = ref
+                                                .watch(passwordVisibleProvider);
+
+                                            return CustomTextField(
+                                              keyboardType:
+                                                  TextInputType.visiblePassword,
+                                              controller: passwordController,
+                                              obscureText: passwordVisible,
+                                              labelText: 'Password',
+                                              suffixIcon: IconButton(
+                                                  onPressed: () {
+                                                    ref
+                                                        .read(
+                                                            passwordVisibleProvider
+                                                                .notifier)
+                                                        .state = !passwordVisible;
+                                                  },
+                                                  icon: passwordVisible
+                                                      ? const Icon(
+                                                          Icons.visibility_off)
+                                                      : const Icon(
+                                                          Icons.visibility)),
+                                            );
+                                          },
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: GestureDetector(
+                                            onTap: () {},
+                                            child: const Text(
+                                              'Forgot your password?',
+                                              style: TextStyle(
+                                                  color: Colors.blueAccent),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                  GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                                          return  SignUpPage(); 
-                                        }));
-                                      },
-                                      child: const Text('Sign up',
-                                          style: TextStyle(
-                                              color: Colors.blueAccent)))
+                                  Column(
+                                    children: [
+                                      CustomButton(
+                                        buttonName: 'LOGIN',
+                                        onPressed: () {
+                                          print(emailController.text);
+                                          print(passwordController.text);
+                                        },
+                                      ),
+                                      const SizedBox(
+                                        height: 15,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          const Text(
+                                            'Don\'t have an account?',
+                                            style: TextStyle(
+                                                color: Colors.blueAccent),
+                                          ),
+                                          const SizedBox(
+                                            width: 10,
+                                          ),
+                                          GestureDetector(
+                                              onTap: () {
+                                                Navigator.push(context,
+                                                    MaterialPageRoute(
+                                                        builder: (context) {
+                                                  return SignUpPage();
+                                                }));
+                                              },
+                                              child: const Text('Sign up',
+                                                  style: TextStyle(
+                                                      color:
+                                                          Colors.blueAccent)))
+                                        ],
+                                      )
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
-                          )
-                        ],
+                              ),
+                            ),
+                          );
+                        },
                       )),
                 ),
               ),

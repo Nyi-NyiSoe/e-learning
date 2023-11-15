@@ -1,15 +1,13 @@
-import 'dart:ui';
-
 import 'package:edulearn/screens/login_page.dart';
-import 'package:edulearn/screens/signup_page.dart';
 import 'package:edulearn/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/widgets/text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
-
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final passwordVisibleProvider = StateProvider<bool>((ref) => true);
@@ -66,89 +64,144 @@ class SignUpPage extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(20)),
                       ),
                       height: MediaQuery.of(context).size.height * 0.8,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          const Text(
-                            'Sign Up',
-                            style: TextStyle(
-                                fontSize: 35, color: Colors.blueAccent),
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              CustomTextField(
-                                  keyboardType: TextInputType.emailAddress,
-                                  controller: emailController,
-                                  obscureText: false,
-                                  labelText: 'Email'),
-                             const  SizedBox(
-                                height: 50,
-                              ),
-                              Consumer(
-                                builder: (context, ref, child) {
-                                  final passwordVisible =
-                                      ref.watch(passwordVisibleProvider);
+                      child: KeyboardVisibilityBuilder(
+                          builder: (context, isKeyboardVisible) {
+                        return SingleChildScrollView(
+                          physics: isKeyboardVisible
+                              ? const AlwaysScrollableScrollPhysics()
+                              : const NeverScrollableScrollPhysics(),
+                          child: Container(
+                            height:isKeyboardVisible? MediaQuery.of(context).size.height * 1.5:MediaQuery.of(context).size.height * 0.8,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                const Text(
+                                  'Sign Up',
+                                  style: TextStyle(
+                                      fontSize: 35, color: Colors.blueAccent),
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        CircleAvatar(
+                                          backgroundColor: Colors.blueAccent,
+                                          backgroundImage: NetworkImage(
+                                              'https://cdn-icons-png.flaticon.com/512/10099/10099965.png'),
+                                          radius: 64,
+                                        ),
+                                        Positioned(
+                                            left: 80,
+                                            bottom: -10,
+                                            child: IconButton(
+                                              style: ButtonStyle(
+                                                  iconColor:
+                                                      MaterialStatePropertyAll(
+                                                          Colors.white)),
+                                              onPressed: () {},
+                                              icon: const Icon(
+                                                  Icons.add_a_photo_outlined),
+                                            ))
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 25,
+                                    ),
+                                    CustomTextField(
+                                        controller: nameController,
+                                        obscureText: false,
+                                        labelText: 'Name',
+                                        keyboardType: TextInputType.name),
+                                    const SizedBox(
+                                      height: 25,
+                                    ),
+                                    CustomTextField(
+                                        keyboardType:
+                                            TextInputType.emailAddress,
+                                        controller: emailController,
+                                        obscureText: false,
+                                        labelText: 'Email'),
+                                    const SizedBox(
+                                      height: 25,
+                                    ),
+                                    Consumer(
+                                      builder: (context, ref, child) {
+                                        final passwordVisible =
+                                            ref.watch(passwordVisibleProvider);
 
-                                  return CustomTextField(
-                                    keyboardType: TextInputType.visiblePassword,
-                                    controller: passwordController,
-                                    obscureText: passwordVisible,
-                                    labelText: 'Password',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          ref
-                                              .read(passwordVisibleProvider
-                                                  .notifier)
-                                              .state = !passwordVisible;
-                                        },
-                                        icon: passwordVisible
-                                            ? const Icon(Icons.visibility_off)
-                                            : const Icon(Icons.visibility)),
-                                  );
-                                },
-                              ),
-                            
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              CustomButton(
-                                buttonName: 'SIGNUP',
-                                onPressed: () {
-                                   print(emailController.text);
-                                   print(passwordController.text);
-                                },
-                              ),
-                               const SizedBox(
-                                    height: 15,
-                                  ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Text(
-                                    'Already have an account?',
-                                    style: TextStyle(color: Colors.blueAccent),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  GestureDetector(
-                                      onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                                          return  LoginPage(); 
-                                        }));
+                                        return CustomTextField(
+                                          keyboardType:
+                                              TextInputType.visiblePassword,
+                                          controller: passwordController,
+                                          obscureText: passwordVisible,
+                                          labelText: 'Password',
+                                          suffixIcon: IconButton(
+                                              onPressed: () {
+                                                ref
+                                                    .read(
+                                                        passwordVisibleProvider
+                                                            .notifier)
+                                                    .state = !passwordVisible;
+                                              },
+                                              icon: passwordVisible
+                                                  ? const Icon(
+                                                      Icons.visibility_off)
+                                                  : const Icon(
+                                                      Icons.visibility)),
+                                        );
                                       },
-                                      child: const Text('Login',
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(
+                                      height: 25,
+                                    ),
+                                Column(
+                                  children: [
+                                    CustomButton(
+                                      buttonName: 'SIGNUP',
+                                      onPressed: () {
+                                        print(emailController.text);
+                                        print(passwordController.text);
+                                      },
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        const Text(
+                                          'Already have an account?',
                                           style: TextStyle(
-                                              color: Colors.blueAccent)))
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      )),
+                                              color: Colors.blueAccent),
+                                        ),
+                                        const SizedBox(
+                                          width: 10,
+                                        ),
+                                        GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) {
+                                                return LoginPage();
+                                              }));
+                                            },
+                                            child: const Text('Login',
+                                                style: TextStyle(
+                                                    color: Colors.blueAccent)))
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        );
+                      })),
                 ),
               ),
             ),
