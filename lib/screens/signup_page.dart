@@ -1,9 +1,12 @@
+import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/login_page.dart';
 import 'package:edulearn/widgets/button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/widgets/text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
+import 'package:edulearn/authenticate/auth_service.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({super.key});
@@ -71,10 +74,12 @@ class SignUpPage extends StatelessWidget {
                               ? const AlwaysScrollableScrollPhysics()
                               : const NeverScrollableScrollPhysics(),
                           child: Container(
-                            height:isKeyboardVisible? MediaQuery.of(context).size.height * 1.5:MediaQuery.of(context).size.height * 0.8,
+                            height: isKeyboardVisible
+                                ? MediaQuery.of(context).size.height * 1.2
+                                : MediaQuery.of(context).size.height * 0.8,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
-                             //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Text(
                                   'Sign Up',
@@ -113,13 +118,14 @@ class SignUpPage extends StatelessWidget {
                                         controller: nameController,
                                         obscureText: false,
                                         labelText: 'Name',
-                                        keyboardType: TextInputType.name),
+                                        keyboardType:
+                                            TextInputType.visiblePassword),
                                     const SizedBox(
                                       height: 25,
                                     ),
                                     CustomTextField(
                                         keyboardType:
-                                            TextInputType.emailAddress,
+                                            TextInputType.visiblePassword,
                                         controller: emailController,
                                         obscureText: false,
                                         labelText: 'Email'),
@@ -156,15 +162,22 @@ class SignUpPage extends StatelessWidget {
                                   ],
                                 ),
                                 const SizedBox(
-                                      height: 25,
-                                    ),
+                                  height: 25,
+                                ),
                                 Column(
                                   children: [
                                     CustomButton(
                                       buttonName: 'SIGNUP',
-                                      onPressed: () {
+                                      onPressed: () async{
+                                        print(nameController.text);
                                         print(emailController.text);
                                         print(passwordController.text);
+                                        String res = await AuthService().signUp(MyUser(
+                                          name: nameController.text,
+                                          email: emailController.text,
+                                          password: passwordController.text,
+                                        ));
+                                        print(res);
                                       },
                                     ),
                                     const SizedBox(
