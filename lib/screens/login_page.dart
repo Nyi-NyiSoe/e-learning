@@ -1,3 +1,5 @@
+import 'package:edulearn/authenticate/auth_service.dart';
+import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/signup_page.dart';
 import 'package:edulearn/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -38,11 +40,11 @@ class LoginPage extends StatelessWidget {
                         bottomLeft: Radius.circular(50),
                         bottomRight: Radius.circular(50))),
                 height: MediaQuery.of(context).size.height / 3,
-                child: Center(
+                child: const Center(
                     child: Padding(
-                  padding: const EdgeInsets.only(bottom: 100),
+                  padding: EdgeInsets.only(bottom: 100),
                   child: SizedBox(
-                      child: const Text(
+                      child: Text(
                     'Edu Learn',
                     style: TextStyle(color: Colors.white, fontSize: 40),
                   )),
@@ -67,15 +69,16 @@ class LoginPage extends StatelessWidget {
                         builder: (context, isKeyboardVisible) {
                           return SingleChildScrollView(
                             physics: isKeyboardVisible
-                                ?const AlwaysScrollableScrollPhysics()
-                                :const NeverScrollableScrollPhysics(),
+                                ? const AlwaysScrollableScrollPhysics()
+                                : const NeverScrollableScrollPhysics(),
                             child: SizedBox(
                               height: isKeyboardVisible
                                   ? MediaQuery.of(context).size.height * 0.9
                                   : MediaQuery.of(context).size.height * 0.8,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   const Text(
                                     'Login',
@@ -141,9 +144,11 @@ class LoginPage extends StatelessWidget {
                                     children: [
                                       CustomButton(
                                         buttonName: 'LOGIN',
-                                        onPressed: () {
+                                        onPressed: () async{
+                                         final res= await AuthService().signIn(emailController.text,passwordController.text);
                                           print(emailController.text);
                                           print(passwordController.text);
+                                          print(res);
                                         },
                                       ),
                                       const SizedBox(

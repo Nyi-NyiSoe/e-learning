@@ -34,4 +34,42 @@ class AuthService {
     }
     return res;
   }
+
+  //sign in
+  Future<String> signIn(String email,String password) async {
+    String res = "some error occured";
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        UserCredential cred = await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        print(cred.user!.uid);
+        // await _firestore.collection('users').doc(cred.user!.uid).set({
+        //   'uid': cred.user!.uid,
+        //   'username': user.name,
+        //   'email': user.email,
+        //   'password': user.password,
+        // });
+      }
+      // await _firestore.collection('users').add({
+      //   'uid': cred.user!.uid,
+      //   'username': user.name,
+      //   'email': user.email,
+      //   'password': user.password,
+      // });
+      res = 'success!';
+    } catch (e) {
+      res = e.toString();
+    }
+    return res;
+  }
+
+  //sign out
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      // print(e.toString());
+      return null;
+    }
+  }
 }
