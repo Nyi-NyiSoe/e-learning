@@ -1,23 +1,33 @@
 import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/login_page.dart';
 import 'package:edulearn/widgets/button.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/widgets/text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
 
-class SignUpPage extends StatelessWidget {
-  SignUpPage({super.key});
+class SignUpPage extends StatefulWidget {
+    final void Function() toggleView;
+  const SignUpPage({super.key,required this.toggleView});
+
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController nameController = TextEditingController();
+
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
   final passwordVisibleProvider = StateProvider<bool>((ref) => true);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Consumer(builder: ((context, ref, child) {
+      return Scaffold(
         resizeToAvoidBottomInset: true,
         body: Stack(
           children: [
@@ -101,7 +111,7 @@ class SignUpPage extends StatelessWidget {
                                             left: 80,
                                             bottom: -10,
                                             child: IconButton(
-                                              style: ButtonStyle(
+                                              style: const ButtonStyle(
                                                   iconColor:
                                                       MaterialStatePropertyAll(
                                                           Colors.white)),
@@ -168,16 +178,15 @@ class SignUpPage extends StatelessWidget {
                                   children: [
                                     CustomButton(
                                       buttonName: 'SIGNUP',
-                                      onPressed: () async{
+                                      onPressed: () async {
                                         print(nameController.text);
                                         print(emailController.text);
                                         print(passwordController.text);
-                                        String res = await AuthService().signUp(MyUser(
+                                        await AuthService().signUp(MyUser(
                                           name: nameController.text,
                                           email: emailController.text,
                                           password: passwordController.text,
                                         ));
-                                        print(res);
                                       },
                                     ),
                                     const SizedBox(
@@ -196,13 +205,7 @@ class SignUpPage extends StatelessWidget {
                                           width: 10,
                                         ),
                                         GestureDetector(
-                                            onTap: () {
-                                              Navigator.push(context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) {
-                                                return LoginPage();
-                                              }));
-                                            },
+                                            onTap: widget.toggleView,
                                             child: const Text('Login',
                                                 style: TextStyle(
                                                     color: Colors.blueAccent)))
@@ -220,5 +223,6 @@ class SignUpPage extends StatelessWidget {
             ),
           ],
         ));
+    }));
   }
 }

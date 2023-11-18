@@ -1,7 +1,5 @@
+import 'package:edulearn/authenticate/authenticate.dart';
 import 'package:edulearn/firebase_options.dart';
-import 'package:edulearn/screens/home_page.dart';
-import 'package:edulearn/screens/login_page.dart';
-import 'package:edulearn/screens/setting_page.dart';
 import 'package:edulearn/screens/wrapper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -25,21 +23,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Edu Learn',
-        home: StreamBuilder<User?>(
-          stream: FirebaseAuth.instance.userChanges(),
+      debugShowCheckedModeBanner: false,
+      home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {
-              if (snapshot.hasData ||
-                  FirebaseAuth.instance.currentUser != null) {
+              if (snapshot.hasData) {
                 return Wrapper();
               }
-            } else {
-              return const CircularProgressIndicator();
             }
-            return LoginPage();
-          },
-        ));
+            return const Authenticate();
+          }),
+    );
   }
 }

@@ -7,15 +7,19 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final void Function()? onTap;
   final TextInputType? keyboardType;
-
+  final Widget? prefixIcon;
+  final void Function(String)? onChanged;
   const CustomTextField(
       {super.key,
       required this.controller,
       required this.obscureText,
-      required this.labelText,
+      this.labelText,
       this.suffixIcon,
       required this.keyboardType,
-      this.onTap});
+      this.onTap,
+      this.prefixIcon,
+      this.onChanged
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +27,15 @@ class CustomTextField extends StatelessWidget {
         height: 50,
         width: 300,
         child: TextFormField(
+          onChanged: onChanged,
+          
             keyboardType: keyboardType,
             style: TextStyle(color: Colors.black),
             controller: controller,
             obscureText: obscureText,
             decoration: InputDecoration(
+              prefixIcon: prefixIcon,
+              prefixIconColor: Colors.blueAccent,
                 suffixIconColor: Colors.blueAccent,
                 floatingLabelBehavior: FloatingLabelBehavior.always,
                 focusedBorder: const OutlineInputBorder(

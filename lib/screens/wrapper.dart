@@ -1,16 +1,19 @@
+import 'package:edulearn/authenticate/auth_service.dart';
+import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/home_page.dart';
+
 import 'package:edulearn/screens/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Wrapper extends ConsumerWidget {
-   Wrapper({super.key});
- final List<Widget> pageList = [ Homepage(),const SettingPage()];
+  Wrapper({super.key});
+  final List<Widget> pageList = [Homepage(), const SettingPage()];
   final pageProvider = StateProvider((ref) => 0);
+
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
-    return SafeArea(
-        child: Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
@@ -42,6 +45,6 @@ class Wrapper extends ConsumerWidget {
         ),
       ),
       body: pageList[ref.watch(pageProvider)],
-    ));;
+    );
   }
 }
