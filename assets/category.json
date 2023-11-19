@@ -1,0 +1,70 @@
+{
+    "categories": [
+      {
+        "name": "Web Development",
+        "img": "web_development.png",
+        "languages": {
+          "HTML": "html.png",
+          "CSS": "css.png",
+          "JavaScript": "javascript.png",
+          "React": "react.png",
+          "Vue.js": "vuejs.png"
+        }
+      },
+      {
+        "name": "Mobile Development",
+        "img": "mobile_development.png",
+        "languages": {
+          "Kotlin": "kotlin.png",
+          "Swift": "swift.png",
+          "Flutter": "flutter.png",
+          "Dart": "dart.png",
+          "React Native": "react_native.png",
+          "Xamarin": "xamarin.png"
+        }
+      },
+      {
+        "name": "AI Development",
+        "img": "ai_development.png",
+        "languages": {
+          "Machine Learning": "machine_learning.png",
+          "Deep Learning": "deep_learning.png",
+          "Natural Language Processing": "nlp.png",
+          "Computer Vision": "computer_vision.png",
+          "TensorFlow": "tensorflow.png",
+          "PyTorch": "pytorch.png"
+        }
+      },
+      {
+        "name": "Database Development",
+        "img": "database_development.png",
+        "languages": {
+          "SQL": "sql.png",
+          "MongoDB": "mongodb.png",
+          "Firebase": "firebase.png",
+          "Cassandra": "cassandra.png"
+        }
+    },
+    {
+        "name": "Game Development",
+        "img": "game_development.png",
+        "languages": {
+          "Unity": "unity.png",
+          "Unreal Engine": "unreal_engine.png",
+          "C#": "csharp.png"
+        }
+      },
+      {
+        "name": "DevOps",
+        "img": "devops.png",
+        "languages": {
+          "Docker": "docker.png",
+          "Kubernetes": "kubernetes.png",
+          "Jenkins": "jenkins.png",
+          "Ansible": "ansible.png"
+        }
+      }
+      
+    ]
+  }
+  
