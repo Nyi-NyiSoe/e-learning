@@ -1,3 +1,5 @@
+import 'package:edulearn/screens/lesson_page.dart';
+import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetail extends StatelessWidget {
@@ -7,9 +9,11 @@ class CourseDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> languagesMap = result.data!['categories'][index]['languages'];
+    Map<String, dynamic> languagesMap =
+        result.data!['categories'][index]['languages'];
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(),
       body: Column(
         children: [
           Container(
@@ -27,13 +31,25 @@ class CourseDetail extends StatelessWidget {
               children: [
                 Expanded(
                   child: GridView.builder(
-                      itemCount:
-                          languagesMap.length,
+                      padding: EdgeInsets.all(8),
+                      itemCount: languagesMap.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
+                              childAspectRatio: 0.85, crossAxisCount: 2),
                       itemBuilder: ((context, index) {
-                        return Text(languagesMap.keys.elementAt(index).toString());
+                        return GestureDetector(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LessonPage(title: languagesMap.keys.elementAt(index),))),
+                          child: CourseCard(
+                              tag: languagesMap.keys.elementAt(index),
+                              img:
+                                  'lang/${languagesMap.values.elementAt(index)}',
+                              index: index,
+                              courseName: languagesMap.keys.elementAt(index),
+                              courseCount: languagesMap.length),
+                        );
                       })),
                 )
               ],
