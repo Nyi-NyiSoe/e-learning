@@ -25,27 +25,27 @@ class RateCourse {
     return 'Error';
   }
 
-  Future<double> getAverageRating(String courseName) async {
+  Future<dynamic> getAverageRating(String courseName) async {
     QuerySnapshot querySnapshot = await _firestore
-        .collection('ratings')
-        .where('courseName', isEqualTo: courseName)
+        .collection('users')
         .get();
 
     int totalRatings = 0;
     int numberOfUsers = querySnapshot.docs.length;
+    return querySnapshot;
 
-    for (QueryDocumentSnapshot doc in querySnapshot.docs) {
-      Map<String, dynamic> userData = doc.data() as Map<String, dynamic>;
-      double ratingValue = userData['value'];
-      totalRatings +=
-          ratingValue.toInt(); // Assuming the rating is a numeric value
-    }
+    // for (QueryDocumentSnapshot doc in querySnapshot.docs) {
+    //   Map<String, dynamic> userData = doc.data() as Map<String, dynamic>;
+    //   double ratingValue = userData['value'];
+    //   totalRatings +=
+    //       ratingValue.toInt(); // Assuming the rating is a numeric value
+    // }
 
-    if (numberOfUsers > 0) {
-      double averageRating = totalRatings / numberOfUsers;
-      return averageRating;
-    } else {
-      return 0.0; // Default value if there are no ratings yet
-    }
+    // if (numberOfUsers > 0) {
+    //   double averageRating = totalRatings / numberOfUsers;
+    //   return averageRating;
+    // } else {
+    //   return 0.0; // Default value if there are no ratings yet
+    // }
   }
 }

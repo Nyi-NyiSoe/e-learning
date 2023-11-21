@@ -25,89 +25,124 @@ class LessonPage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.25,
               child: Card(
-                shadowColor: Colors.black,
-                elevation: 4,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                child: Image(
-                  image: AssetImage(
-                      'images/lang/${title.replaceAll('.', '').toLowerCase()}.png'),
-                ),
-              ),
+                  shadowColor: Colors.black,
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30),
+                        child: Text(
+                          '$title Course',
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      Hero(
+                        tag: title,
+                        child: Image(
+                          image: AssetImage(
+                              'images/lang/${title.replaceAll('.', '').toLowerCase()}.png'),
+                        ),
+                      ),
+                    ],
+                  )),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 30, bottom: 10),
-                      child: Text(
-                        '$title basic course',
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        const Icon(Icons.star_outline),
-                        FutureBuilder(future: RateCourse().getAverageRating(title), builder: (context,snaphot){
-                         if(snaphot.connectionState == ConnectionState.waiting){
-                          print(snaphot.data);
-                          return Text('0.0');
-                         }
-                         else{
-                           return Text(snaphot.data.toString());
-                         }
-                        }),
-                        const Icon(Icons.alarm_rounded),
-                        const Text('6 hours')
-                      ],
-                    )
-                  ],
+                const Text(
+                  'About Course',
+                  style: TextStyle(fontSize: 20),
                 ),
-                ElevatedButton(
-                    onPressed: () async {
-                      await showDialog(
-                          context: context,
-                          builder: (context) {
-                            return AlertDialog(
-                              title: const Text('Rate this course'),
-                              content: Container(
-                                height: 100,
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    RatingBar.builder(
-                                        allowHalfRating: true,
-                                        itemBuilder: (context, _) {
-                                          return Icon(
-                                            Icons.star,
-                                            color: Colors.amber,
-                                          );
-                                        },
-                                        onRatingUpdate: (rating) {
-                                          courseRating = rating;
-                                          print(courseRating);
-                                        }),
-                                    ElevatedButton(
-                                        onPressed: () async {
-                                          var res = await RateCourse()
-                                              .rateCourse(courseRating, title);
-                                          print(res);
-                                          Navigator.pop(context);
-                                        },
-                                        child: Text('Rate'))
-                                  ],
-                                ),
-                              ),
-                            );
-                          });
-                    },
-                    child: Text('Rate course'))
+                const SizedBox(
+                  width: 1,
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                        onTap: () async {
+                          showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text('Rate this course'),
+                                  content: SizedBox(
+                                    height: 100,
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        RatingBar.builder(
+                                            allowHalfRating: true,
+                                            itemBuilder: (context, _) {
+                                              return const Icon(
+                                                Icons.star,
+                                                color: Colors.amber,
+                                              );
+                                            },
+                                            onRatingUpdate: (rating) {
+                                              courseRating = rating;
+                                              print(courseRating);
+                                            }),
+                                        ElevatedButton(
+                                            onPressed: () async {
+                                              var res = await RateCourse()
+                                                  .rateCourse(
+                                                      courseRating, title);
+                                              print(res);
+                                              Navigator.pop(context);
+                                            },
+                                            child: const Text('Rate'))
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              });
+                        },
+                        child: Icon(Icons.star_outline)),
+                    Text(courseRating.toString())
+                  ],
+                )
               ],
-            )
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 30,top: 10,right: 30,bottom: 10),
+              child: const Text(
+                'Sit ex non dolor fugiat. Duis culpa ad non eiusmod proident adipisicing eiusmod dolore aute velit fugiat cupidatat. Laboris ex cupidatat veniam velit fugiat consequat Lorem. Exercitation aliqua quis excepteur nulla proident ullamco.',
+                style: TextStyle(fontSize: 15),
+              ),
+            ),
+            Expanded(
+                child: ListView.builder(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    itemCount: 5,
+                    itemBuilder: ((context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: Card(
+                          elevation: 3,
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: Container(
+                                    decoration: BoxDecoration(
+                                        border: Border.all(width: 1)),
+                                    child: Icon(Icons.play_arrow)),
+                                title: Text('Introduction'),
+                                trailing: Text('10 mins'),
+                              ),
+                              LinearProgressIndicator(
+                                value: 0.75,
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    })))
           ],
         ),
       ),
