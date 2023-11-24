@@ -21,6 +21,8 @@ class AuthService {
           'username': user.name,
           'email': user.email,
           'password': user.password,
+          'rating': [],
+          'completed_course': []
         });
       
       }

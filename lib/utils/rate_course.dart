@@ -8,12 +8,9 @@ class RateCourse {
     String result;
     try {
       if (_auth.currentUser != null) {
-        await _firestore
-            .collection('rating')
-            .doc(_auth.currentUser!.uid)
-            .collection(courseName)
-            .doc(_auth.currentUser!.uid)
-            .set({'rating': rating});
+        await _firestore.collection('users').doc(_auth.currentUser!.uid).set({
+          'rating': {courseName: rating},
+        }, SetOptions(merge: true));
         result = 'success';
         return result;
       }
@@ -25,27 +22,27 @@ class RateCourse {
     return 'Error';
   }
 
-  Future<dynamic> getAverageRating(String courseName) async {
-    QuerySnapshot querySnapshot = await _firestore
-        .collection('users')
-        .get();
+  Future getAverageRating() async {
+    DocumentSnapshot<Map<String, dynamic>> snapshot =
+        await _firestore.collection('users').doc(_auth.currentUser!.uid).get();
+        if (snapshot.exists) {
+  // Access the data as a map
+  Map<String, dynamic>? userData = snapshot.data();
 
-    int totalRatings = 0;
-    int numberOfUsers = querySnapshot.docs.length;
-    return querySnapshot;
+  // Check if the 'rating' field exists in the data
+  if (userData != null && userData.containsKey('rating')) {
+    // Access the 'rating' map
+    Map<String, dynamic> ratingData = userData['rating'];
 
-    // for (QueryDocumentSnapshot doc in querySnapshot.docs) {
-    //   Map<String, dynamic> userData = doc.data() as Map<String, dynamic>;
-    //   double ratingValue = userData['value'];
-    //   totalRatings +=
-    //       ratingValue.toInt(); // Assuming the rating is a numeric value
-    // }
-
-    // if (numberOfUsers > 0) {
-    //   double averageRating = totalRatings / numberOfUsers;
-    //   return averageRating;
-    // } else {
-    //   return 0.0; // Default value if there are no ratings yet
-    // }
+    // Now you can loop through the courses and their ratings
+    ratingData.forEach((courseName, rating) {
+      print('Course: $courseName, Rating: $rating');
+    });
+  } else {
+    print('No rating data found for the user.');
+  }
+} else {
+  print('Document does not exist.');
+}
   }
 }

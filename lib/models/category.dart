@@ -1,7 +1,19 @@
-class Category{
-  final String? categoryName;
-  final List<String>? courseList;
+class CategoryModel {
+  final String categoryName;
+  final String img;
+  final Map<String, String> languages;
+  CategoryModel(
+      {required this.categoryName, required this.img, required this.languages});
+  factory CategoryModel.fromJson(Map<String, dynamic> json) {
+    Map<String, String> languagesMap = {};
+    json['languages'].forEach((key, value) {
+      languagesMap[key] = value;
+    });
 
-  Category({required this.categoryName, required this.courseList});
-  
+    return CategoryModel(
+      categoryName: json['name'],
+      img: json['img'],
+      languages: languagesMap,
+    );
+  }
 }

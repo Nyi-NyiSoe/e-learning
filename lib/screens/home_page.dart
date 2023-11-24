@@ -1,7 +1,9 @@
+import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/category_detail.dart';
 import 'package:edulearn/utils/load_json.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:edulearn/widgets/text_field.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,10 +11,6 @@ class Homepage extends ConsumerWidget {
   Homepage({super.key});
 
   final TextEditingController searchController = TextEditingController();
-  Future<Map<String, dynamic>> getCategory() async {
-    var result = await LoadJson().readJson();
-    return result;
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -30,37 +28,39 @@ class Homepage extends ConsumerWidget {
             ),
           ),
           Expanded(
-            child: FutureBuilder<Map<String, dynamic>>(
-                future: getCategory(),
+            child: FutureBuilder(
+                future: LoadJson().readJson(),
                 builder: ((context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(child: CircularProgressIndicator());
                   } else {
+                    List<CategoryModel> categories = snapshot.data!;
                     return GridView.builder(
-                      padding: EdgeInsets.all(8),
-                        itemCount: snapshot.data!['categories'].length,
+                        padding: EdgeInsets.all(8),
+                        itemCount: categories.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                                 childAspectRatio: 0.85, crossAxisCount: 2),
                         itemBuilder: ((context, index) {
                           return GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return CourseDetail(
-                                  index: index,
-                                  result: snapshot,
+                              onTap: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return CourseDetail(
+                                    indexL: index,
+                                    result: categories,
+                                  );
+                                }),
                                 );
-                              }));
-                            },
-                            child: CourseCard(
-                                tag: snapshot.data!['categories'][index]
-                                    ['name'],
-                                img: 'category/${snapshot.data!['categories'][index]['img']}',
+                              },
+                              child: CourseCard(
+                                tag: categories[index].categoryName,
+                                img: 'category/${categories[index].img}',
                                 index: index,
-                                courseName: snapshot.data!['categories'][index]['name'],
-                                courseCount: (snapshot.data!['categories']).length),
-                          );
+                                courseName: categories[index].categoryName,
+                                courseCount:
+                                    (categories[index].languages.length),
+                              ));
                         }));
                   }
                 })),

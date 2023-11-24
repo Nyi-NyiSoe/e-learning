@@ -1,19 +1,18 @@
+import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/lesson_page.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetail extends StatelessWidget {
-  final AsyncSnapshot<Map<String, dynamic>> result;
-  final int index;
-  const CourseDetail({super.key, required this.index, required this.result});
+  final List<CategoryModel> result;
+  final int indexL;
+  const CourseDetail({super.key, required this.indexL, required this.result});
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> languagesMap =
-        result.data!['categories'][index]['languages'];
     return SafeArea(
         child: Scaffold(
-          appBar: AppBar(),
+      appBar: AppBar(),
       body: Column(
         children: [
           Container(
@@ -21,10 +20,10 @@ class CourseDetail extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
             child: Hero(
-                tag: result.data!['categories'][index]['name'],
+                tag: result[indexL].categoryName,
                 child: Image(
-                    image: AssetImage(
-                        'images/category/${result.data!['categories'][index]['img']}'))),
+                    image:
+                        AssetImage('images/category/${result[indexL].img}'))),
           ),
           Expanded(
             child: Column(
@@ -32,7 +31,7 @@ class CourseDetail extends StatelessWidget {
                 Expanded(
                   child: GridView.builder(
                       padding: EdgeInsets.all(8),
-                      itemCount: languagesMap.length,
+                      itemCount: result[indexL].languages.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: 0.85, crossAxisCount: 2),
@@ -41,14 +40,21 @@ class CourseDetail extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LessonPage(title: languagesMap.keys.elementAt(index),))),
+                                  builder: (context) => LessonPage(
+                                        title: result[indexL]
+                                            .languages
+                                            .keys
+                                            .elementAt(index),
+                                      ))),
                           child: CourseCard(
-                              tag: languagesMap.keys.elementAt(index),
+                              tag:
+                                  result[indexL].languages.keys.elementAt(index),
                               img:
-                                  'lang/${languagesMap.values.elementAt(index)}',
+                                  'lang/${result[indexL].languages.values.elementAt(index)}',
                               index: index,
-                              courseName: languagesMap.keys.elementAt(index),
-                              courseCount: languagesMap.length),
+                              courseName:
+                                  result[indexL].languages.keys.elementAt(index),
+                              courseCount: result[indexL].languages.length),
                         );
                       })),
                 )
