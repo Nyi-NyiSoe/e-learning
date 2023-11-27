@@ -17,14 +17,14 @@ class LoadJson {
       // Convert the decoded data into a list of Category instances
       categories =
           categoriesList.map((json) => CategoryModel.fromJson(json)).toList();
-         for(var res in categories){
-          print(res.categoryName);
-          res.languages.forEach((key, value) { 
-            print(key+value);
-          });
+        //  for(var res in categories){
+        //   //print(res.categoryName);
+        //   // res.languages.forEach((key, value) { 
+        //   //   print(key+value);
+        //   // });
           
 
-         }
+        //  }
       return categories;
       
     } catch (error) {

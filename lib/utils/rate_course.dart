@@ -4,6 +4,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 class RateCourse {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  Map<String, double> result = {};
+  int userCount = 0;
+
+  Future<double> getAverageRatingValue(String title) async {
+    await getAverageRating(title);
+    double r = 0;
+    double a = 0;
+    double b = 0;
+    print('user count $userCount');
+    result.forEach((key, value) {
+      if (key.contains(title)) {
+        r += value / userCount;
+      }
+    });
+    return r;
+  }
+
   Future<String> rateCourse(double rating, String courseName) async {
     String result;
     try {
@@ -22,27 +39,40 @@ class RateCourse {
     return 'Error';
   }
 
-  Future getAverageRating() async {
-    DocumentSnapshot<Map<String, dynamic>> snapshot =
-        await _firestore.collection('users').doc(_auth.currentUser!.uid).get();
-        if (snapshot.exists) {
-  // Access the data as a map
-  Map<String, dynamic>? userData = snapshot.data();
+  Future getAverageRating(String title) async {
+    try {
+      QuerySnapshot querySnapshot =
+          await FirebaseFirestore.instance.collection('users').get();
 
-  // Check if the 'rating' field exists in the data
-  if (userData != null && userData.containsKey('rating')) {
-    // Access the 'rating' map
-    Map<String, dynamic> ratingData = userData['rating'];
+      for (QueryDocumentSnapshot documentSnapshot in querySnapshot.docs) {
+        Map<String, dynamic> userData =
+            documentSnapshot.data() as Map<String, dynamic>;
 
-    // Now you can loop through the courses and their ratings
-    ratingData.forEach((courseName, rating) {
-      print('Course: $courseName, Rating: $rating');
-    });
-  } else {
-    print('No rating data found for the user.');
-  }
-} else {
-  print('Document does not exist.');
-}
+        // Access the uid
+        String uid = documentSnapshot.id;
+
+        // Access the 'rating' field
+        Map<String, double> ratingMap =
+            Map<String, double>.from(userData['rating']);
+        ratingMap.forEach(
+          (key, value) {
+            if (result.containsKey(key)) {
+              result[key] = result[key]! + value;
+            } else {
+              result[key] = value;
+            }
+          },
+        );
+        if (userData.containsKey('rating') &&
+            userData['rating'].containsKey(title)) {
+          userCount += 1;
+        }
+
+        // Now you can use 'uid' and 'ratingMap' as needed
+        print('User ID: $uid, Ratings: $ratingMap');
+      }
+    } catch (e) {
+      print('Error fetching users: $e');
+    }
   }
 }

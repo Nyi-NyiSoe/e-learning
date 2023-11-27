@@ -60,7 +60,11 @@ class SettingPage extends StatelessWidget {
                 ),
                 Container(
                   child: Column(
-                    
+                    children: [
+                      ElevatedButton(onPressed: ()async{
+                         print(await RateCourse().getAverageRatingValue('HTML'));
+                      }, child: Text('data'))
+                    ],
                   ),
                 )
               ],

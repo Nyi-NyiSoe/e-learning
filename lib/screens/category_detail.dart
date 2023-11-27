@@ -50,7 +50,7 @@ class CourseDetail extends StatelessWidget {
                               tag:
                                   result[indexL].languages.keys.elementAt(index),
                               img:
-                                  'lang/${result[indexL].languages.values.elementAt(index)}',
+                                  'lang/${result[indexL].languages.values.elementAt(index).replaceAll('_', ' ')}',
                               index: index,
                               courseName:
                                   result[indexL].languages.keys.elementAt(index),

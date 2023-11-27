@@ -104,13 +104,24 @@ class LessonPage extends StatelessWidget {
                               });
                         },
                         child: Icon(Icons.star_outline)),
-                    Text(courseRating.toString())
+                    FutureBuilder(
+                        future: RateCourse().getAverageRatingValue(title),
+                        builder: ((context, snapshot) {
+                          if(snapshot.connectionState == ConnectionState.waiting){
+                            const CircularProgressIndicator();
+                          }else{
+                            return Text(snapshot.data.toString());
+                          }
+                          return Text('0.0');
+                          
+                        }))
                   ],
                 )
               ],
             ),
             Container(
-              margin: const EdgeInsets.only(left: 30,top: 10,right: 30,bottom: 10),
+              margin: const EdgeInsets.only(
+                  left: 30, top: 10, right: 30, bottom: 10),
               child: const Text(
                 'Sit ex non dolor fugiat. Duis culpa ad non eiusmod proident adipisicing eiusmod dolore aute velit fugiat cupidatat. Laboris ex cupidatat veniam velit fugiat consequat Lorem. Exercitation aliqua quis excepteur nulla proident ullamco.',
                 style: TextStyle(fontSize: 15),

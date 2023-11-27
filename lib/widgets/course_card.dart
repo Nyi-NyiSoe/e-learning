@@ -12,14 +12,10 @@ class CourseCard extends StatelessWidget {
       required this.img,
       required this.index,
       required this.courseName,
-      required this.courseCount
-    
-      });
-     
+      required this.courseCount});
 
   @override
   Widget build(BuildContext context) {
-    
     return Card(
       elevation: 3,
       child: Container(
@@ -31,8 +27,7 @@ class CourseCard extends StatelessWidget {
                 child: Hero(
               tag: tag,
               child: Image(
-                image: AssetImage(
-                    'images/$img'),
+                image: AssetImage('images/$img'),
                 height: 140,
               ),
             )),
@@ -43,13 +38,12 @@ class CourseCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                   courseName!,
+                    courseName!,
                     style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                        '$courseCount Courses'),
+                    child: Text('$courseCount Courses'),
                   )
                 ],
               ),
