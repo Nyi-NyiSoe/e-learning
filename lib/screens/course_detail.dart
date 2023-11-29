@@ -1,5 +1,5 @@
 import 'package:edulearn/models/category.dart';
-import 'package:edulearn/screens/lesson_page.dart';
+import 'package:edulearn/screens/course_page.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
@@ -40,20 +40,22 @@ class CourseDetail extends StatelessWidget {
                           onTap: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LessonPage(
-                                        title: result[indexL]
-                                            .languages
-                                            .keys
-                                            .elementAt(index),
+                                  builder: (context) => CoursePage(
+                                        index: index,
+                                        languages: result[indexL].languages,
                                       ))),
                           child: CourseCard(
-                              tag:
-                                  result[indexL].languages.keys.elementAt(index),
+                              tag: result[indexL]
+                                  .languages
+                                  .keys
+                                  .elementAt(index),
                               img:
-                                  'lang/${result[indexL].languages.values.elementAt(index).replaceAll('_', ' ')}',
+                                  'lang/${result[indexL].languages.values.elementAt(index)}',
                               index: index,
-                              courseName:
-                                  result[indexL].languages.keys.elementAt(index),
+                              courseName: result[indexL]
+                                  .languages
+                                  .keys
+                                  .elementAt(index),
                               courseCount: result[indexL].languages.length),
                         );
                       })),

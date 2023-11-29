@@ -41,10 +41,8 @@ class CourseCard extends StatelessWidget {
                     courseName!,
                     style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text('$courseCount Courses'),
-                  )
+                  Text('$courseCount Courses'),
+                 
                 ],
               ),
             ),

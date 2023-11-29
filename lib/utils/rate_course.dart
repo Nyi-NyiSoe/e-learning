@@ -14,8 +14,9 @@ class RateCourse {
     double b = 0;
     print('user count $userCount');
     result.forEach((key, value) {
-      if (key.contains(title)) {
+      if (key== title) {
         r += value / userCount;
+        print(key+value.toString()+r.toString());
       }
     });
     return r;
@@ -67,9 +68,8 @@ class RateCourse {
             userData['rating'].containsKey(title)) {
           userCount += 1;
         }
-
-        // Now you can use 'uid' and 'ratingMap' as needed
-        print('User ID: $uid, Ratings: $ratingMap');
+     
+       
       }
     } catch (e) {
       print('Error fetching users: $e');

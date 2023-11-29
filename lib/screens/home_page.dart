@@ -1,5 +1,5 @@
 import 'package:edulearn/models/category.dart';
-import 'package:edulearn/screens/category_detail.dart';
+import 'package:edulearn/screens/course_detail.dart';
 import 'package:edulearn/utils/load_json.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:edulearn/widgets/text_field.dart';
