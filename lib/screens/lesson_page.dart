@@ -1,7 +1,12 @@
+import 'package:edulearn/models/lesson.dart';
+import 'package:edulearn/utils/load_lessons.dart';
 import 'package:flutter/material.dart';
 
 class LessonPage extends StatelessWidget {
-  const LessonPage({super.key});
+  final String title;
+  //final String imgUrl;
+  final String des;
+  const LessonPage({super.key, required this.title, required this.des});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class LessonPage extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Introduction to HTML',
+                (title),
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
               Container(
@@ -23,7 +28,7 @@ class LessonPage extends StatelessWidget {
                     if (loadingProgress == null) {
                       return child;
                     } else {
-                     return Center(
+                      return Center(
                         child: CircularProgressIndicator(
                           value: loadingProgress.expectedTotalBytes != null
                               ? loadingProgress.cumulativeBytesLoaded /
@@ -38,7 +43,7 @@ class LessonPage extends StatelessWidget {
               Container(
                 margin: EdgeInsets.all(10),
                 child: Text(
-                  'Eu magna nostrud commodo reprehenderit irure. Magna ea pariatur Lorem enim eu et nostrud nostrud ut occaecat elit consequat. Non eu sint Lorem exercitation ad culpa dolore aliqua adipisicing irure quis amet aliquip duis. Irure esse sit sit officia laborum consequat pariatur dolor do commodo magna et. Adipisicing do commodo nostrud voluptate officia deserunt pariatur et sunt. Aute consequat proident tempor exercitation minim reprehenderit magna nulla cupidatat. Ut esse amet et aliquip exercitation.',
+                  des,
                   style: TextStyle(fontSize: 20),
                 ),
               )

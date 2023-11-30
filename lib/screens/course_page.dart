@@ -1,13 +1,14 @@
+import 'package:edulearn/models/lesson.dart';
 import 'package:edulearn/screens/lesson_page.dart';
+import 'package:edulearn/utils/load_lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:edulearn/utils/rate_course.dart';
 
 class CoursePage extends StatelessWidget {
-
-  final int index;
-  final Map<String,String> languages;
-  const CoursePage({super.key,required this.languages,required this.index});
+  final int indexL;
+  final Map<String, String> languages;
+  const CoursePage({super.key, required this.languages, required this.indexL});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class CoursePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text(languages.keys.elementAt(index)),
+          title: Text(languages.keys.elementAt(indexL)),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,9 +39,9 @@ class CoursePage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 10,top: 30),
+                          padding: const EdgeInsets.only(left: 10, top: 30),
                           child: Text(
-                            '${languages.keys.elementAt(index)} Course',
+                            '${languages.keys.elementAt(indexL)} Course',
                             maxLines: 1,
                             style: const TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.w500),
@@ -50,10 +51,10 @@ class CoursePage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: Hero(
-                          tag: languages.keys.elementAt(index),
+                          tag: languages.keys.elementAt(indexL),
                           child: Image(
                             image: AssetImage(
-                                'images/lang/${languages.values.elementAt(index)}'),
+                                'images/lang/${languages.values.elementAt(indexL)}'),
                           ),
                         ),
                       ),
@@ -101,7 +102,9 @@ class CoursePage extends StatelessWidget {
                                             onPressed: () async {
                                               var res = await RateCourse()
                                                   .rateCourse(
-                                                      courseRating, languages.keys.elementAt(index));
+                                                      courseRating,
+                                                      languages.keys
+                                                          .elementAt(indexL));
                                               print(res);
                                               Navigator.pop(context);
                                             },
@@ -114,7 +117,8 @@ class CoursePage extends StatelessWidget {
                         },
                         child: Icon(Icons.star_outline)),
                     FutureBuilder(
-                        future: RateCourse().getAverageRatingValue(languages.keys.elementAt(index)),
+                        future: RateCourse().getAverageRatingValue(
+                            languages.keys.elementAt(indexL)),
                         builder: ((context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
@@ -137,38 +141,37 @@ class CoursePage extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: ListView.builder(
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    itemCount: 5,
+                child: FutureBuilder(
+              future:
+                  LoadLessons().loadLessons(languages.keys.elementAt(indexL)),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const CircularProgressIndicator();
+                } else {
+                  List<LessonModel> lessons = snapshot.data!;
+                  return ListView.builder(
+                    itemCount: lessons.length,
                     itemBuilder: ((context, index) {
-                      return GestureDetector(
-                        onTap: () => Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return LessonPage();
-                        })),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Card(
-                            elevation: 3,
-                            child: Column(
-                              children: [
-                                ListTile(
-                                  leading: Container(
-                                      decoration: BoxDecoration(
-                                          border: Border.all(width: 1)),
-                                      child: Icon(Icons.play_arrow)),
-                                  title: Text('Introduction'),
-                                  trailing: Text('10 mins'),
-                                ),
-                                LinearProgressIndicator(
-                                  value: 0.75,
-                                )
-                              ],
-                            ),
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return LessonPage(title: lessons[index].title,des: lessons[index].description);
+                        }));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(left:20,right: 20,bottom: 10),
+                        child: Card(
+                          child: ListTile(
+                            leading: Icon(Icons.book),
+                            title: Text(lessons[index].title),
                           ),
                         ),
-                      );
-                    })))
+                      ),
+                    );
+                  }));
+                }
+              },
+            ))
           ],
         ),
       ),

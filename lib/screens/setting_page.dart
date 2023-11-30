@@ -1,3 +1,4 @@
+import 'package:edulearn/utils/load_lessons.dart';
 import 'package:edulearn/utils/rate_course.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
@@ -62,7 +63,7 @@ class SettingPage extends StatelessWidget {
                   child: Column(
                     children: [
                       ElevatedButton(onPressed: ()async{
-                         print(await RateCourse().getAverageRatingValue('HTML'));
+                        print(await LoadLessons().loadLessons('HTML'));
                       }, child: Text('data'))
                     ],
                   ),

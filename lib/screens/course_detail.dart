@@ -41,7 +41,7 @@ class CourseDetail extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => CoursePage(
-                                        index: index,
+                                        indexL: index,
                                         languages: result[indexL].languages,
                                       ))),
                           child: CourseCard(

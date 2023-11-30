@@ -1,0 +1,196 @@
+{
+    "HTML": [
+      {
+        "title": "Introduction to HTML",
+        "imgUrl": "https://example.com/intro_html.png",
+        "description": "Learn the basics of HTML and its role in web development."
+      },
+      {
+        "title": "HTML Document Structure",
+        "imgUrl": "https://example.com/html_structure.png",
+        "description": "Explore the structure of an HTML document, including the DOCTYPE declaration and basic layout."
+      },
+      {
+        "title": "HTML Elements and Tags",
+        "imgUrl": "https://example.com/html_elements.png",
+        "description": "Understand HTML elements, tags, and their significance in creating web content."
+      },
+      {
+        "title": "HTML Headings and Paragraphs",
+        "imgUrl": "https://example.com/html_headings.png",
+        "description": "Learn how to use HTML headings and paragraphs to structure your content."
+      },
+      {
+        "title": "HTML Links and Anchors",
+        "imgUrl": "https://example.com/html_links.png",
+        "description": "Discover how to create links and anchors to connect web pages and resources."
+      },
+      {
+        "title": "HTML Lists (Ordered and Unordered)",
+        "imgUrl": "https://example.com/html_lists.png",
+        "description": "Explore the use of ordered and unordered lists in HTML for better organization."
+      },
+      {
+        "title": "HTML Images",
+        "imgUrl": "https://example.com/html_images.png",
+        "description": "Learn how to embed images in your HTML documents for visual appeal."
+      },
+      {
+        "title": "HTML Forms and Input Elements",
+        "imgUrl": "https://example.com/html_forms.png",
+        "description": "Understand the creation of HTML forms and various input elements for user interaction."
+      },
+      {
+        "title": "HTML Tables",
+        "imgUrl": "https://example.com/html_tables.png",
+        "description": "Discover how to create tables in HTML to present data in a structured format."
+      },
+      {
+        "title": "HTML Semantic Elements",
+        "imgUrl": "https://example.com/html_semantic.png",
+        "description": "Explore semantic elements in HTML and their role in improving document structure."
+      },
+      {
+        "title": "HTML Multimedia (Audio and Video)",
+        "imgUrl": "https://example.com/html_multimedia.png",
+        "description": "Learn how to embed audio and video content in HTML documents."
+      },
+      {
+        "title": "HTML Styles and CSS",
+        "imgUrl": "https://example.com/html_styles_css.png",
+        "description": "Understand the use of styles and CSS in HTML to enhance visual presentation."
+      },
+      {
+        "title": "HTML Comments",
+        "imgUrl": "https://example.com/html_comments.png",
+        "description": "Explore the use of HTML comments to add notes and explanations in your code."
+      },
+      {
+        "title": "HTML Entities and Special Characters",
+        "imgUrl": "https://example.com/html_entities.png",
+        "description": "Learn how to represent special characters and entities in HTML."
+      },
+      {
+        "title": "HTML Validation and Best Practices",
+        "imgUrl": "https://example.com/html_validation.png",
+        "description": "Understand HTML validation and best practices for creating robust web documents."
+      },
+      {
+        "title": "Responsive Web Design with HTML",
+        "imgUrl": "https://example.com/html_responsive.png",
+        "description": "Explore responsive web design principles and techniques using HTML."
+      },
+      {
+        "title": "HTML Metadata (Meta Tags)",
+        "imgUrl": "https://example.com/html_metadata.png",
+        "description": "Learn how to use metadata and meta tags to provide additional information about your HTML document."
+      },
+      {
+        "title": "HTML Layouts (Divs and Spans)",
+        "imgUrl": "https://example.com/html_layouts.png",
+        "description": "Discover how to create layouts using divs and spans in HTML for better organization."
+      },
+      {
+        "title": "HTML Inline and Block Elements",
+        "imgUrl": "https://example.com/html_inline_block.png",
+        "description": "Understand the difference between inline and block-level elements in HTML and their use cases."
+      },
+      {
+        "title": "HTML Deprecated Elements",
+        "imgUrl": "https://example.com/html_deprecated.png",
+        "description": "Learn about deprecated HTML elements and their alternatives in modern web development."
+      }
+      
+     
+    ],
+
+    "CSS": [
+        {
+          "title": "Introduction to CSS",
+          "imgUrl": "https://example.com/intro_css.png",
+          "description": "Learn the basics of Cascading Style Sheets (CSS) and its role in styling web documents."
+        },
+        {
+          "title": "CSS Selectors",
+          "imgUrl": "https://example.com/css_selectors.png",
+          "description": "Explore CSS selectors and how they are used to target HTML elements for styling."
+        },
+        {
+          "title": "CSS Box Model",
+          "imgUrl": "https://example.com/css_box_model.png",
+          "description": "Understand the CSS box model, including margin, padding, border, and content."
+        },
+        {
+          "title": "CSS Typography",
+          "imgUrl": "https://example.com/css_typography.png",
+          "description": "Learn how to style text, fonts, and typography using CSS properties."
+        },
+        {
+          "title": "CSS Colors and Backgrounds",
+          "imgUrl": "https://example.com/css_colors_backgrounds.png",
+          "description": "Explore CSS properties for defining colors and backgrounds in web pages."
+        },
+        {
+          "title": "CSS Layouts",
+          "imgUrl": "https://example.com/css_layouts.png",
+          "description": "Understand different CSS layout techniques, including Flexbox and Grid."
+        },
+        {
+          "title": "CSS Transitions and Animations",
+          "imgUrl": "https://example.com/css_transitions_animations.png",
+          "description": "Learn how to create smooth transitions and animations using CSS."
+        },
+        {
+          "title": "Responsive Web Design with CSS",
+          "imgUrl": "https://example.com/css_responsive.png",
+          "description": "Explore CSS techniques for creating responsive web designs that adapt to various screen sizes."
+        },
+        {
+          "title": "CSS Media Queries",
+          "imgUrl": "https://example.com/css_media_queries.png",
+          "description": "Understand how to use CSS media queries to apply styles based on different devices and screen resolutions."
+        },
+        {
+          "title": "CSS Flexbox",
+          "imgUrl": "https://example.com/css_flexbox.png",
+          "description": "Learn the CSS Flexbox layout model for building flexible and efficient web layouts."
+        },
+        {
+          "title": "CSS Grid",
+          "imgUrl": "https://example.com/css_grid.png",
+          "description": "Explore the CSS Grid layout system for creating two-dimensional layouts with rows and columns."
+        },
+        {
+          "title": "CSS Positioning",
+          "imgUrl": "https://example.com/css_positioning.png",
+          "description": "Understand CSS positioning properties to control the placement of elements on a webpage."
+        },
+        {
+          "title": "CSS Transformations",
+          "imgUrl": "https://example.com/css_transformations.png",
+          "description": "Learn how to use CSS transformations to modify the appearance of elements, such as rotation and scaling."
+        },
+        {
+          "title": "CSS Variables",
+          "imgUrl": "https://example.com/css_variables.png",
+          "description": "Explore the use of CSS variables to create reusable and maintainable styles in your projects."
+        },
+        {
+          "title": "CSS Pseudo-classes and Pseudo-elements",
+          "imgUrl": "https://example.com/css_pseudo_classes.png",
+          "description": "Understand CSS pseudo-classes and pseudo-elements for styling specific states or parts of an element."
+        },
+        {
+          "title": "CSS Flexibility and Responsiveness",
+          "imgUrl": "https://example.com/css_flexibility_responsiveness.png",
+          "description": "Learn advanced CSS techniques for creating flexible and responsive web designs."
+        },
+        {
+          "title": "CSS Best Practices",
+          "imgUrl": "https://example.com/css_best_practices.png",
+          "description": "Understand best practices and tips for writing clean, efficient, and maintainable CSS code."
+        }
+        
+      ]
+  }
+  
