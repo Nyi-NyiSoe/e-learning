@@ -1,5 +1,6 @@
 import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/course_page.dart';
+import 'package:edulearn/utils/load_lessons.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,7 @@ class CourseDetail extends StatelessWidget {
                                   .languages
                                   .keys
                                   .elementAt(index),
-                              courseCount: result[indexL].languages.length),
+                              courseCount: 10),
                         );
                       })),
                 )

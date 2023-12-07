@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:edulearn/models/category.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 
 class LoadJson {
   List<CategoryModel> categories = [];
@@ -17,19 +19,12 @@ class LoadJson {
       // Convert the decoded data into a list of Category instances
       categories =
           categoriesList.map((json) => CategoryModel.fromJson(json)).toList();
-        //  for(var res in categories){
-        //   //print(res.categoryName);
-        //   // res.languages.forEach((key, value) { 
-        //   //   print(key+value);
-        //   // });
-          
 
-        //  }
       return categories;
-      
     } catch (error) {
       print('Error reading JSON: $error');
       return [];
     }
   }
+  
 }

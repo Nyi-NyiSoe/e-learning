@@ -3,14 +3,15 @@ import 'package:edulearn/models/lesson.dart';
 import 'package:flutter/services.dart';
 
 class LoadLessons {
-  final List<LessonModel> lessonList = [];
+  List<LessonModel> lessonList = [];
   Future<List<LessonModel>> loadLessons(String title) async {
     try {
       final String response = await rootBundle.loadString('assets/lesson.json');
-
-       return parseLessons(title, response);
       
-      
+       lessonList=  parseLessons(title, response);
+    
+     
+      return lessonList;
     } catch (e) {
       print(e.toString());
     }
@@ -29,4 +30,5 @@ class LoadLessons {
       return [];
     }
   }
+  
 }

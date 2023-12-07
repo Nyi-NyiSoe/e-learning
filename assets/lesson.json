@@ -191,6 +191,258 @@
           "description": "Understand best practices and tips for writing clean, efficient, and maintainable CSS code."
         }
         
-      ]
+      ],
+      
+        "JavaScript": [
+          {
+            "title": "Introduction to JavaScript",
+            "imgUrl": "https://example.com/intro_js.png",
+            "description": "Learn the fundamentals of JavaScript, the programming language for the web."
+          },
+          {
+            "title": "JavaScript Variables and Data Types",
+            "imgUrl": "https://example.com/js_variables.png",
+            "description": "Understand how to declare variables and work with different data types in JavaScript."
+          },
+          {
+            "title": "JavaScript Operators and Expressions",
+            "imgUrl": "https://example.com/js_operators.png",
+            "description": "Explore JavaScript operators and expressions for performing various operations in your code."
+          },
+          {
+            "title": "JavaScript Control Flow (if, else, switch)",
+            "imgUrl": "https://example.com/js_control_flow.png",
+            "description": "Learn how to control the flow of your JavaScript code using conditional statements like if, else, and switch."
+          },
+          {
+            "title": "JavaScript Functions",
+            "imgUrl": "https://example.com/js_functions.png",
+            "description": "Master the concept of functions in JavaScript and how to create reusable blocks of code."
+          },
+          {
+            "title": "JavaScript Arrays",
+            "imgUrl": "https://example.com/js_arrays.png",
+            "description": "Explore JavaScript arrays and their methods for storing and manipulating collections of data."
+          },
+          {
+            "title": "JavaScript Objects",
+            "imgUrl": "https://example.com/js_objects.png",
+            "description": "Understand JavaScript objects, key-value pairs, and how to work with object-oriented programming concepts."
+          },
+          {
+            "title": "JavaScript DOM Manipulation",
+            "imgUrl": "https://example.com/js_dom.png",
+            "description": "Learn how to manipulate the Document Object Model (DOM) using JavaScript for dynamic web interactions."
+          },
+          {
+            "title": "Asynchronous JavaScript (Promises, Async/Await)",
+            "imgUrl": "https://example.com/js_async.png",
+            "description": "Dive into asynchronous programming in JavaScript using Promises and the Async/Await pattern."
+          },
+          {
+            "title": "JavaScript Events",
+            "imgUrl": "https://example.com/js_events.png",
+            "description": "Explore handling events in JavaScript to respond to user interactions on your web pages."
+          },
+          {
+            "title": "JavaScript AJAX and Fetch API",
+            "imgUrl": "https://example.com/js_ajax.png",
+            "description": "Learn how to make asynchronous requests to servers using JavaScript's AJAX and Fetch API."
+          },
+          {
+            "title": "JavaScript ES6+ Features",
+            "imgUrl": "https://example.com/js_es6.png",
+            "description": "Discover the latest features introduced in ECMAScript 6 (ES6) and newer versions of JavaScript."
+          },
+          {
+            "title": "JavaScript Modules",
+            "imgUrl": "https://example.com/js_modules.png",
+            "description": "Understand JavaScript modules and how to organize and structure your code for maintainability."
+          },
+          {
+            "title": "JavaScript Testing (Jest)",
+            "imgUrl": "https://example.com/js_testing.png",
+            "description": "Learn the basics of testing JavaScript code using Jest, a popular testing framework."
+          },
+          {
+            "title": "JavaScript Frameworks (React, Angular, Vue)",
+            "imgUrl": "https://example.com/js_frameworks.png",
+            "description": "Explore popular JavaScript frameworks like React, Angular, and Vue for building dynamic web applications."
+          },
+          {
+            "title": "JavaScript Security Best Practices",
+            "imgUrl": "https://example.com/js_security.png",
+            "description": "Understand best practices for securing your JavaScript code and protecting against common vulnerabilities."
+          },
+          {
+            "title": "JavaScript Debugging and Profiling",
+            "imgUrl": "https://example.com/js_debugging.png",
+            "description": "Master the art of debugging and profiling JavaScript code for efficient development."
+          },
+          {
+            "title": "JavaScript Build Tools (Webpack, Babel)",
+            "imgUrl": "https://example.com/js_build_tools.png",
+            "description": "Explore build tools like Webpack and Babel to enhance your JavaScript development workflow."
+          }
+        
+        ],
+        "React": [
+          {
+            "title": "Introduction to React",
+            "imgUrl": "https://example.com/intro_react.png",
+            "description": "Learn the basics of React, a JavaScript library for building user interfaces."
+          },
+          {
+            "title": "React Components and Props",
+            "imgUrl": "https://example.com/react_components.png",
+            "description": "Understand the concept of React components, props, and their role in building modular UIs."
+          },
+          {
+            "title": "React State and Lifecycle",
+            "imgUrl": "https://example.com/react_state_lifecycle.png",
+            "description": "Explore React state and lifecycle methods for managing component data and behavior."
+          },
+          {
+            "title": "React Events and Handling",
+            "imgUrl": "https://example.com/react_events.png",
+            "description": "Learn how to handle events in React and respond to user interactions on your web applications."
+          },
+          {
+            "title": "React Forms and Controlled Components",
+            "imgUrl": "https://example.com/react_forms.png",
+            "description": "Master form handling in React using controlled components and managing form data."
+          },
+          {
+            "title": "React Hooks",
+            "imgUrl": "https://example.com/react_hooks.png",
+            "description": "Dive into React Hooks to add state and lifecycle features to functional components in a concise way."
+          },
+          {
+            "title": "React Router",
+            "imgUrl": "https://example.com/react_router.png",
+            "description": "Explore React Router for navigation and creating dynamic, single-page applications with multiple views."
+          },
+          {
+            "title": "React Context API",
+            "imgUrl": "https://example.com/react_context.png",
+            "description": "Understand React's Context API for managing global state and sharing data between components."
+          },
+          {
+            "title": "React Redux",
+            "imgUrl": "https://example.com/react_redux.png",
+            "description": "Learn how to integrate Redux with React for state management in larger applications."
+          },
+          {
+            "title": "React Forms and Validation",
+            "imgUrl": "https://example.com/react_form_validation.png",
+            "description": "Explore techniques for form validation in React applications to ensure data integrity."
+          },
+          {
+            "title": "React Testing Library",
+            "imgUrl": "https://example.com/react_testing.png",
+            "description": "Master the React Testing Library to write unit and integration tests for your React components."
+          },
+          {
+            "title": "React Hooks Advanced",
+            "imgUrl": "https://example.com/react_hooks_advanced.png",
+            "description": "Deepen your understanding of React Hooks with advanced concepts and use cases."
+          },
+          {
+            "title": "Server-Side Rendering (SSR) with React",
+            "imgUrl": "https://example.com/react_ssr.png",
+            "description": "Explore server-side rendering (SSR) in React to improve performance and SEO."
+          },
+          {
+            "title": "React Animations",
+            "imgUrl": "https://example.com/react_animations.png",
+            "description": "Learn how to add animations to your React applications for a more engaging user experience."
+          },
+          {
+            "title": "React Best Practices and Patterns",
+            "imgUrl": "https://example.com/react_best_practices.png",
+            "description": "Understand best practices and common patterns for structuring and organizing React code."
+          },
+          {
+            "title": "React Deployment",
+            "imgUrl": "https://example.com/react_deployment.png",
+            "description": "Explore different methods for deploying React applications to make them accessible to users."
+          }
+         
+        ],
+        "Vue.js": [
+          {
+            "title": "Introduction to Vue.js",
+            "imgUrl": "https://example.com/intro_vuejs.png",
+            "description": "Learn the fundamentals of Vue.js, a progressive JavaScript framework for building user interfaces."
+          },
+          {
+            "title": "Vue.js Components and Props",
+            "imgUrl": "https://example.com/vuejs_components.png",
+            "description": "Understand the concept of Vue.js components, props, and their role in creating modular and reusable UIs."
+          },
+          {
+            "title": "Vue.js State Management",
+            "imgUrl": "https://example.com/vuejs_state_management.png",
+            "description": "Explore Vue.js state management techniques to handle application-level data and ensure a predictable state."
+          },
+          {
+            "title": "Vue.js Directives",
+            "imgUrl": "https://example.com/vuejs_directives.png",
+            "description": "Learn how to use Vue.js directives to manipulate the DOM and apply dynamic behavior to elements."
+          },
+          {
+            "title": "Vue.js Forms and Two-Way Binding",
+            "imgUrl": "https://example.com/vuejs_forms.png",
+            "description": "Master form handling in Vue.js and understand the concept of two-way data binding for efficient data synchronization."
+          },
+          {
+            "title": "Vue.js Routing",
+            "imgUrl": "https://example.com/vuejs_routing.png",
+            "description": "Explore Vue.js routing to create single-page applications with multiple views and navigation functionality."
+          },
+          {
+            "title": "Vue.js Vuex",
+            "imgUrl": "https://example.com/vuejs_vuex.png",
+            "description": "Understand and implement state management in Vue.js using Vuex for managing complex application states."
+          },
+          {
+            "title": "Vue.js Lifecycle Hooks",
+            "imgUrl": "https://example.com/vuejs_lifecycle.png",
+            "description": "Learn about Vue.js lifecycle hooks and how to leverage them for handling component lifecycles."
+          },
+          {
+            "title": "Vue.js Transitions and Animations",
+            "imgUrl": "https://example.com/vuejs_transitions.png",
+            "description": "Add dynamic transitions and animations to your Vue.js applications for a smoother user experience."
+          },
+          {
+            "title": "Vue.js Advanced Components",
+            "imgUrl": "https://example.com/vuejs_advanced_components.png",
+            "description": "Deepen your understanding of Vue.js components with advanced techniques and patterns."
+          },
+          {
+            "title": "Vue.js Testing",
+            "imgUrl": "https://example.com/vuejs_testing.png",
+            "description": "Master testing Vue.js applications using popular testing libraries and frameworks."
+          },
+          {
+            "title": "Vue.js Server-Side Rendering (SSR)",
+            "imgUrl": "https://example.com/vuejs_ssr.png",
+            "description": "Explore server-side rendering (SSR) in Vue.js to improve performance and SEO for your applications."
+          },
+          {
+            "title": "Vue.js Authentication",
+            "imgUrl": "https://example.com/vuejs_authentication.png",
+            "description": "Implement user authentication and authorization in Vue.js applications for secure user interactions."
+          },
+          {
+            "title": "Vue.js Deployment",
+            "imgUrl": "https://example.com/vuejs_deployment.png",
+            "description": "Discover different methods for deploying Vue.js applications and making them accessible to users."
+          }
+         
+        ]
+    
+      
   }
   

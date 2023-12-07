@@ -17,6 +17,24 @@ class CoursePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(languages.keys.elementAt(indexL)),
+          actions: [
+            PopupMenuButton<String>(onSelected: (value) {
+             if(value == 'add'){
+              print('adding to list');
+             }else{
+              print('removing from list');
+             }
+            }, itemBuilder: (context) {
+              return [
+                PopupMenuItem(
+                  value: 'add',
+                  child: Text('Add to Fav')),
+                PopupMenuItem(
+                  value: 'remove',
+                  child: Text('Remove from Fav')),
+              ];
+            })
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -150,25 +168,29 @@ class CoursePage extends StatelessWidget {
                 } else {
                   List<LessonModel> lessons = snapshot.data!;
                   return ListView.builder(
-                    itemCount: lessons.length,
-                    itemBuilder: ((context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return LessonPage(title: lessons[index].title,des: lessons[index].description);
-                        }));
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.only(left:20,right: 20,bottom: 10),
-                        child: Card(
-                          child: ListTile(
-                            leading: Icon(Icons.book),
-                            title: Text(lessons[index].title),
+                      itemCount: lessons.length,
+                      itemBuilder: ((context, index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return LessonPage(
+                                  title: lessons[index].title,
+                                  des: lessons[index].description);
+                            }));
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                                left: 20, right: 20, bottom: 10),
+                            child: Card(
+                              child: ListTile(
+                                leading: Icon(Icons.book),
+                                title: Text(lessons[index].title),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  }));
+                        );
+                      }));
                 }
               },
             ))
