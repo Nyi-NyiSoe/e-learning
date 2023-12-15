@@ -1,5 +1,7 @@
 import 'package:edulearn/models/lesson.dart';
+import 'package:edulearn/screens/fav_page.dart';
 import 'package:edulearn/screens/lesson_page.dart';
+import 'package:edulearn/utils/fav.dart';
 import 'package:edulearn/utils/load_lessons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -19,19 +21,31 @@ class CoursePage extends StatelessWidget {
           title: Text(languages.keys.elementAt(indexL)),
           actions: [
             PopupMenuButton<String>(onSelected: (value) {
-             if(value == 'add'){
-              print('adding to list');
-             }else{
-              print('removing from list');
-             }
+              if (value == 'add') {
+                print('adding to list');
+              } else {
+                print('removing from list');
+              }
             }, itemBuilder: (context) {
               return [
                 PopupMenuItem(
-                  value: 'add',
-                  child: Text('Add to Fav')),
+                    value: 'add',
+                    child: GestureDetector(
+                        onTap: () async {
+                          String result = await FavouriteCourse()
+                              .addCourse(languages.keys.elementAt(indexL));
+                          print(result);
+                        },
+                        child: const Text('Add to Fav'))),
                 PopupMenuItem(
-                  value: 'remove',
-                  child: Text('Remove from Fav')),
+                    value: 'remove',
+                    child: GestureDetector(
+                        onTap: () async {
+                         String result = await FavouriteCourse()
+                              .deleteCourse(languages.keys.elementAt(indexL));
+                              print(result);
+                        },
+                        child: const Text('Remove from Fav'))),
               ];
             })
           ],
