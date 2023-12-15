@@ -5,22 +5,38 @@ class FavouriteCourse {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Future<String> addCourse(String courseName) async {
-    String result;
+   late String result;
     try {
       if (_auth.currentUser != null) {
-        await _firestore
+        // Fetch the current user's data
+        var userData = await _firestore
             .collection('users')
             .doc(_auth.currentUser!.uid)
-            .update({
-          'fav_course': FieldValue.arrayUnion([courseName])
-        });
+            .get();
+
+        // Get the current fav_courses array or an empty list if it doesn't exist
+        List<String> currentFavCourses =
+            List<String>.from(userData.get('fav_course') ?? []);
+
+        // Check if the course is already in the array
+        if (!currentFavCourses.contains(courseName)) {
+          // Update the array only if the course is not already in it
+          await _firestore
+              .collection('users')
+              .doc(_auth.currentUser!.uid)
+              .update({
+            'fav_course': FieldValue.arrayUnion([courseName])
+          });
+
+          result = 'Added to fav!';
+        } else {
+          result = 'Course already in fav!';
+        }
       }
-      result = 'success';
-      return result;
     } catch (e) {
-      result = e.toString();
-      return result;
+      result = 'Error: $e';
     }
+    return result;
   }
 
   Future<String> deleteCourse(String courseName) async {
@@ -34,7 +50,7 @@ class FavouriteCourse {
           'fav_course': FieldValue.arrayRemove([courseName])
         });
       }
-      result = 'success';
+      result = 'Deleted from fav!';
       return result;
     } catch (e) {
       result = e.toString();

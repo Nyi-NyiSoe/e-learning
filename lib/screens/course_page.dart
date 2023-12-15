@@ -12,6 +12,8 @@ class CoursePage extends StatelessWidget {
   final Map<String, String> languages;
   const CoursePage({super.key, required this.languages, required this.indexL});
 
+  void showSnackBar(BuildContext context, String message) {}
+
   @override
   Widget build(BuildContext context) {
     double courseRating = 0;
@@ -32,18 +34,49 @@ class CoursePage extends StatelessWidget {
                     value: 'add',
                     child: GestureDetector(
                         onTap: () async {
-                          String result = await FavouriteCourse()
-                              .addCourse(languages.keys.elementAt(indexL));
-                          print(result);
+                          try {
+                            String result = await FavouriteCourse()
+                                .addCourse(languages.keys.elementAt(indexL));
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(result),
+                                  duration: Duration(
+                                      seconds:
+                                          2), // Adjust the duration as needed
+                                ),
+                              );
+                            }
+                          } catch (e) {
+                            if (context.mounted) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Already added!'),
+                                  duration: Duration(
+                                      seconds:
+                                          2), // Adjust the duration as needed
+                                ),
+                              );
+                            }
+                          }
                         },
                         child: const Text('Add to Fav'))),
                 PopupMenuItem(
                     value: 'remove',
                     child: GestureDetector(
                         onTap: () async {
-                         String result = await FavouriteCourse()
+                          String result = await FavouriteCourse()
                               .deleteCourse(languages.keys.elementAt(indexL));
-                              print(result);
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(result),
+                                duration: Duration(
+                                    seconds:
+                                        2), // Adjust the duration as needed
+                              ),
+                            );
+                          }
                         },
                         child: const Text('Remove from Fav'))),
               ];
