@@ -68,4 +68,21 @@ class FavouriteCourse {
     }
     return result;
   }
+
+  Future<List> loadCourse() async {
+    try {
+      if (_auth.currentUser != null) {
+        var userdata = await _firestore
+            .collection('users')
+            .doc(_auth.currentUser!.uid)
+            .get();
+
+        return userdata.get('fav_course');
+      }
+    } catch (e) {
+      print(e.toString());
+      return [];
+    }
+    return [];
+  }
 }
