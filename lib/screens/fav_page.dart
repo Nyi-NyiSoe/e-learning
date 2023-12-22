@@ -1,9 +1,4 @@
-import 'package:edulearn/models/category.dart';
-import 'package:edulearn/screens/course_page.dart';
-import 'package:edulearn/utils/load_json.dart';
-import 'package:edulearn/utils/load_lessons.dart';
 import 'package:edulearn/widgets/course_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/utils/fav.dart';
 

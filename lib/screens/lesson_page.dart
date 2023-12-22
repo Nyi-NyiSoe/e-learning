@@ -1,5 +1,4 @@
 import 'package:edulearn/models/lesson.dart';
-import 'package:edulearn/utils/load_lessons.dart';
 import 'package:flutter/material.dart';
 
 class LessonPage extends StatelessWidget {

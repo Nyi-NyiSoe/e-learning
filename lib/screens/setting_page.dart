@@ -1,4 +1,4 @@
-import 'package:edulearn/utils/load_lessons.dart';
+import 'package:edulearn/utils/load_json.dart';
 import 'package:edulearn/utils/rate_course.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
@@ -63,7 +63,8 @@ class SettingPage extends StatelessWidget {
                   child: Column(
                     children: [
                       ElevatedButton(onPressed: ()async{
-                        print(await LoadLessons().loadLessons('HTML'));
+                        var data = await LoadJson().readJson();
+                        print(data[0].languages[0].langName);
                       }, child: Text('data'))
                     ],
                   ),

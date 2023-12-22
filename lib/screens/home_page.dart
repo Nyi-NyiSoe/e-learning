@@ -2,8 +2,6 @@ import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/course_detail.dart';
 import 'package:edulearn/utils/load_json.dart';
 import 'package:edulearn/widgets/course_card.dart';
-import 'package:edulearn/widgets/text_field.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -36,7 +34,7 @@ class Homepage extends ConsumerWidget {
                   } else {
                     List<CategoryModel> categories = snapshot.data!;
                     return GridView.builder(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         itemCount: categories.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
@@ -48,7 +46,6 @@ class Homepage extends ConsumerWidget {
                                     MaterialPageRoute(builder: (context) {
                                   return CourseDetail(
                                     indexL: index,
-                                    result: categories,
                                   );
                                 }),
                                 );

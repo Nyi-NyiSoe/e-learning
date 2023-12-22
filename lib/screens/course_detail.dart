@@ -1,71 +1,90 @@
 import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/course_page.dart';
-import 'package:edulearn/utils/load_lessons.dart';
+import 'package:edulearn/utils/load_json.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetail extends StatelessWidget {
-  final List<CategoryModel> result;
   final int indexL;
-  const CourseDetail({super.key, required this.indexL, required this.result});
+  const CourseDetail({super.key, required this.indexL});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: AppBar(),
-      body: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 0.3,
-            width: MediaQuery.of(context).size.width,
-            color: Colors.blue,
-            child: Hero(
-                tag: result[indexL].categoryName,
-                child: Image(
-                    image:
-                        AssetImage('images/category/${result[indexL].img}'))),
-          ),
-          Expanded(
-            child: Column(
-              children: [
-                Expanded(
-                  child: GridView.builder(
-                      padding: EdgeInsets.all(8),
-                      itemCount: result[indexL].languages.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              childAspectRatio: 0.85, crossAxisCount: 2),
-                      itemBuilder: ((context, index) {
-                        return GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => CoursePage(
-                                        indexL: index,
-                                        languages: result[indexL].languages,
-                                      ))),
-                          child: CourseCard(
-                              tag: result[indexL]
-                                  .languages
-                                  .keys
-                                  .elementAt(index),
-                              img:
-                                  'lang/${result[indexL].languages.values.elementAt(index)}',
-                              index: index,
-                              courseName: result[indexL]
-                                  .languages
-                                  .keys
-                                  .elementAt(index),
-                              courseCount: 10),
-                        );
-                      })),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    ));
+            appBar: AppBar(),
+            body: FutureBuilder(
+                future: LoadJson().readJson(),
+                builder: ((context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else {
+                    return Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.3,
+                          width: MediaQuery.of(context).size.width,
+                          color: Colors.blue,
+                          child: Hero(
+                              tag: snapshot.data![indexL].categoryName,
+                              child: Image(
+                                  image: AssetImage(
+                                      'images/category/${snapshot.data![indexL].img}'))),
+                        ),
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Expanded(
+                                child: GridView.builder(
+                                    padding: EdgeInsets.all(8),
+                                    itemCount:
+                                        snapshot.data![indexL].languages.length,
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                            childAspectRatio: 0.85,
+                                            crossAxisCount: 2),
+                                    itemBuilder: ((context, index) {
+                                      return GestureDetector(
+                                          onTap: () => Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      CoursePage(
+                                                        indexLesson: index,
+                                                        indexLanguage: indexL,
+                                                        title: snapshot
+                                                            .data![indexL]
+                                                            .languages
+                                                            .elementAt(index)
+                                                            .langName,
+                                                      ))),
+                                          child: CourseCard(
+                                              tag: snapshot
+                                                  .data![indexL].languages
+                                                  .elementAt(index)
+                                                  .langName,
+                                              img:
+                                                  'lang/${snapshot.data![indexL].languages.elementAt(index).img}',
+                                              index: index,
+                                              courseName: snapshot
+                                                  .data![indexL].languages
+                                                  .elementAt(index)
+                                                  .langName,
+                                              courseCount: snapshot
+                                                  .data![indexL].languages
+                                                  .elementAt(index)
+                                                  .lessons
+                                                  .length));
+                                    })),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    );
+                  }
+                }))));
   }
 }
