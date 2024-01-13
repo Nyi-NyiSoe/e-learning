@@ -6,13 +6,15 @@ class CourseCard extends StatelessWidget {
   final int? index;
   final String? courseName;
   final int? courseCount;
+  final String type;
   const CourseCard(
       {super.key,
       required this.tag,
       required this.img,
       required this.index,
       required this.courseName,
-      required this.courseCount});
+      required this.courseCount,
+      required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class CourseCard extends StatelessWidget {
                     courseName!,
                     style: const TextStyle(fontWeight: FontWeight.w500),
                   ),
-                  Text('$courseCount Courses'),
+                  Text('$courseCount $type'),
                  
                 ],
               ),

@@ -462,7 +462,288 @@
           }
           
         ]
-      }  
+      } ,
+      {
+        "name" : "Mobile Development",
+        "img" : "mobile_development.png",
+        "languages" :[
+          {
+            "name" :"Flutter",
+            "img" : "flutter.png",
+            "lessons": [
+              {
+                "title": "Introduction to Flutter Development",
+                "imgUrl": "https://example.com/flutter_intro_development.png",
+                "description": "Embark on your Flutter journey and understand the basics of Flutter development, exploring its capabilities for cross-platform app development."
+              },
+              {
+                "title": "Understanding Flutter Widgets",
+                "imgUrl": "https://example.com/flutter_widgets_explained.png",
+                "description": "Dive deep into the world of Flutter widgets, discovering how they are the building blocks of Flutter applications and understanding their usage."
+              },
+              {
+                "title": "State Management Techniques in Flutter",
+                "imgUrl": "https://example.com/flutter_state_management_techniques.png",
+                "description": "Master various state management techniques in Flutter, including setState, Provider, Bloc, and Riverpod, to efficiently manage the state of your app."
+              },
+              {
+                "title": "Responsive Design in Flutter Apps",
+                "imgUrl": "https://example.com/flutter_responsive_design.png",
+                "description": "Learn how to create responsive layouts in Flutter, ensuring your app looks great on various devices and screen sizes with adaptive design principles."
+              },
+              {
+                "title": "Flutter Animation Essentials",
+                "imgUrl": "https://example.com/flutter_animation_essentials.png",
+                "description": "Explore the fundamentals of animation in Flutter, adding dynamic and engaging elements to your app through simple animations and transitions."
+              },
+              {
+                "title": "Exploring Flutter Packages",
+                "imgUrl": "https://example.com/flutter_exploring_packages.png",
+                "description": "Navigate the vast Flutter package ecosystem, integrating third-party packages to enhance your app's functionality and save development time."
+              },
+              {
+                "title": "Building Forms in Flutter",
+                "imgUrl": "https://example.com/flutter_building_forms.png",
+                "description": "Learn how to design and implement forms in Flutter, capturing user input and handling form validation for a seamless user experience."
+              },
+              {
+                "title": "Navigation in Flutter Apps",
+                "imgUrl": "https://example.com/flutter_navigation.png",
+                "description": "Understand the navigation patterns in Flutter, implementing smooth transitions between screens and managing the navigation stack in your app."
+              },
+              {
+                "title": "Flutter and REST APIs",
+                "imgUrl": "https://example.com/flutter_rest_apis.png",
+                "description": "Integrate RESTful APIs into your Flutter app, fetching and displaying data from external sources to create dynamic and connected applications."
+              },
+              {
+                "title": "Firebase Integration with Flutter",
+                "imgUrl": "https://example.com/flutter_firebase_integration.png",
+                "description": "Connect your Flutter applications to Firebase services, incorporating features like authentication, real-time databases, and cloud functions for a robust backend."
+              },
+              {
+                "title": "Testing and Debugging in Flutter",
+                "imgUrl": "https://example.com/flutter_testing_debugging.png",
+                "description": "Master the art of testing and debugging Flutter applications, ensuring the reliability and quality of your code through effective testing practices."
+              },
+              {
+                "title": "Deploying Flutter Apps on Different Platforms",
+                "imgUrl": "https://example.com/flutter_deploying_apps.png",
+                "description": "Explore the process of deploying Flutter applications on various platforms, including iOS, Android, and the web, to reach a broader audience with your creations."
+              }
+              
+              
+              
+              
+              
+              
+              
+
+            ]
+          },
+          {
+            "name" : "Kotlin",
+            "img" :"kotlin.png",
+            "lessons":[
+              {
+                "title": "Introduction to Kotlin Programming",
+                "imgUrl": "https://example.com/kotlin_intro_programming.png",
+                "description": "Kickstart your Kotlin journey by gaining a solid understanding of the fundamentals of Kotlin programming language."
+              },
+              {
+                "title": "Object-Oriented Programming in Kotlin",
+                "imgUrl": "https://example.com/kotlin_oop.png",
+                "description": "Dive into the world of object-oriented programming in Kotlin, learning about classes, objects, inheritance, and polymorphism."
+              },
+              {
+                "title": "Functional Programming with Kotlin",
+                "imgUrl": "https://example.com/kotlin_functional_programming.png",
+                "description": "Explore the functional programming paradigm in Kotlin, understanding concepts like higher-order functions, immutability, and lambda expressions."
+              },
+              {
+                "title": "Kotlin Coroutines in Action",
+                "imgUrl": "https://example.com/kotlin_coroutines.png",
+                "description": "Master the art of asynchronous programming with Kotlin coroutines, enhancing the performance and responsiveness of your applications."
+              },
+              {
+                "title": "Android App Development with Kotlin",
+                "imgUrl": "https://example.com/kotlin_android_dev.png",
+                "description": "Learn how to build Android applications using Kotlin, covering topics like UI design, navigation, and working with Android APIs."
+              },
+              {
+                "title": "Kotlin and Spring Boot Integration",
+                "imgUrl": "https://example.com/kotlin_spring_boot.png",
+                "description": "Integrate Kotlin with Spring Boot to develop robust and scalable backend applications, combining the power of Kotlin and the Spring framework."
+              },
+              {
+                "title": "Testing Kotlin Applications",
+                "imgUrl": "https://example.com/kotlin_testing.png",
+                "description": "Explore effective testing strategies for Kotlin applications, ensuring the reliability and correctness of your code through unit and integration tests."
+              },
+              {
+                "title": "Building RESTful APIs with Kotlin",
+                "imgUrl": "https://example.com/kotlin_restful_apis.png",
+                "description": "Create RESTful APIs using Kotlin, covering the design principles, routing, and interaction with databases to build scalable backend services."
+              },
+              {
+                "title": "Kotlin DSLs: Domain-Specific Languages",
+                "imgUrl": "https://example.com/kotlin_dsl.png",
+                "description": "Delve into the world of Kotlin DSLs, designing and implementing domain-specific languages to simplify complex tasks in your codebase."
+              },
+              {
+                "title": "Concurrency in Kotlin",
+                "imgUrl": "https://example.com/kotlin_concurrency.png",
+                "description": "Understand concurrent programming in Kotlin, exploring multithreading, parallelism, and synchronization for efficient and responsive applications."
+              },
+              {
+                "title": "Kotlin for Web Development",
+                "imgUrl": "https://example.com/kotlin_web_dev.png",
+                "description": "Extend your Kotlin skills to web development, using frameworks like Ktor to build modern and scalable web applications with Kotlin."
+              },
+              {
+                "title": "Deploying Kotlin Applications",
+                "imgUrl": "https://example.com/kotlin_deploying_apps.png",
+                "description": "Learn the process of deploying Kotlin applications on various platforms, including cloud services and containers, for widespread accessibility."
+              }
+            ]
+          },
+          {
+            "name" : "Dart",
+            "img" : "dart.png",
+            "lessons":[
+              {
+                "title": "Introduction to Dart Programming",
+                "imgUrl": "https://example.com/dart_intro_programming.png",
+                "description": "Start your Dart programming journey by getting acquainted with the basics, syntax, and features of the Dart programming language."
+              },
+              {
+                "title": "Object-Oriented Programming in Dart",
+                "imgUrl": "https://example.com/dart_oop.png",
+                "description": "Dive into object-oriented programming with Dart, understanding classes, objects, inheritance, and polymorphism for building modular and scalable code."
+              },
+              {
+                "title": "Functional Programming in Dart",
+                "imgUrl": "https://example.com/dart_functional_programming.png",
+                "description": "Explore the functional programming paradigm in Dart, leveraging concepts like first-class functions, immutability, and higher-order functions."
+              },
+              {
+                "title": "Asynchronous Programming with Dart",
+                "imgUrl": "https://example.com/dart_async_programming.png",
+                "description": "Master asynchronous programming in Dart using features like Future and Stream, enhancing the performance and responsiveness of your applications."
+              },
+              {
+                "title": "Flutter App Development with Dart",
+                "imgUrl": "https://example.com/dart_flutter_dev.png",
+                "description": "Learn how to build cross-platform mobile, web, and desktop applications using Dart and the Flutter framework for a seamless user experience."
+              },
+              {
+                "title": "Web Development with Dart and Angular",
+                "imgUrl": "https://example.com/dart_angular_web_dev.png",
+                "description": "Explore Dart in the context of web development, combining it with the Angular framework to build dynamic and interactive web applications."
+              },
+              {
+                "title": "Testing Dart Applications",
+                "imgUrl": "https://example.com/dart_testing.png",
+                "description": "Implement effective testing strategies for Dart applications, ensuring code reliability and correctness through unit tests, integration tests, and more."
+              },
+              {
+                "title": "Building RESTful APIs with Dart",
+                "imgUrl": "https://example.com/dart_restful_apis.png",
+                "description": "Create RESTful APIs with Dart, covering principles of API design, routing, and database interaction to build scalable backend services for your applications."
+              },
+              {
+                "title": "Dart for Front-End Development",
+                "imgUrl": "https://example.com/dart_front_end_dev.png",
+                "description": "Extend your Dart skills to front-end development, using frameworks like Dart HTML or Dart for web components to create modern user interfaces."
+              },
+              {
+                "title": "Concurrency in Dart",
+                "imgUrl": "https://example.com/dart_concurrency.png",
+                "description": "Understand concurrent programming in Dart, exploring topics like isolates, futures, and streams for building responsive and efficient applications."
+              },
+              {
+                "title": "Dart for Server-Side Development",
+                "imgUrl": "https://example.com/dart_server_side.png",
+                "description": "Apply Dart on the server side to build scalable and performant backend applications, covering frameworks like Aqueduct or shelf for web servers."
+              },
+              {
+                "title": "Deploying Dart Applications",
+                "imgUrl": "https://example.com/dart_deploying_apps.png",
+                "description": "Learn the process of deploying Dart applications on various platforms, including cloud services and containers, for widespread accessibility."
+              }
+            ]
+            
+          },
+          {
+            "name" : "Swift",
+            "img" : "swift.png",
+            "lessons":[
+              {
+                "title": "Introduction to Swift Programming",
+                "imgUrl": "https://example.com/swift_intro_programming.png",
+                "description": "Embark on your Swift programming journey, covering the basics, syntax, and key features of the Swift programming language."
+              },
+              {
+                "title": "Object-Oriented Programming in Swift",
+                "imgUrl": "https://example.com/swift_oop.png",
+                "description": "Delve into object-oriented programming with Swift, understanding classes, objects, inheritance, and protocols for building modular and scalable code."
+              },
+              {
+                "title": "Functional Programming in Swift",
+                "imgUrl": "https://example.com/swift_functional_programming.png",
+                "description": "Explore the functional programming paradigm in Swift, leveraging concepts like higher-order functions, immutability, and optionals for concise and expressive code."
+              },
+              {
+                "title": "Asynchronous Programming in Swift",
+                "imgUrl": "https://example.com/swift_async_programming.png",
+                "description": "Master asynchronous programming in Swift using features like Grand Central Dispatch, async/await, and Combine for efficient and responsive applications."
+              },
+              {
+                "title": "iOS App Development with Swift",
+                "imgUrl": "https://example.com/swift_ios_dev.png",
+                "description": "Learn how to build native iOS applications using Swift, covering UI design, navigation, and integrating with iOS features for a seamless user experience."
+              },
+              {
+                "title": "SwiftUI for Declarative UI Design",
+                "imgUrl": "https://example.com/swiftui_declarative_ui.png",
+                "description": "Explore SwiftUI, Apple's declarative UI framework, to design modern and responsive user interfaces with ease, simplifying the process of building UIs."
+              },
+              {
+                "title": "Testing Swift Applications",
+                "imgUrl": "https://example.com/swift_testing.png",
+                "description": "Implement effective testing strategies for Swift applications, ensuring code reliability and correctness through unit tests, UI tests, and more."
+              },
+              {
+                "title": "Building RESTful APIs with Swift",
+                "imgUrl": "https://example.com/swift_restful_apis.png",
+                "description": "Create RESTful APIs with Swift, covering principles of API design, networking, and data parsing to build scalable backend services for your applications."
+              },
+              {
+                "title": "Swift for macOS App Development",
+                "imgUrl": "https://example.com/swift_macos_dev.png",
+                "description": "Extend your Swift skills to macOS app development, building native applications for macOS with features like AppKit and SwiftUI."
+              },
+              {
+                "title": "Concurrency in Swift",
+                "imgUrl": "https://example.com/swift_concurrency.png",
+                "description": "Understand concurrent programming in Swift, exploring topics like DispatchQueue, OperationQueue, and Combine for building responsive and efficient applications."
+              },
+              {
+                "title": "Server-Side Swift with Vapor",
+                "imgUrl": "https://example.com/swift_vapor.png",
+                "description": "Apply Swift on the server side with Vapor, building robust and scalable backend applications, covering topics like routing, database interactions, and authentication."
+              },
+              {
+                "title": "Deploying Swift Applications",
+                "imgUrl": "https://example.com/swift_deploying_apps.png",
+                "description": "Learn the process of deploying Swift applications on various platforms, including the App Store and cloud services, for widespread accessibility."
+              }
+            ]
+            
+          }
+          
+        ]
+      } 
     ]
   }
   

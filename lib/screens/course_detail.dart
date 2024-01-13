@@ -76,7 +76,9 @@ class CourseDetail extends StatelessWidget {
                                                   .data![indexL].languages
                                                   .elementAt(index)
                                                   .lessons
-                                                  .length));
+                                                  .length,
+                                                  type: "Lessons",),
+                                                  );
                                     })),
                               )
                             ],

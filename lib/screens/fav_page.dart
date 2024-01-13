@@ -1,3 +1,4 @@
+import 'package:edulearn/screens/course_page.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/utils/fav.dart';
@@ -18,8 +19,10 @@ class FavouriteCoursePage extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   );
                 } else {
+                  List<String> languageName = snapshot.data!.keys.toList() ?? [];
+                  
                   return GridView.builder(
-                      itemCount: snapshot.data!.length,
+                      itemCount: snapshot.data!.entries.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2, childAspectRatio: 0.85),
@@ -27,15 +30,16 @@ class FavouriteCoursePage extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return CircularProgressIndicator();
+                              return CoursePage(indexLesson: index, indexLanguage: 0, title: languageName[index]);
                             }));
                           },
                           child: CourseCard(
-                              tag: snapshot.data![index],
-                              img: 'lang/${snapshot.data![index].toLowerCase()}.png',
+                              tag: languageName[index],
+                              img: 'lang/${languageName[index].toLowerCase()}.png',
                               index: index,
-                              courseName: snapshot.data![index],
-                              courseCount: 5),
+                              courseName: languageName[index],
+                              courseCount: 5,
+                              type: "Lessons",),
                         );
                       });
                 }

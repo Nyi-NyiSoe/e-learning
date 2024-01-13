@@ -57,6 +57,7 @@ class Homepage extends ConsumerWidget {
                                 courseName: categories[index].categoryName,
                                 courseCount:
                                     (categories[index].languages.length),
+                                    type: "Courses",
                               ));
                         }));
                   }

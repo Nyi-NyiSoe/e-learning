@@ -39,7 +39,7 @@ class CoursePage extends StatelessWidget {
                           onTap: () async {
                             try {
                               String result =
-                                  await FavouriteCourse().addCourse(title);
+                                  await FavouriteCourse().addCourse(title,indexLanguage,indexLesson);
                               if (context.mounted) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
@@ -230,6 +230,8 @@ class CoursePage extends StatelessWidget {
                           if (snapshot.connectionState == ConnectionState.waiting) {
                             return const CircularProgressIndicator();
                           } else {
+                            print('indexLanguage $indexLanguage');
+                            print('index lessons $indexLesson');
                             List<LanguageModel> languages = snapshot.data![indexLanguage].languages.toList();
                             return ListView.builder(
                                 itemCount: languages[indexLesson].lessons.length,
