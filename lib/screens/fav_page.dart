@@ -19,8 +19,14 @@ class FavouriteCoursePage extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   );
                 } else {
-                  List<String> languageName = snapshot.data!.keys.toList() ?? [];
-                  
+                  List<String> languageName =
+                      snapshot.data!.keys.toList() ?? [];
+                 Map<String, dynamic>? userData = snapshot.data;
+
+                  List<int> indexLanguageList = List.from(snapshot.data!.values.map((indices) => (indices as List<dynamic>)[0] as int));
+
+                   List<int> indexLessonList = List.from(snapshot.data!.values.map((indices) => (indices as List<dynamic>)[1] as int));
+
                   return GridView.builder(
                       itemCount: snapshot.data!.entries.length,
                       gridDelegate:
@@ -29,17 +35,23 @@ class FavouriteCoursePage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return CoursePage(indexLesson: index, indexLanguage: 0, title: languageName[index]);
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return CoursePage(
+                                  indexLesson: indexLessonList[index],
+                                  indexLanguage: indexLanguageList[index],
+                                  title: languageName[index]);
                             }));
                           },
                           child: CourseCard(
-                              tag: languageName[index],
-                              img: 'lang/${languageName[index].toLowerCase()}.png',
-                              index: index,
-                              courseName: languageName[index],
-                              courseCount: 5,
-                              type: "Lessons",),
+                            tag: languageName[index],
+                            img:
+                                'lang/${languageName[index].replaceAll('.', '').toLowerCase()}.png',
+                            index: index,
+                            courseName: languageName[index],
+                            courseCount: 5,
+                            type: "Lessons",
+                          ),
                         );
                       });
                 }
