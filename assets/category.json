@@ -531,14 +531,6 @@
                 "imgUrl": "https://example.com/flutter_deploying_apps.png",
                 "description": "Explore the process of deploying Flutter applications on various platforms, including iOS, Android, and the web, to reach a broader audience with your creations."
               }
-              
-              
-              
-              
-              
-              
-              
-
             ]
           },
           {
@@ -740,10 +732,237 @@
               }
             ]
             
+          },
+          {
+            "name" :"React Native",
+            "img":"react_native.png",
+            "lessons":[
+              {
+                "title": "Introduction to React Native Development",
+                "imgUrl": "https://example.com/react_native_intro_development.png",
+                "description": "Embark on your React Native journey and explore the fundamentals of React Native development, understanding its advantages and use cases in mobile app development."
+              },
+              {
+                "title": "Setting Up Your React Native Environment",
+                "imgUrl": "https://example.com/react_native_setup_environment.png",
+                "description": "Learn the essentials of setting up your React Native development environment, including installing Node.js, configuring npm, and setting up the React Native CLI for efficient app development."
+              },
+              {
+                "title": "Understanding React Native Components",
+                "imgUrl": "https://example.com/react_native_components.png",
+                "description": "Dive into React Native components, exploring the basics and building your first React Native app to grasp the core concepts of component-based development."
+              },
+              {
+                "title": "Styling in React Native",
+                "imgUrl": "https://example.com/react_native_styling.png",
+                "description": "Master the art of styling in React Native, applying CSS styles and leveraging Flexbox layout to create responsive and visually appealing mobile applications."
+              },
+              {
+                "title": "Navigation in React Native Apps",
+                "imgUrl": "https://example.com/react_native_navigation.png",
+                "description": "Implement navigation stacks, tab navigation, and drawer navigation in your React Native apps, providing a seamless user experience with smooth transitions between screens."
+              },
+              {
+                "title": "State and Props in React Native",
+                "imgUrl": "https://example.com/react_native_state_props.png",
+                "description": "Understand the concepts of state and props in React Native, managing component state and passing data between components for dynamic and interactive app behavior."
+              },
+              {
+                "title": "Handling User Input",
+                "imgUrl": "https://example.com/react_native_user_input.png",
+                "description": "Explore user input handling in React Native, working with forms, input fields, and implementing input validation for a smooth user interaction."
+              },
+              {
+                "title": "Networking and API Integration",
+                "imgUrl": "https://example.com/react_native_networking_api.png",
+                "description": "Dive into networking and API integration in React Native, making asynchronous API calls and handling responses to fetch and display data in your mobile applications."
+              },
+              {
+                "title": "Data Persistence in React Native",
+                "imgUrl": "https://example.com/react_native_data_persistence.png",
+                "description": "Learn how to persist data in React Native apps, utilizing techniques such as AsyncStorage for local storage and efficient data caching to enhance user experience."
+              },
+              {
+                "title": "Animating in React Native",
+                "imgUrl": "https://example.com/react_native_animations.png",
+                "description": "Explore the fundamentals of animation in React Native, adding dynamic and engaging elements to your app through simple animations and transitions."
+              },
+              {
+                "title": "Working with Native Modules",
+                "imgUrl": "https://example.com/react_native_native_modules.png",
+                "description": "Integrate native modules into your React Native app to leverage device-specific functionality and enhance your application's capabilities."
+              },
+              {
+                "title": "Testing and Debugging React Native Apps",
+                "imgUrl": "https://example.com/react_native_testing_debugging.png",
+                "description": "Master the art of testing and debugging React Native applications, ensuring the reliability and quality of your code through effective testing practices."
+              },
+              {
+                "title": "Deploying React Native Apps",
+                "imgUrl": "https://example.com/react_native_deploying_apps.png",
+                "description": "Explore the process of deploying React Native applications on various platforms, including iOS and Android, to reach a broader audience with your creations."
+              },
+              {
+                "title": "Optimizing React Native Performance",
+                "imgUrl": "https://example.com/react_native_optimizing_performance.png",
+                "description": "Identify and address performance bottlenecks in your React Native apps, implementing best practices to optimize and enhance the overall performance of your applications."
+              },
+              {
+                "title": "Advanced Topics in React Native",
+                "imgUrl": "https://example.com/react_native_advanced_topics.png",
+                "description": "Delve into advanced topics in React Native, including integrating third-party libraries, exploring the latest features, and expanding your knowledge to create more sophisticated mobile applications."
+              }
+            ]
           }
           
         ]
-      } 
+      } ,
+      {
+        "name": "Database Development",
+        "img": "database_development.png",
+        "languages": [
+          {
+            "name": "SQL",
+            "img": "sql.png",
+            "lessons": [
+              {
+                "title": "Introduction to SQL",
+                "imgUrl": "https://example.com/sql_intro.png",
+                "description": "Begin your SQL journey by understanding the fundamentals of Structured Query Language, covering database concepts, tables, and basic queries."
+              },
+              {
+                "title": "Advanced SQL Queries",
+                "imgUrl": "https://example.com/sql_advanced_queries.png",
+                "description": "Dive deeper into SQL with advanced query techniques, including JOIN operations, subqueries, and optimizing database performance."
+              },
+              {
+                "title": "Database Design and Normalization",
+                "imgUrl": "https://example.com/sql_database_design.png",
+                "description": "Learn the principles of database design and normalization to create efficient and well-structured relational databases."
+              },
+              {
+                "title": "Stored Procedures and Triggers",
+                "imgUrl": "https://example.com/sql_stored_procedures.png",
+                "description": "Explore the use of stored procedures and triggers in SQL, enhancing the functionality and automation of database operations."
+              },
+              {
+                "title": "Transactions and Concurrency Control",
+                "imgUrl": "https://example.com/sql_transactions.png",
+                "description": "Understand transaction management and concurrency control in SQL databases, ensuring data integrity and consistency in multi-user environments."
+              }
+            ]
+          },
+          {
+            "name": "MongoDB",
+            "img": "mongodb.png",
+            "lessons": [
+              {
+                "title": "Introduction to MongoDB",
+                "imgUrl": "https://example.com/mongodb_intro.png",
+                "description": "Begin your exploration of MongoDB, a NoSQL database, understanding its document-oriented structure and the basics of BSON data format."
+              },
+              {
+                "title": "MongoDB CRUD Operations",
+                "imgUrl": "https://example.com/mongodb_crud.png",
+                "description": "Master CRUD operations in MongoDB, covering the creation, retrieval, updating, and deletion of documents within a MongoDB database."
+              },
+              {
+                "title": "Indexes and Query Optimization in MongoDB",
+                "imgUrl": "https://example.com/mongodb_indexes.png",
+                "description": "Explore the importance of indexes in MongoDB and learn how to optimize queries for improved performance in large-scale databases."
+              },
+              {
+                "title": "Aggregation Framework in MongoDB",
+                "imgUrl": "https://example.com/mongodb_aggregation.png",
+                "description": "Dive into the MongoDB Aggregation Framework, allowing for complex data transformations and analysis within your MongoDB database."
+              },
+              {
+                "title": "MongoDB Atlas: Cloud Database Deployment",
+                "imgUrl": "https://example.com/mongodb_atlas.png",
+                "description": "Learn how to deploy and manage MongoDB databases in the cloud using MongoDB Atlas, ensuring scalability and accessibility."
+              }
+            ]
+          },
+          {
+            "name": "Firebase",
+            "img": "firebase.png",
+            "lessons": [
+              {
+                "title": "Introduction to Firebase",
+                "imgUrl": "https://example.com/firebase_intro.png",
+                "description": "Get started with Firebase, a mobile and web application development platform, understanding its real-time database, authentication, and hosting capabilities."
+              },
+              {
+                "title": "Firebase Authentication",
+                "imgUrl": "https://example.com/firebase_authentication.png",
+                "description": "Explore Firebase Authentication, implementing secure user authentication for your applications using Firebase's identity services."
+              },
+              {
+                "title": "Firebase Realtime Database",
+                "imgUrl": "https://example.com/firebase_realtime_db.png",
+                "description": "Learn how to use Firebase Realtime Database, a NoSQL cloud database, to store and synchronize data in real-time across multiple clients."
+              },
+              {
+                "title": "Firebase Cloud Functions",
+                "imgUrl": "https://example.com/firebase_cloud_functions.png",
+                "description": "Integrate serverless computing into your Firebase project with Cloud Functions, allowing for backend logic and automation in response to events."
+              },
+              {
+                "title": "Firebase Hosting and Cloud Firestore",
+                "imgUrl": "https://example.com/firebase_hosting_firestore.png",
+                "description": "Explore Firebase Hosting for web applications and Cloud Firestore for scalable NoSQL databases in Firebase, ensuring a complete backend solution."
+              }
+            ]
+          },
+          {
+            "name": "Docker",
+            "img": "docker.png",
+            "lessons": [
+              {
+                "title": "Introduction to Docker",
+                "imgUrl": "https://example.com/docker_intro.png",
+                "description": "Begin your Docker journey by understanding containerization and the basics of Docker, enabling efficient deployment and scaling of applications."
+              },
+              {
+                "title": "Docker Images and Containers",
+                "imgUrl": "https://example.com/docker_images_containers.png",
+                "description": "Explore the creation of Docker images and the deployment of containers, ensuring consistency and reproducibility in your application environments."
+              },
+              {
+                "title": "Docker Compose for Multi-Container Applications",
+                "imgUrl": "https://example.com/docker_compose.png",
+                "description": "Learn how to use Docker Compose to define and manage multi-container Docker applications, simplifying the orchestration of complex services."
+              },
+              {
+                "title": "Docker Networking and Volumes",
+                "imgUrl": "https://example.com/docker_networking_volumes.png",
+                "description": "Understand Docker networking for connecting containers and managing data persistence with volumes, optimizing communication and storage."
+              },
+              {
+                "title": "Docker Swarm for Orchestration",
+                "imgUrl": "https://example.com/docker_swarm.png",
+                "description": "Explore Docker Swarm for container orchestration, enabling the management and scaling of Dockerized applications across a cluster of machines."
+              },
+              {
+                "title": "Container Security and Best Practices",
+                "imgUrl": "https://example.com/docker_security.png",
+                "description": "Learn best practices for securing Docker containers, including image scanning, container runtime security, and implementing secure deployment strategies."
+              },
+              {
+                "title": "Continuous Integration and Deployment with Docker",
+                "imgUrl": "https://example.com/docker_ci_cd.png",
+                "description": "Integrate Docker into your CI/CD pipeline, automating the testing, building, and deployment processes for faster and more reliable application delivery."
+              },
+              {
+                "title": "Dockerizing Microservices Architectures",
+                "imgUrl": "https://example.com/docker_microservices.png",
+                "description": "Explore the principles of Dockerizing microservices, designing and deploying containerized microservices architectures for scalable and modular applications."
+              }
+            ]
+          }
+        ]
+      }
+      
     ]
   }
   

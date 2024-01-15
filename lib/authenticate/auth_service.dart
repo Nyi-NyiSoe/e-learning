@@ -22,7 +22,7 @@ class AuthService {
           'email': user.email,
           'password': user.password,
           'rating': [],
-          'fav_course': {}
+          'fav_course': {} 
         });
       
       }
