@@ -959,6 +959,753 @@
                 "description": "Explore the principles of Dockerizing microservices, designing and deploying containerized microservices architectures for scalable and modular applications."
               }
             ]
+          },
+          {
+            "name":"Cassandra",
+            "img":"cassandra.png",
+            "lessons":[
+              {
+                "title": "Introduction to NoSQL Databases: Understanding Cassandra",
+                "imgUrl": "https://example.com/cassandra_intro.png",
+                "description": "Overview of NoSQL databases and Cassandra's role in the landscape."
+              },
+              {
+                "title": "Cassandra Data Model: Key Concepts and Entities",
+                "imgUrl": "https://example.com/cassandra_data_model.png",
+                "description": "Understanding the wide-column store model and essential entities in Cassandra."
+              },
+              {
+                "title": "Installation and Setup of Cassandra",
+                "imgUrl": "https://example.com/cassandra_installation.png",
+                "description": "Step-by-step guide to installing Cassandra and configuring a basic cluster."
+              },
+              {
+                "title": "Cassandra Query Language (CQL): Basics and Syntax",
+                "imgUrl": "https://example.com/cql_basics.png",
+                "description": "Introduction to CQL and basic commands for CRUD operations."
+              },
+              {
+                "title": "Data Modeling in Cassandra",
+                "imgUrl": "https://example.com/cassandra_data_modeling.png",
+                "description": "Designing effective data models and best practices for schema design."
+              },
+              {
+                "title": "Cassandra Architecture: Under the Hood",
+                "imgUrl": "https://example.com/cassandra_architecture.png",
+                "description": "Exploring Cassandra's distributed architecture and data storage/retrieval."
+              },
+              {
+                "title": "Cassandra Consistency and Tunable Consistency",
+                "imgUrl": "https://example.com/cassandra_consistency.png",
+                "description": "Understanding consistency levels in Cassandra and tuning for operations."
+              },
+              {
+                "title": "Cassandra Clustering and Replication",
+                "imgUrl": "https://example.com/cassandra_clustering.png",
+                "description": "Configuring and managing clusters, and replication strategies in Cassandra."
+              },
+              {
+                "title": "Cassandra Secondary Indexes and Materialized Views",
+                "imgUrl": "https://example.com/cassandra_indexes.png",
+                "description": "Working with secondary indexes and creating materialized views in Cassandra."
+              },
+              {
+                "title": "Cassandra and Time Series Data",
+                "imgUrl": "https://example.com/cassandra_time_series.png",
+                "description": "Handling time series data in Cassandra and use cases for time series."
+              },
+              {
+                "title": "Scaling Cassandra: Adding Nodes and Load Balancing",
+                "imgUrl": "https://example.com/cassandra_scaling.png",
+                "description": "Horizontal scaling, adding nodes to a cluster, and load balancing in Cassandra."
+              },
+              {
+                "title": "Backup and Restore in Cassandra",
+                "imgUrl": "https://example.com/cassandra_backup_restore.png",
+                "description": "Strategies for backing up and restoring data in Cassandra."
+              },
+              {
+                "title": "Cassandra Security Best Practices",
+                "imgUrl": "https://example.com/cassandra_security.png",
+                "description": "Configuring security settings and best practices for securing a Cassandra cluster."
+              },
+              {
+                "title": "Monitoring and Performance Tuning in Cassandra",
+                "imgUrl": "https://example.com/cassandra_monitoring.png",
+                "description": "Tools and techniques for monitoring clusters and performance tuning tips."
+              },
+              {
+                "title": "Real-world Applications: Case Studies with Cassandra",
+                "imgUrl": "https://example.com/cassandra_case_studies.png",
+                "description": "Explore real-world applications and case studies using Cassandra."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name":"Game Development",
+        "img":"game_development.png",
+        "languages":[
+          {
+            "name":"C#",
+            "img":"csharp.png",
+            "lessons":[
+              {
+                "title": "Introduction to C# Programming",
+                "imgUrl": "https://example.com/csharp_intro.png",
+                "description": "Get started with the fundamentals of C# programming, covering syntax, data types, and basic concepts in the C# language."
+              },
+              {
+                "title": "Object-Oriented Programming (OOP) in C#",
+                "imgUrl": "https://example.com/csharp_oop.png",
+                "description": "Explore the principles of object-oriented programming (OOP) using C#, including classes, inheritance, polymorphism, and encapsulation."
+              },
+              {
+                "title": "C# Control Flow and Decision Making",
+                "imgUrl": "https://example.com/csharp_control_flow.png",
+                "description": "Learn how to control the flow of your C# programs through conditional statements, loops, and decision-making structures."
+              },
+              {
+                "title": "Working with Collections in C#",
+                "imgUrl": "https://example.com/csharp_collections.png",
+                "description": "Understand how to use collections in C#, including arrays, lists, dictionaries, and other data structures for efficient data management."
+              },
+              {
+                "title": "File I/O and Exception Handling in C#",
+                "imgUrl": "https://example.com/csharp_file_io.png",
+                "description": "Master file input/output operations and exception handling techniques in C# to create robust and error-tolerant applications."
+              },
+              {
+                "title": "Asynchronous Programming in C#",
+                "imgUrl": "https://example.com/csharp_async.png",
+                "description": "Dive into asynchronous programming concepts in C# to write responsive and scalable applications using async and await keywords."
+              },
+              {
+                "title": "C# and .NET Framework Basics",
+                "imgUrl": "https://example.com/csharp_dotnet.png",
+                "description": "Explore the basics of the .NET Framework and its integration with C#, covering namespaces, assemblies, and common runtime features."
+              },
+              {
+                "title": "Developing Windows Applications with C#",
+                "imgUrl": "https://example.com/csharp_windows_apps.png",
+                "description": "Learn to build graphical user interfaces (GUI) for Windows applications using C# and the Windows Forms or WPF framework."
+              },
+              {
+                "title": "Web Development with ASP.NET Core and C#",
+                "imgUrl": "https://example.com/csharp_aspnet_core.png",
+                "description": "Discover how to create dynamic and scalable web applications using C# in combination with ASP.NET Core for server-side development."
+              },
+              {
+                "title": "Testing and Debugging in C#",
+                "imgUrl": "https://example.com/csharp_testing_debugging.png",
+                "description": "Gain insights into effective testing and debugging practices in C#, ensuring the reliability and correctness of your code."
+              }
+
+            ]
+          },
+          {
+            "name":"Unity",
+            "img":"unity.png",
+            "lessons":[
+              {
+                "title": "Introduction to Unity Game Development",
+                "imgUrl": "https://example.com/unity_intro.png",
+                "description": "Embark on your Unity journey, understanding the basics of game development, Unity's interface, and creating your first simple game."
+              },
+              {
+                "title": "Unity Basics: Scenes and GameObjects",
+                "imgUrl": "https://example.com/unity_scenes_gameobjects.png",
+                "description": "Explore Unity scenes and game objects, learning how to create, manipulate, and organize elements within your game environment."
+              },
+              {
+                "title": "Scripting in Unity with C#",
+                "imgUrl": "https://example.com/unity_scripting.png",
+                "description": "Get hands-on with C# scripting in Unity, covering variables, functions, classes, and how to implement logic to control your game elements."
+              },
+              {
+                "title": "Physics and Colliders in Unity",
+                "imgUrl": "https://example.com/unity_physics_colliders.png",
+                "description": "Dive into Unity's physics engine, understanding colliders, rigidbodies, and how to simulate realistic movements and interactions in your game."
+              },
+              {
+                "title": "Unity UI and User Interaction",
+                "imgUrl": "https://example.com/unity_ui_interaction.png",
+                "description": "Learn to design and implement user interfaces (UI) in Unity, creating interactive menus, buttons, and enhancing user experience."
+              },
+              {
+                "title": "Animating in Unity",
+                "imgUrl": "https://example.com/unity_animation.png",
+                "description": "Master the art of animation in Unity, covering keyframes, animation controllers, and creating dynamic movements for characters and objects."
+              },
+              {
+                "title": "Unity Networking and Multiplayer Games",
+                "imgUrl": "https://example.com/unity_networking.png",
+                "description": "Explore Unity's networking capabilities, understanding how to create multiplayer games and implement networked features for collaborative gameplay."
+              },
+              {
+                "title": "Optimizing Unity Games for Performance",
+                "imgUrl": "https://example.com/unity_optimization.png",
+                "description": "Learn techniques for optimizing Unity games, improving performance, reducing bottlenecks, and ensuring a smooth gaming experience."
+              },
+              {
+                "title": "Unity and Augmented Reality (AR)",
+                "imgUrl": "https://example.com/unity_ar.png",
+                "description": "Discover how to integrate augmented reality (AR) elements into Unity projects, opening up possibilities for immersive and interactive experiences."
+              },
+              {
+                "title": "Publishing Unity Games to Platforms",
+                "imgUrl": "https://example.com/unity_publishing.png",
+                "description": "Understand the process of publishing Unity games to various platforms, including PC, mobile, and consoles, reaching a wider audience."
+              }
+              
+            ]
+          },
+          {
+            "name":"Unreal Engine",
+            "img":"unreal_engine.png",
+            "lessons":[
+              {
+                "title": "Introduction to Unreal Engine",
+                "imgUrl": "https://example.com/unreal_intro.png",
+                "description": "Embark on your Unreal Engine journey, exploring the fundamentals of game development, the Unreal Editor, and creating a basic game environment."
+              },
+              {
+                "title": "Unreal Engine Basics: Actors and Components",
+                "imgUrl": "https://example.com/unreal_actors_components.png",
+                "description": "Dive into Unreal Engine's actor and component system, understanding how to create, manipulate, and assemble game elements within your project."
+              },
+              {
+                "title": "Blueprint Scripting in Unreal Engine",
+                "imgUrl": "https://example.com/unreal_blueprint_scripting.png",
+                "description": "Get hands-on with visual scripting using Blueprints in Unreal Engine, covering variables, functions, events, and creating interactive gameplay logic."
+              },
+              {
+                "title": "Materials and Shading in Unreal Engine",
+                "imgUrl": "https://example.com/unreal_materials_shading.png",
+                "description": "Explore Unreal Engine's material system, learning to create realistic surfaces, apply textures, and achieve stunning visual effects in your game."
+              },
+              {
+                "title": "Unreal Animation and Character Rigging",
+                "imgUrl": "https://example.com/unreal_animation_rigging.png",
+                "description": "Master the art of animation and character rigging in Unreal Engine, covering skeletal meshes, animations, and bringing characters to life in your game."
+              },
+              {
+                "title": "Unreal Engine Level Design",
+                "imgUrl": "https://example.com/unreal_level_design.png",
+                "description": "Learn level design principles in Unreal Engine, creating immersive environments, setting up lighting, and optimizing your game world for performance."
+              },
+              {
+                "title": "Unreal Engine AI and Navigation",
+                "imgUrl": "https://example.com/unreal_ai_navigation.png",
+                "description": "Explore artificial intelligence (AI) in Unreal Engine, implementing behaviors, navigation systems, and creating intelligent NPCs for your game."
+              },
+              {
+                "title": "Unreal Engine Particle Systems",
+                "imgUrl": "https://example.com/unreal_particles.png",
+                "description": "Delve into Unreal Engine's particle systems, creating stunning visual effects, explosions, and environmental elements to enhance your game."
+              },
+              {
+                "title": "Unreal Engine VR Development",
+                "imgUrl": "https://example.com/unreal_vr.png",
+                "description": "Discover the world of virtual reality (VR) development in Unreal Engine, creating immersive experiences and optimizing your game for VR platforms."
+              },
+              {
+                "title": "Publishing Unreal Engine Games",
+                "imgUrl": "https://example.com/unreal_publishing.png",
+                "description": "Understand the process of publishing Unreal Engine games, preparing for distribution on various platforms, and reaching a global audience."
+              }
+              
+            ]
+          }
+        ]
+      },{
+        "name":"Devops",
+        "img":"devops.png",
+        "languages":[
+          {
+            "name":"Ansible",
+            "img":"ansible.png",
+            "lessons":[
+              {
+                "title": "Introduction to Configuration Management with Ansible",
+                "imgUrl": "https://example.com/ansible_intro.png",
+                "description": "Learn the basics of Ansible and its role in automating configuration management tasks."
+              },
+              {
+                "title": "Ansible Playbooks: Creating and Executing Automation Scripts",
+                "imgUrl": "https://example.com/ansible_playbooks.png",
+                "description": "Explore Ansible playbooks, the YAML-based configuration files used to define automation tasks."
+              },
+              {
+                "title": "Ansible Modules: Extending Functionality for Automation",
+                "imgUrl": "https://example.com/ansible_modules.png",
+                "description": "Understanding Ansible modules and how to leverage them for extended automation capabilities."
+              },
+              {
+                "title": "Inventory Management in Ansible",
+                "imgUrl": "https://example.com/ansible_inventory.png",
+                "description": "Master the art of inventory management in Ansible to organize and manage your infrastructure."
+              },
+              {
+                "title": "Roles and Role-based Tasks in Ansible",
+                "imgUrl": "https://example.com/ansible_roles.png",
+                "description": "Delve into Ansible roles to modularize and structure your automation code for better maintainability."
+              },
+              {
+                "title": "Ansible Variables: Dynamic Configuration Management",
+                "imgUrl": "https://example.com/ansible_variables.png",
+                "description": "Learn how to use variables in Ansible to make your automation more dynamic and flexible."
+              },
+              {
+                "title": "Handling Errors and Debugging in Ansible",
+                "imgUrl": "https://example.com/ansible_debugging.png",
+                "description": "Explore techniques for handling errors and debugging your Ansible automation scripts effectively."
+              },
+              {
+                "title": "Ansible Vault: Securing Sensitive Data",
+                "imgUrl": "https://example.com/ansible_vault.png",
+                "description": "Understand Ansible Vault to encrypt and secure sensitive information within your playbooks."
+              },
+              {
+                "title": "Integration with Version Control Systems (VCS)",
+                "imgUrl": "https://example.com/ansible_vcs_integration.png",
+                "description": "Integrate Ansible with version control systems like Git for efficient collaboration and versioning."
+              },
+              {
+                "title": "Ansible Tower: Web-based GUI and Automation Orchestration",
+                "imgUrl": "https://example.com/ansible_tower.png",
+                "description": "Discover Ansible Tower, a web-based GUI and automation orchestration platform for managing Ansible at scale."
+              },
+              {
+                "title": "Dynamic Inventories and Cloud Integration",
+                "imgUrl": "https://example.com/ansible_dynamic_inventory.png",
+                "description": "Explore dynamic inventories and how Ansible integrates with cloud platforms for dynamic infrastructure management."
+              },
+              {
+                "title": "Best Practices for Ansible Automation",
+                "imgUrl": "https://example.com/ansible_best_practices.png",
+                "description": "Learn best practices to ensure efficient, maintainable, and scalable Ansible automation."
+              }
+            ]
+          },
+          {
+            "name":"Jenkins",
+            "img":"jenkins.png",
+            "lessons":[
+              {
+                "title": "Introduction to Jenkins: Continuous Integration Basics",
+                "imgUrl": "https://example.com/jenkins_intro.png",
+                "description": "Get started with Jenkins and understand the fundamentals of continuous integration in software development."
+              },
+              {
+                "title": "Installing and Configuring Jenkins",
+                "imgUrl": "https://example.com/jenkins_install_config.png",
+                "description": "Learn how to install and configure Jenkins for your development environment and projects."
+              },
+              {
+                "title": "Creating Your First Jenkins Job",
+                "imgUrl": "https://example.com/jenkins_first_job.png",
+                "description": "Walkthrough the process of creating your first Jenkins job and setting up basic build automation."
+              },
+              {
+                "title": "Source Code Management (SCM) Integration with Jenkins",
+                "imgUrl": "https://example.com/jenkins_scm_integration.png",
+                "description": "Integrate Jenkins with version control systems like Git for seamless source code management in your CI/CD pipeline."
+              },
+              {
+                "title": "Building and Compiling Code with Jenkins",
+                "imgUrl": "https://example.com/jenkins_building_code.png",
+                "description": "Explore how Jenkins handles building and compiling code as part of your continuous integration workflow."
+              },
+              {
+                "title": "Automated Testing in Jenkins",
+                "imgUrl": "https://example.com/jenkins_automated_testing.png",
+                "description": "Understand the importance of automated testing in Jenkins and how to incorporate it into your CI pipeline."
+              },
+              {
+                "title": "Jenkins Plugins: Extending Functionality for Continuous Integration",
+                "imgUrl": "https://example.com/jenkins_plugins.png",
+                "description": "Dive into the world of Jenkins plugins and discover how they extend Jenkins' functionality for various integrations."
+              },
+              {
+                "title": "Continuous Deployment with Jenkins",
+                "imgUrl": "https://example.com/jenkins_continuous_deployment.png",
+                "description": "Learn the principles of continuous deployment and how to implement it using Jenkins in your CI/CD pipeline."
+              },
+              {
+                "title": "Monitoring and Reporting in Jenkins",
+                "imgUrl": "https://example.com/jenkins_monitoring_reporting.png",
+                "description": "Explore monitoring and reporting tools in Jenkins to track and analyze the performance of your CI/CD processes."
+              },
+              {
+                "title": "Jenkins Pipeline: Declarative and Scripted Pipelines",
+                "imgUrl": "https://example.com/jenkins_pipeline.png",
+                "description": "Delve into Jenkins Pipeline, both declarative and scripted, for defining and automating complex CI/CD workflows."
+              },
+              {
+                "title": "Jenkins Security Best Practices",
+                "imgUrl": "https://example.com/jenkins_security.png",
+                "description": "Learn security best practices for Jenkins to ensure the safety and integrity of your CI/CD environment."
+              },
+              {
+                "title": "Scaling Jenkins: Distributed Builds and High Availability",
+                "imgUrl": "https://example.com/jenkins_scaling.png",
+                "description": "Discover how to scale Jenkins by setting up distributed builds and achieving high availability for your CI/CD infrastructure."
+              }
+            ]
+          },
+          {
+            "name":"Kubernetes",
+            "img":"kubernetes.png",
+            "lessons":[
+              {
+                "title": "Introduction to Kubernetes: Container Orchestration Basics",
+                "imgUrl": "https://example.com/kubernetes_intro.png",
+                "description": "Get introduced to Kubernetes and understand the fundamentals of container orchestration for scalable and resilient applications."
+              },
+              {
+                "title": "Installing and Setting Up Kubernetes Cluster",
+                "imgUrl": "https://example.com/kubernetes_installation.png",
+                "description": "Learn how to install and configure a Kubernetes cluster for deploying, managing, and scaling containerized applications."
+              },
+              {
+                "title": "Kubernetes Pods: The Basic Building Blocks",
+                "imgUrl": "https://example.com/kubernetes_pods.png",
+                "description": "Explore the concept of Pods in Kubernetes and understand how they serve as the basic units for deploying containers."
+              },
+              {
+                "title": "Managing Deployments in Kubernetes",
+                "imgUrl": "https://example.com/kubernetes_deployments.png",
+                "description": "Learn how to manage application deployments in Kubernetes, enabling updates, rollbacks, and scaling for your containerized applications."
+              },
+              {
+                "title": "Service Discovery and Load Balancing in Kubernetes",
+                "imgUrl": "https://example.com/kubernetes_service_discovery.png",
+                "description": "Understand how Kubernetes handles service discovery and load balancing to ensure efficient communication between application components."
+              },
+              {
+                "title": "Kubernetes ConfigMaps and Secrets",
+                "imgUrl": "https://example.com/kubernetes_configmaps_secrets.png",
+                "description": "Explore ConfigMaps and Secrets in Kubernetes for managing configuration data and sensitive information in your applications."
+              },
+              {
+                "title": "Kubernetes Persistent Volumes and Persistent Volume Claims",
+                "imgUrl": "https://example.com/kubernetes_persistent_volumes.png",
+                "description": "Learn about Persistent Volumes (PVs) and Persistent Volume Claims (PVCs) in Kubernetes to manage data persistence for your applications."
+              },
+              {
+                "title": "Monitoring and Logging in Kubernetes",
+                "imgUrl": "https://example.com/kubernetes_monitoring_logging.png",
+                "description": "Discover tools and best practices for monitoring and logging in Kubernetes, ensuring visibility into the health and performance of your clusters."
+              },
+              {
+                "title": "Kubernetes Helm: Package Manager for Kubernetes",
+                "imgUrl": "https://example.com/kubernetes_helm.png",
+                "description": "Get hands-on experience with Helm, the package manager for Kubernetes, to simplify the deployment and management of applications."
+              },
+              {
+                "title": "Kubernetes Security Best Practices",
+                "imgUrl": "https://example.com/kubernetes_security.png",
+                "description": "Learn essential security best practices for Kubernetes to protect your containerized applications and infrastructure."
+              },
+              {
+                "title": "Scaling Applications in Kubernetes",
+                "imgUrl": "https://example.com/kubernetes_scaling.png",
+                "description": "Explore strategies for scaling applications in Kubernetes to handle increased workloads and ensure optimal performance."
+              },
+              {
+                "title": "Kubernetes Network Policies",
+                "imgUrl": "https://example.com/kubernetes_network_policies.png",
+                "description": "Understand the concept of network policies in Kubernetes and how they control communication between pods, ensuring a secure microservices architecture."
+              }
+            ]
+          }
+         
+        ]
+      },{
+        "name":"Ai Development",
+        "img":"ai_development.png",
+        "languages":[
+          {
+            "name":"Computer Vision",
+            "img":"computer_vision.png",
+            "lessons":[
+              {
+                "title": "Introduction to Computer Vision",
+                "imgUrl": "https://example.com/computer_vision_intro.png",
+                "description": "Embark on your Computer Vision journey, understanding the basics of image processing, feature extraction, and the applications of computer vision in various fields."
+              },
+              {
+                "title": "Image Processing Techniques",
+                "imgUrl": "https://example.com/image_processing.png",
+                "description": "Explore fundamental image processing techniques, including filtering, convolution, and transformations, to enhance and analyze images in computer vision applications."
+              },
+              {
+                "title": "Feature Detection and Matching",
+                "imgUrl": "https://example.com/feature_detection_matching.png",
+                "description": "Dive into feature detection algorithms, such as Harris Corner Detection and SIFT, and learn how to match features across images for object recognition and tracking."
+              },
+              {
+                "title": "Object Detection in Computer Vision",
+                "imgUrl": "https://example.com/object_detection.png",
+                "description": "Learn about object detection techniques, including traditional methods and deep learning-based approaches, to identify and locate objects in images and videos."
+              },
+              {
+                "title": "Image Segmentation and Recognition",
+                "imgUrl": "https://example.com/image_segmentation_recognition.png",
+                "description": "Master image segmentation algorithms and recognition models for dividing images into meaningful parts and classifying objects within those segments."
+              },
+              {
+                "title": "Deep Learning for Computer Vision",
+                "imgUrl": "https://example.com/deep_learning_computer_vision.png",
+                "description": "Delve into deep learning techniques for computer vision, exploring Convolutional Neural Networks (CNNs) and other architectures for image classification and object detection."
+              },
+              {
+                "title": "Facial Recognition and Biometrics",
+                "imgUrl": "https://example.com/facial_recognition_biometrics.png",
+                "description": "Explore facial recognition technologies and biometric systems, understanding the applications, challenges, and ethical considerations in computer vision."
+              },
+              {
+                "title": "Augmented Reality (AR) Basics",
+                "imgUrl": "https://example.com/ar_basics.png",
+                "description": "Introduce yourself to the basics of Augmented Reality (AR) in computer vision, including marker-based AR, image tracking, and overlaying digital content on the real world."
+              },
+              {
+                "title": "3D Computer Vision",
+                "imgUrl": "https://example.com/3d_computer_vision.png",
+                "description": "Dive into the world of 3D computer vision, understanding depth perception, point clouds, and 3D reconstruction for applications in robotics, AR, and more."
+              },
+              {
+                "title": "Computer Vision Applications",
+                "imgUrl": "https://example.com/computer_vision_applications.png",
+                "description": "Explore real-world applications of computer vision, including autonomous vehicles, medical image analysis, security systems, and industrial automation."
+              }
+            ]
+          },
+          {
+            "name":"Deep Learning",
+            "img":"deep_learning.png",
+            "lessons":[
+              {
+                "title": "Introduction to Deep Learning",
+                "imgUrl": "https://example.com/deep_learning_intro.png",
+                "description": "Begin your journey into the world of deep learning, understanding the basic concepts, architectures, and applications of neural networks."
+              },
+              {
+                "title": "Neural Network Fundamentals",
+                "imgUrl": "https://example.com/neural_network_fundamentals.png",
+                "description": "Explore the foundational elements of neural networks, covering topics like activation functions, layers, and the backpropagation algorithm for training networks."
+              },
+              {
+                "title": "Convolutional Neural Networks (CNNs)",
+                "imgUrl": "https://example.com/cnns.png",
+                "description": "Dive into Convolutional Neural Networks (CNNs), specialized for image-related tasks, and learn about filters, pooling, and how CNNs achieve spatial hierarchies."
+              },
+              {
+                "title": "Recurrent Neural Networks (RNNs)",
+                "imgUrl": "https://example.com/rnns.png",
+                "description": "Understand the concepts of Recurrent Neural Networks (RNNs), designed for sequence data, and explore applications in natural language processing and time series analysis."
+              },
+              {
+                "title": "Generative Adversarial Networks (GANs)",
+                "imgUrl": "https://example.com/gans.png",
+                "description": "Delve into the fascinating world of Generative Adversarial Networks (GANs), exploring how these networks can generate realistic images and data through adversarial training."
+              },
+              {
+                "title": "Transfer Learning in Deep Learning",
+                "imgUrl": "https://example.com/transfer_learning.png",
+                "description": "Learn the techniques of transfer learning, leveraging pre-trained models to enhance the performance of your deep learning models on new tasks or domains."
+              },
+              {
+                "title": "Natural Language Processing (NLP)",
+                "imgUrl": "https://example.com/nlp.png",
+                "description": "Explore the intersection of deep learning and language, diving into Natural Language Processing (NLP) for tasks like sentiment analysis, machine translation, and chatbots."
+              },
+              {
+                "title": "Deep Reinforcement Learning",
+                "imgUrl": "https://example.com/deep_reinforcement_learning.png",
+                "description": "Embark on the world of Deep Reinforcement Learning, understanding how neural networks can learn optimal decision-making strategies through interaction with environments."
+              },
+              {
+                "title": "Ethical Considerations in Deep Learning",
+                "imgUrl": "https://example.com/ethical_deep_learning.png",
+                "description": "Reflect on the ethical implications of deep learning, addressing issues such as bias, fairness, transparency, and responsible AI development."
+              },
+              {
+                "title": "Advanced Topics in Deep Learning",
+                "imgUrl": "https://example.com/advanced_deep_learning.png",
+                "description": "Explore advanced topics in deep learning, covering topics like attention mechanisms, meta-learning, and the latest developments in the field."
+              }
+            ]
+          },
+          {
+            "name":"NLP",
+            "img":"nlp.png",
+            "lessons":[
+              {
+                "title": "Introduction to Natural Language Processing",
+                "imgUrl": "https://example.com/nlp_intro.png",
+                "description": "Embark on your NLP journey, understanding the fundamentals of processing and analyzing human language using computational methods."
+              },
+              {
+                "title": "Text Preprocessing Techniques",
+                "imgUrl": "https://example.com/text_preprocessing.png",
+                "description": "Learn essential text preprocessing techniques, including tokenization, stemming, lemmatization, and handling stop words, to prepare text data for NLP tasks."
+              },
+              {
+                "title": "Text Representation with Word Embeddings",
+                "imgUrl": "https://example.com/word_embeddings.png",
+                "description": "Dive into the world of word embeddings, exploring techniques like Word2Vec, GloVe, and FastText to represent words as dense vectors for NLP applications."
+              },
+              {
+                "title": "Named Entity Recognition (NER)",
+                "imgUrl": "https://example.com/ner.png",
+                "description": "Explore Named Entity Recognition (NER) techniques to identify and classify entities such as names, locations, and organizations in text data."
+              },
+              {
+                "title": "Text Classification and Sentiment Analysis",
+                "imgUrl": "https://example.com/sentiment_analysis.png",
+                "description": "Understand the principles of text classification and sentiment analysis, applying NLP methods to categorize and analyze sentiments expressed in textual content."
+              },
+              {
+                "title": "Part-of-Speech Tagging",
+                "imgUrl": "https://example.com/pos_tagging.png",
+                "description": "Learn about Part-of-Speech (POS) tagging, a crucial NLP task involving the classification of words into their grammatical categories for deeper language understanding."
+              },
+              {
+                "title": "Sequence-to-Sequence Models",
+                "imgUrl": "https://example.com/sequence_to_sequence.png",
+                "description": "Dive into sequence-to-sequence models, exploring architectures like Encoder-Decoder and attention mechanisms for tasks such as machine translation and summarization."
+              },
+              {
+                "title": "Topic Modeling with Latent Dirichlet Allocation (LDA)",
+                "imgUrl": "https://example.com/lda.png",
+                "description": "Explore Latent Dirichlet Allocation (LDA) for topic modeling, a technique to identify topics within a collection of text documents and analyze their distributions."
+              },
+              {
+                "title": "BERT and Transformer Models",
+                "imgUrl": "https://example.com/bert_transformer.png",
+                "description": "Understand the revolution brought by Transformer models, with a focus on BERT (Bidirectional Encoder Representations from Transformers) for advanced NLP tasks."
+              },
+              {
+                "title": "Ethical Considerations in NLP",
+                "imgUrl": "https://example.com/ethical_nlp.png",
+                "description": "Reflect on the ethical challenges in Natural Language Processing, addressing issues like bias, fairness, privacy, and responsible AI development."
+              }
+            ]
+          },
+          {
+            "name":"Pytorch",
+            "img":"pytorch.png",
+            "lessons":[
+              {
+                "title": "Introduction to PyTorch",
+                "imgUrl": "https://example.com/pytorch_intro.png",
+                "description": "Start your PyTorch journey by understanding the basics of this powerful deep learning framework, exploring tensors, and setting up your development environment."
+              },
+              {
+                "title": "Building Neural Networks in PyTorch",
+                "imgUrl": "https://example.com/pytorch_neural_networks.png",
+                "description": "Learn how to build and train neural networks using PyTorch, covering concepts like forward and backward passes, optimization, and model evaluation."
+              },
+              {
+                "title": "Convolutional Neural Networks (CNNs) with PyTorch",
+                "imgUrl": "https://example.com/pytorch_cnn.png",
+                "description": "Dive into Convolutional Neural Networks (CNNs) using PyTorch, understanding how to implement image classification, feature extraction, and spatial hierarchies."
+              },
+              {
+                "title": "Recurrent Neural Networks (RNNs) in PyTorch",
+                "imgUrl": "https://example.com/pytorch_rnn.png",
+                "description": "Explore Recurrent Neural Networks (RNNs) with PyTorch, covering sequential data processing, time series analysis, and applications in natural language processing."
+              },
+              {
+                "title": "Transfer Learning with PyTorch",
+                "imgUrl": "https://example.com/pytorch_transfer_learning.png",
+                "description": "Understand the concept of transfer learning and how to leverage pre-trained models using PyTorch for various tasks, saving time and computational resources."
+              },
+              {
+                "title": "Generative Adversarial Networks (GANs) in PyTorch",
+                "imgUrl": "https://example.com/pytorch_gans.png",
+                "description": "Dive into Generative Adversarial Networks (GANs) with PyTorch, exploring the architecture, training process, and applications in generating realistic synthetic data."
+              },
+              {
+                "title": "PyTorch for Natural Language Processing (NLP)",
+                "imgUrl": "https://example.com/pytorch_nlp.png",
+                "description": "Apply PyTorch to natural language processing tasks, including text classification, sentiment analysis, and language modeling, harnessing its capabilities for NLP applications."
+              },
+              {
+                "title": "Deploying PyTorch Models",
+                "imgUrl": "https://example.com/pytorch_deploy.png",
+                "description": "Learn the essentials of deploying PyTorch models to production, covering model serialization, optimization, and integration into web applications or other systems."
+              },
+              {
+                "title": "PyTorch and GPU Acceleration",
+                "imgUrl": "https://example.com/pytorch_gpu.png",
+                "description": "Optimize your PyTorch workflows by harnessing the power of GPU acceleration, exploring techniques to accelerate training and inference processes."
+              },
+              {
+                "title": "Advanced PyTorch Tips and Tricks",
+                "imgUrl": "https://example.com/pytorch_advanced_tips.png",
+                "description": "Discover advanced tips and tricks in PyTorch, including custom layers, debugging techniques, and best practices for efficient and effective deep learning development."
+              }
+            ]
+          },
+          {
+            "name":"Tensorflow",
+            "img":"tensorflow.png",
+            "lessons":[
+              {
+                "title": "Introduction to TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_intro.png",
+                "description": "Embark on your TensorFlow journey, understanding the basics of this popular machine learning framework, exploring tensors, and setting up your development environment."
+              },
+              {
+                "title": "Building Neural Networks with TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_neural_networks.png",
+                "description": "Learn how to build and train neural networks using TensorFlow, covering concepts like layers, activation functions, optimization, and model evaluation."
+              },
+              {
+                "title": "Convolutional Neural Networks (CNNs) in TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_cnn.png",
+                "description": "Dive into Convolutional Neural Networks (CNNs) using TensorFlow, understanding how to implement image classification, feature extraction, and spatial hierarchies."
+              },
+              {
+                "title": "Recurrent Neural Networks (RNNs) with TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_rnn.png",
+                "description": "Explore Recurrent Neural Networks (RNNs) with TensorFlow, covering sequential data processing, time series analysis, and applications in natural language processing."
+              },
+              {
+                "title": "Transfer Learning in TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_transfer_learning.png",
+                "description": "Understand the concept of transfer learning and how to leverage pre-trained models using TensorFlow for various tasks, saving time and computational resources."
+              },
+              {
+                "title": "Generative Adversarial Networks (GANs) with TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_gans.png",
+                "description": "Dive into Generative Adversarial Networks (GANs) using TensorFlow, exploring the architecture, training process, and applications in generating realistic synthetic data."
+              },
+              {
+                "title": "Natural Language Processing (NLP) with TensorFlow",
+                "imgUrl": "https://example.com/tensorflow_nlp.png",
+                "description": "Apply TensorFlow to natural language processing tasks, including text classification, sentiment analysis, and language modeling, harnessing its capabilities for NLP applications."
+              },
+              {
+                "title": "Deploying TensorFlow Models",
+                "imgUrl": "https://example.com/tensorflow_deploy.png",
+                "description": "Learn the essentials of deploying TensorFlow models to production, covering model serialization, optimization, and integration into web applications or other systems."
+              },
+              {
+                "title": "TensorFlow and GPU Acceleration",
+                "imgUrl": "https://example.com/tensorflow_gpu.png",
+                "description": "Optimize your TensorFlow workflows by harnessing the power of GPU acceleration, exploring techniques to accelerate training and inference processes."
+              },
+              {
+                "title": "Advanced TensorFlow Tips and Tricks",
+                "imgUrl": "https://example.com/tensorflow_advanced_tips.png",
+                "description": "Discover advanced tips and tricks in TensorFlow, including custom layers, debugging techniques, and best practices for efficient and effective machine learning development."
+              }
+            ]
           }
         ]
       }

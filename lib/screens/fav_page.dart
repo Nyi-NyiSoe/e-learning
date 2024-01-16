@@ -57,7 +57,7 @@ class _FavouriteCoursePageState extends State<FavouriteCoursePage> {
                             child: CourseCard(
                               tag: languageName[index],
                               img:
-                                  'lang/${languageName[index].replaceAll('.', '').replaceAll(' ', '_').toLowerCase()}.png',
+                                  'lang/${languageName[index].replaceAll('.', '').replaceAll(' ', '_').replaceAll('#','sharp').toLowerCase()}.png',
                               index: index,
                               courseName: languageName[index],
                               courseCount: 5,
