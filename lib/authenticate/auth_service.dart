@@ -12,7 +12,7 @@ class AuthService {
     try {
       if (user.email!.isNotEmpty ||
           user.name!.isNotEmpty ||
-          user.password!.isNotEmpty) {
+          user.password!.isNotEmpty || user.pfp != null) {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: user.email!, password: user.password!);
         print(cred.user!.uid);
@@ -21,6 +21,7 @@ class AuthService {
           'username': user.name,
           'email': user.email,
           'password': user.password,
+          
           'rating': [],
           'fav_course': {} 
         });

@@ -15,7 +15,10 @@ class _FavouriteCoursePageState extends State<FavouriteCoursePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(),
+        
+          appBar: AppBar(
+            title: const Text('Your Favouite Courses'),
+          ),
           body: RefreshIndicator(
             onRefresh: () async{
               setState(() {

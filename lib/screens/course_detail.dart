@@ -12,7 +12,9 @@ class CourseDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: AppBar(),
+            appBar: AppBar(
+              title: const Text('Categories!'),
+            ),
             body: FutureBuilder(
                 future: LoadJson().readJson(),
                 builder: ((context, snapshot) {

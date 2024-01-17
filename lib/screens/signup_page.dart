@@ -1,11 +1,14 @@
+import 'dart:typed_data';
+
 import 'package:edulearn/models/user.dart';
-import 'package:edulearn/screens/login_page.dart';
+import 'package:edulearn/utils/image_picker.dart';
 import 'package:edulearn/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/widgets/text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
+import 'package:image_picker/image_picker.dart';
 
 class SignUpPage extends StatefulWidget {
     final void Function() toggleView;
@@ -23,6 +26,16 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController passwordController = TextEditingController();
 
   final passwordVisibleProvider = StateProvider<bool>((ref) => true);
+
+  Uint8List? _image ;
+  void selectImage() async{
+    Uint8List img= await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = img;
+
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -101,9 +114,15 @@ class _SignUpPageState extends State<SignUpPage> {
                                   children: [
                                     Stack(
                                       children: [
+                                       _image!= null ? 
                                         CircleAvatar(
                                           backgroundColor: Colors.blueAccent,
-                                          backgroundImage: NetworkImage(
+                                          backgroundImage:  MemoryImage(_image!),
+                                          radius: 64,
+                                        )
+                                       :  CircleAvatar(
+                                          backgroundColor: Colors.blueAccent,
+                                          backgroundImage:  NetworkImage(
                                               'https://cdn-icons-png.flaticon.com/512/10099/10099965.png'),
                                           radius: 64,
                                         ),
@@ -115,7 +134,10 @@ class _SignUpPageState extends State<SignUpPage> {
                                                   iconColor:
                                                       MaterialStatePropertyAll(
                                                           Colors.white)),
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                selectImage();
+                                                print('clicked');
+                                              },
                                               icon: const Icon(
                                                   Icons.add_a_photo_outlined),
                                             ))

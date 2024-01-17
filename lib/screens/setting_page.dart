@@ -1,5 +1,4 @@
 import 'package:edulearn/utils/load_json.dart';
-import 'package:edulearn/utils/rate_course.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
 
