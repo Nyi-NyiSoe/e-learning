@@ -1,4 +1,6 @@
+import 'package:edulearn/models/user.dart';
 import 'package:edulearn/utils/load_json.dart';
+import 'package:edulearn/utils/user_data.dart';
 import 'package:flutter/material.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
 
@@ -16,7 +18,11 @@ class SettingPage extends StatelessWidget {
                   },
                   icon: const Icon(Icons.logout))
             ]),
-            body:  Column(
+            body: FutureBuilder(future: UserData().getUserData(), builder: ((context, snapshot) {
+              if(snapshot.connectionState == ConnectionState.waiting){
+                return const Center(child: CircularProgressIndicator(),);
+              }else{
+                return  Column(
               children: [
                 Center(
                   child: Container(
@@ -26,10 +32,11 @@ class SettingPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         CircleAvatar(
+                         backgroundImage: NetworkImage(snapshot.data!.pfp.toString()),
                           radius: 64,
                         ),
                         Text(
-                          'Name',
+                          snapshot.data!.name!,
                           style: TextStyle(fontSize: 30),
                         ),
                         Row(
@@ -37,7 +44,7 @@ class SettingPage extends StatelessWidget {
                          
                           children: [
                             Column(
-                              children: [Text('5'), Text('Courses')],
+                              children: [Text(snapshot.data!.favCourse!.length.toString()), Text('Courses')],
                             ),
                             Container(
                               height: 50,
@@ -62,13 +69,17 @@ class SettingPage extends StatelessWidget {
                   child: Column(
                     children: [
                       ElevatedButton(onPressed: ()async{
-                        var data = await LoadJson().readJson();
-                        print(data[0].languages[0].langName);
+                        MyUser? user = await UserData().getUserData();
+                        print(user!.favCourse);
                       }, child: Text('data'))
                     ],
                   ),
                 )
               ],
-            )));
+            );
+              }
+            }))
+            ),
+            );
   }
 }

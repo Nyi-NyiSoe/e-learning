@@ -1,4 +1,7 @@
+import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:edulearn/authenticate/upload_pic.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:edulearn/models/user.dart';
 class AuthService {
@@ -16,15 +19,22 @@ class AuthService {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: user.email!, password: user.password!);
         print(cred.user!.uid);
-        await _firestore.collection('users').doc(cred.user!.uid).set({
+
+       String? photoUrl = await UploadPic().uploadToStorage('profilePics', user.pfp! as Uint8List);
+
+       if(photoUrl != null){
+         await _firestore.collection('users').doc(cred.user!.uid).set({
           'uid': cred.user!.uid,
           'username': user.name,
           'email': user.email,
           'password': user.password,
-          
+          'pfp': photoUrl,
           'rating': [],
           'fav_course': {} 
         });
+       }else{
+        print('Error uploading pic');
+       }
       
       }
       // await _firestore.collection('users').add({
