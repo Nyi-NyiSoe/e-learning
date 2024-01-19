@@ -3,13 +3,14 @@ import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/fav_page.dart';
 import 'package:edulearn/screens/home_page.dart';
 
-import 'package:edulearn/screens/setting_page.dart';
+import 'package:edulearn/screens/profile_page.dart';
+import 'package:edulearn/screens/quiz_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Wrapper extends ConsumerWidget {
   Wrapper({super.key});
-  final List<Widget> pageList = [Homepage(),FavouriteCoursePage(), const SettingPage(),];
+  final List<Widget> pageList = [Homepage(),const FavouriteCoursePage(),const QuizPage() ,const SettingPage(),];
   final pageProvider = StateProvider((ref) => 0);
 
   @override
@@ -40,9 +41,15 @@ class Wrapper extends ConsumerWidget {
                       
                     },
                     child: const Icon(Icons.favorite_outline)),
-                GestureDetector(
+                    GestureDetector(
                     onTap: () {
                       ref.read(pageProvider.notifier).state = 2;
+                      
+                    },
+                    child: const Icon(Icons.quiz_outlined)),
+                GestureDetector(
+                    onTap: () {
+                      ref.read(pageProvider.notifier).state = 3;
                       
                     },
                     child: const Icon(Icons.settings_outlined))

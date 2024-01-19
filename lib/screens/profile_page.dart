@@ -31,7 +31,7 @@ class SettingPage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        CircleAvatar(
+                       CircleAvatar(
                          backgroundImage: NetworkImage(snapshot.data!.pfp.toString()),
                           radius: 64,
                         ),
