@@ -15,18 +15,24 @@ class TabBarWidget extends StatelessWidget {
       children: [
         TabBar(
           indicatorSize: TabBarIndicatorSize.label,
-          indicatorColor: Colors.red,
+          indicatorColor: Colors.purple,
           controller: _tabController,
           isScrollable: true,
           labelColor: Colors.black,
           labelPadding: const EdgeInsets.only(left: 20, right: 20),
           unselectedLabelStyle: const TextStyle(color: Colors.grey),
-          tabs: const [
-            Tab(
-              text: 'Quiz',
+          tabs:  [
+            Container(
+              width: MediaQuery.of(context).size.width * 0.3,
+              child: Tab(
+                text: 'Quiz',
+              ),
             ),
-            Tab(
-              text: 'Leaderboard',
+            Container(
+               width: MediaQuery.of(context).size.width * 0.3,
+              child: Tab(
+                text: 'Leaderboard',
+              ),
             ),
           ],
         ),
