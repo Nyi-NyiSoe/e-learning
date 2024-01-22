@@ -1,5 +1,6 @@
 import 'package:edulearn/authenticate/auth_service.dart';
 import 'package:edulearn/models/user.dart';
+import 'package:edulearn/screens/compete_page.dart';
 import 'package:edulearn/screens/fav_page.dart';
 import 'package:edulearn/screens/home_page.dart';
 
@@ -10,7 +11,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Wrapper extends ConsumerWidget {
   Wrapper({super.key});
-  final List<Widget> pageList = [Homepage(),const FavouriteCoursePage(),const QuizPage() ,const SettingPage(),];
+  final List<Widget> pageList = [Homepage(),const FavouriteCoursePage(),const CompetePage() ,const SettingPage(),];
   final pageProvider = StateProvider((ref) => 0);
 
   @override

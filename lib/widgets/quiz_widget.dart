@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TabBarWidget extends StatelessWidget {
-  const TabBarWidget({super.key});
+class QuizWidget extends StatelessWidget {
+  const QuizWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-       
+        Text('Questions')
       ],
     );
   }
