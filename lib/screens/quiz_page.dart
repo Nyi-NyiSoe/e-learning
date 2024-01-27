@@ -1,24 +1,19 @@
 import 'package:edulearn/screens/quiz_question_page.dart';
 import 'package:edulearn/utils/fav.dart';
+import 'package:edulearn/utils/load_quiz.dart';
 import 'package:edulearn/widgets/course_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class QuizPage extends StatelessWidget {
+class QuizPage extends ConsumerWidget {
   const QuizPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: FavouriteCourse().loadCourse(),
-        builder: ((context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          } else {
-            List<String> languageName = snapshot.data!.keys.toList();
-            return GridView.builder(
-                itemCount: languageName.length,
+  Widget build(BuildContext context,WidgetRef ref) {
+    final questionProvider = ref.watch(quizProvider);
+    return questionProvider.when(data: (data){
+      return  GridView.builder(
+                itemCount: data.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemBuilder: ((context, index) {
@@ -57,9 +52,14 @@ class QuizPage extends StatelessWidget {
                               );
                             });
                       },
-                      child: Text(languageName[index]));
+                      child: Text(data.keys.elementAt(index)));
                 }));
-          }
-        }));
+    }, error: (error,stackTrace){
+      print(error.toString());
+      return Text('Erro loading data!');
+    }, loading: (){
+      return const CircularProgressIndicator();
+    });
+     
   }
 }

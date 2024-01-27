@@ -1,0 +1,46 @@
+{
+    "HTML": [
+      {
+        "question": "What does HTML stand for?",
+        "choices": ["Hyper Text Markup Language", "Highly Typed Modeling Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Which tag is used to create a hyperlink in HTML?",
+        "choices": ["<a>", "<link>", "<hlink>", "<url>"],
+        "correctAnswerIndex": 1
+      },
+      {
+        "question": "What does the DOCTYPE declaration in HTML do?",
+        "choices": ["Specifies the version of HTML in use", "Defines the document type and structure", "Declares a document to be HTML5", "None of the above"],
+        "correctAnswerIndex": 2
+      },
+      {
+        "question": "In HTML, which attribute is used to specify an alternate text for an image if it cannot be displayed?",
+        "choices": ["alt", "title", "description", "caption"],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "What does the HTML tag <em> represent?",
+        "choices": ["Emphasis", "Italic", "Element", "Emphasized"],
+        "correctAnswerIndex": 3
+      },
+      {
+        "question": "Which HTML element is used to define the structure of an HTML document?",
+        "choices": ["<header>", "<main>", "<article>", "<body>"],
+        "correctAnswerIndex": 2
+      },
+      {
+        "question": "What is the purpose of the HTML <meta> tag?",
+        "choices": ["Defines metadata about an HTML document", "Creates a navigation link", "Specifies a paragraph", "Formats text as bold"],
+        "correctAnswerIndex": 0
+      },
+      {
+        "question": "Which HTML element is used to define a table?",
+        "choices": ["<table>", "<tr>", "<td>", "<th>"],
+        "correctAnswerIndex": 0
+      }
+     
+    ]
+  }
+  
