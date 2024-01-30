@@ -1,8 +1,7 @@
 import 'package:edulearn/utils/load_quiz.dart';
-import 'package:edulearn/widgets/choice.dart';
+
 import 'package:edulearn/widgets/progress_bar.dart';
 import 'package:edulearn/widgets/question_card.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -23,7 +22,7 @@ class QuizQuestion extends StatelessWidget {
           final questionData = ref.watch(quizProvider);
          
           return questionData.when(data: (data){
-            print(data['HTML'].length);
+            print(data['HTML'][2]['correctAnswerIndex'] );
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -53,7 +52,7 @@ class QuizQuestion extends StatelessWidget {
         Expanded(child: PageView.builder(
           itemCount: data['HTML'].length,
           itemBuilder: ((context, index) {
-          return QuestionCard(index, data['HTML'][index]['question'],  data['HTML'][index]['choices']);
+          return QuestionCard(question: data['HTML'][index]['question'],option: data['HTML'][index]['choices'],answer: data['HTML'][index]['correctAnswerIndex'],);
         })))
               ],
             );
