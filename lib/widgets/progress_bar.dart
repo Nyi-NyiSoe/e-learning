@@ -1,3 +1,4 @@
+import 'package:edulearn/screens/quiz_question_page.dart';
 import 'package:flutter/material.dart';
 
 class ProgressBar extends StatefulWidget {
@@ -24,7 +25,7 @@ class _ProgressBarState extends State<ProgressBar>
         setState(() {});
       });
 
-    _controller.forward();
+    _controller.forward().whenComplete((nextQuestion));
   }
 
   @override
@@ -73,5 +74,12 @@ class _ProgressBarState extends State<ProgressBar>
     // Dispose of the AnimationController when the widget is disposed
     _controller.dispose();
     super.dispose();
+  }
+
+  void nextQuestion(){
+    QuizQuestion().pageController.nextPage(duration: Duration(milliseconds: 600), curve: Curves.ease);
+  
+    _controller.reset();
+    _controller.forward().whenComplete((nextQuestion));
   }
 }

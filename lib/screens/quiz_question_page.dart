@@ -6,7 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class QuizQuestion extends StatelessWidget {
-  const QuizQuestion({super.key});
+   QuizQuestion({super.key});
+
+  PageController _pageController = PageController();
+  PageController get pageController => _pageController;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,9 @@ class QuizQuestion extends StatelessWidget {
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         title: Text('Quiz'),
-        actions: [ElevatedButton(onPressed: () {}, child: Text('Skip'))],
+        actions: [ElevatedButton(onPressed: () {
+          _pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.ease);
+        }, child: Text('Skip'))],
       ),
       body: Consumer(
         builder: (context, ref, child) {
@@ -50,6 +55,8 @@ class QuizQuestion extends StatelessWidget {
             thickness: 1.5,
           ),
         Expanded(child: PageView.builder(
+          physics: NeverScrollableScrollPhysics(),
+          controller: pageController,
           itemCount: data['HTML'].length,
           itemBuilder: ((context, index) {
           return QuestionCard(question: data['HTML'][index]['question'],option: data['HTML'][index]['choices'],answer: data['HTML'][index]['correctAnswerIndex'],);
