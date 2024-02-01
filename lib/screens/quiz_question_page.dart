@@ -1,79 +1,106 @@
 import 'package:edulearn/utils/load_quiz.dart';
-
-import 'package:edulearn/widgets/progress_bar.dart';
 import 'package:edulearn/widgets/question_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class QuizQuestion extends StatelessWidget {
-   QuizQuestion({super.key});
+class QuizQuestion extends ConsumerWidget {
+  QuizQuestion({super.key, required this.quizName});
 
-  PageController _pageController = PageController();
-  PageController get pageController => _pageController;
+  final _pageController = PageController();
+
+  final String quizName;
+  final questionCountProvider = StateProvider((ref) => 1);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final questionCount = ref.watch(questionCountProvider);
+     final questionData = ref.watch(quizProvider);
+
     return SafeArea(
-        child: Scaffold(
-      backgroundColor: Colors.grey.shade300,
-      appBar: AppBar(
-        title: Text('Quiz'),
-        actions: [ElevatedButton(onPressed: () {
-          _pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.ease);
-        }, child: Text('Skip'))],
-      ),
-      body: Consumer(
-        builder: (context, ref, child) {
-          final questionData = ref.watch(quizProvider);
-         
-          return questionData.when(data: (data){
-            print(data['HTML'][2]['correctAnswerIndex'] );
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                 const ProgressBar(),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text.rich(
-              TextSpan(
-                  text: 'Questions 1',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineMedium!
-                      .copyWith(color: Colors.grey),
-                  children: [
-                    TextSpan(
-                        text: '{/10}',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(color: Colors.grey)),
-                  ]),
-            ),
-          ),
-          Divider(
-            thickness: 1.5,
-          ),
-        Expanded(child: PageView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          controller: pageController,
-          itemCount: data['HTML'].length,
-          itemBuilder: ((context, index) {
-          return QuestionCard(question: data['HTML'][index]['question'],option: data['HTML'][index]['choices'],answer: data['HTML'][index]['correctAnswerIndex'],);
-        })))
-              ],
-            );
-          }, error: (error,stackStrace){
-            print(error.toString());
-            return Text(error.toString());
-          }, loading: (){
-            return const CircularProgressIndicator();
-          });
-        },
-        
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade300,
+        appBar: AppBar(
+          title: const Text('Quiz'),
+          actions: [
+            ElevatedButton(
+                onPressed: () {
+                  _pageController.nextPage(
+                      duration: const Duration(seconds: 1), curve: Curves.ease);
+                },
+                child: const Text('Skip'))
+          ],
         ),
+        body: questionData.when(data: (data) {
+              print(data[quizName][2]['correctAnswerIndex']);
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10),
+                    child: Text.rich(
+                      TextSpan(
+                          text: 'Question $questionCount',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineMedium!
+                              .copyWith(color: Colors.grey),
+                          children: [
+                            TextSpan(
+                                text: '/${data[quizName].length}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall!
+                                    .copyWith(color: Colors.grey)),
+                          ]),
+                    ),
+                  ),
+                  const Divider(
+                    thickness: 1.5,
+                  ),
+                  Expanded(
+                    child: PageView.builder(
+                      onPageChanged: (vale) {
+                        print(questionCount);
+                        ref.read(questionCountProvider.notifier).state++;
+                      },
+                      physics: const NeverScrollableScrollPhysics(),
+                      controller: _pageController,
+                      itemCount: data[quizName].length,
+                      itemBuilder: ((context, index) {
+                        if (index == data[quizName].length - 1) {
+                          return Column(
+                            children: [
+                              QuestionCard(
+                                pageController: _pageController,
+                                question: data[quizName][index]['question'],
+                                option: data[quizName][index]['choices'],
+                                answer: data[quizName][index]
+                                    ['correctAnswerIndex'],
+                              ),
+                              ElevatedButton(
+                                  onPressed: () {}, child: Text('Check score'))
+                            ],
+                          );
+                        } else {
+                          return QuestionCard(
+                            pageController: _pageController,
+                            question: data[quizName][index]['question'],
+                            option: data[quizName][index]['choices'],
+                            answer: data[quizName][index]['correctAnswerIndex'],
+                          );
+                        }
+                      }),
+                    ),
+                  )
+                ],
+              );
+            }, error: (error, stackStrace) {
+              print(error.toString());
+              return Text(error.toString());
+            }, loading: () {
+              return const CircularProgressIndicator();
+            })
       ),
     );
   }
 }
-

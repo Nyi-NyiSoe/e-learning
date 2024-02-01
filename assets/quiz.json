@@ -40,5 +40,108 @@
       "choices": ["<table>", "<tr>", "<td>", "<th>"],
       "correctAnswerIndex": "1"
     }
+  ],
+  "CSS":[
+    {
+      "question": "What does CSS stand for?",
+      "choices": [
+        "Counter Strike: Source",
+        "Cascading Style Sheets",
+        "Computer Style Sheets",
+        "Creative Style System"
+      ],
+      "correctAnswerIndex": "2"
+    },
+    {
+      "question": "Which CSS property is used for changing the text color of an element?",
+      "choices": [
+        "color",
+        "text-color",
+        "font-color",
+        "foreground-color"
+      ],
+      "correctAnswerIndex": "1"
+    },
+    {
+      "question": "What does the 'box-sizing' property do in CSS?",
+      "choices": [
+        "Defines the size of the box",
+        "Specifies whether the padding should be included in the total width/height of the element",
+        "Sets the border style of the box",
+        "Adjusts the transparency of the box"
+      ],
+      "correctAnswerIndex": "2"
+    },
+    {
+      "question": "Which CSS selector targets all elements of a specific type?",
+      "choices": [
+        "class selector",
+        "ID selector",
+        "element selector",
+        "descendant selector"
+      ],
+      "correctAnswerIndex": "3"
+    },
+    {
+      "question": "In CSS, what is the purpose of the 'z-index' property?",
+      "choices": [
+        "Defines the zoom level of an element",
+        "Sets the order of the stacking context",
+        "Adjusts the opacity of an element",
+        "Specifies the background color of an element"
+      ],
+      "correctAnswerIndex": "2"
+    },
+    {
+      "question": "What is the default value of the 'position' property in CSS?",
+      "choices": [
+        "static",
+        "relative",
+        "absolute",
+        "fixed"
+      ],
+      "correctAnswerIndex": "1"
+    },
+    {
+      "question": "Which CSS property is used to control the space between elements?",
+      "choices": [
+        "margin",
+        "padding",
+        "spacing",
+        "border-spacing"
+      ],
+      "correctAnswerIndex": "1"
+    },
+    {
+      "question": "What does the 'float' property in CSS do?",
+      "choices": [
+        "Makes an element 'float' in water",
+        "Positions an element to the left or right with text flowing around it",
+        "Sets the opacity of an element",
+        "Changes the font style of an element"
+      ],
+      "correctAnswerIndex": "2"
+    },
+    {
+      "question": "Which CSS property is used to create rounded corners?",
+      "choices": [
+        "border-radius",
+        "corner-radius",
+        "round-corners",
+        "box-corners"
+      ],
+      "correctAnswerIndex": "1"
+    },
+    {
+      "question": "What does the 'display: none;' property do in CSS?",
+      "choices": [
+        "Hides the element",
+        "Displays the element with no styling",
+        "Sets the element to full width",
+        "Applies a border to the element"
+      ],
+      "correctAnswerIndex": "1"
+    }
+
   ]
 }
