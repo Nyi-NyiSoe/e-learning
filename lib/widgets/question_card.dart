@@ -1,4 +1,5 @@
 import 'package:edulearn/screens/quiz_question_page.dart';
+import 'package:edulearn/utils/score.dart';
 
 import 'package:edulearn/widgets/choice.dart';
 import 'package:flutter/material.dart';
@@ -17,12 +18,13 @@ class QuestionCard extends ConsumerWidget {
   final PageController pageController;
 
   final colorProvider = StateProvider<bool>((ref) => false);
+  final isAlreadySelected = StateProvider<bool>((ref) => false);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final colorValue = ref.watch(colorProvider);
     final colorController = ref.read(colorProvider.notifier);
-   
+    final colorValue = ref.watch(colorProvider);
+    final scoreController = ref.read(scoreProvider.notifier);
 
     return Padding(
       padding: const EdgeInsets.all(10.0),
@@ -41,17 +43,34 @@ class QuestionCard extends ConsumerWidget {
                 return Choice(
                     index: index + 1,
                     option: option[index],
-                    onTap: () async {
-                    
-                      colorController.state = true;
-                       await Future.delayed(const Duration(seconds: 1));
-                      pageController.nextPage(
-                          duration: const Duration(seconds: 2),
-                          curve: Curves.ease);
-                          
+                    onTap: ()  async{
+                      if (colorValue == true) {
+                        return ;
+                      } else {
+                        colorController.state = true; // Update color first
+
+                        await Future.delayed(const Duration(seconds: 1));
+
+                        if ((index + 1).toString() == answer) {
+                          // Update score if the answer is correct
+                          ref.read(scoreProvider.notifier).state++;
+                        }
+                        
+                       if(pageController.page! == index-1){
+                         
+                       }
+                       else{
+                        pageController.nextPage(
+                          duration: const Duration(milliseconds: 250),
+                          curve: Curves.ease,
+                        );
+                       }
+
+                        print(ref.read(scoreProvider.notifier).state);
+                      }
                     },
                     color: colorValue
-                        ? ((index+1).toString() == answer)
+                        ? ((index + 1).toString() == answer)
                             ? Colors.greenAccent
                             : Colors.redAccent
                         : Colors.white);

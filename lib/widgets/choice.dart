@@ -33,14 +33,7 @@ class Choice extends ConsumerWidget {
                 style: TextStyle(color: Colors.black),
               ),
             ),
-            // Container(
-            //   width: 26,
-            //   height: 20,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(50),
-            //     border: Border.all(color: Colors.grey)
-            //   ),
-            // )
+            
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:edulearn/utils/load_quiz.dart';
+import 'package:edulearn/utils/score.dart';
 import 'package:edulearn/widgets/question_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,6 +16,7 @@ class QuizQuestion extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final questionCount = ref.watch(questionCountProvider);
      final questionData = ref.watch(quizProvider);
+     final score = ref.watch(scoreProvider);
 
     return SafeArea(
       child: Scaffold(
@@ -61,6 +63,7 @@ class QuizQuestion extends ConsumerWidget {
                     child: PageView.builder(
                       onPageChanged: (vale) {
                         print(questionCount);
+                        
                         ref.read(questionCountProvider.notifier).state++;
                       },
                       physics: const NeverScrollableScrollPhysics(),
@@ -78,7 +81,21 @@ class QuizQuestion extends ConsumerWidget {
                                     ['correctAnswerIndex'],
                               ),
                               ElevatedButton(
-                                  onPressed: () {}, child: Text('Check score'))
+                                  onPressed: () {
+                                    showDialog(context: context, builder: ((context) {
+                                      return AlertDialog(
+                                        title: Text('End of quiz!'),
+                                        content: Text('You got $score out of ${data[quizName].length} questions right!'),
+                                        actions: [
+                                         TextButton(onPressed: (){
+                                            Navigator.pop(context);
+                                            
+                                         }, child: Text('Done'))
+                                        ],
+                                      );
+                                    }),
+                                    );
+                                  }, child: Text('Check score'))
                             ],
                           );
                         } else {
