@@ -7,11 +7,14 @@ class Choice extends ConsumerWidget {
       required this.index,
       required this.option,
       required this.color,
-      required this.onTap});
+      required this.onTap,
+      required this.selectColor
+      });
   final int index;
   final String option;
   final Color color;
   final Function()? onTap;
+  final Color selectColor;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -33,7 +36,15 @@ class Choice extends ConsumerWidget {
                 style: TextStyle(color: Colors.black),
               ),
             ),
-            
+            Container(
+              width: 20,
+              height: 20,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.circular(50),
+                color: selectColor,
+              ),
+            )
           ],
         ),
       ),

@@ -10,13 +10,14 @@ class QuizQuestion extends ConsumerWidget {
   final _pageController = PageController();
 
   final String quizName;
-  final questionCountProvider = StateProvider((ref) => 1);
+
+  
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final questionCount = ref.watch(questionCountProvider);
      final questionData = ref.watch(quizProvider);
-     final score = ref.watch(scoreProvider);
+     //final score = ref.watch(scoreProvider);
 
     return SafeArea(
       child: Scaffold(
@@ -27,7 +28,7 @@ class QuizQuestion extends ConsumerWidget {
             ElevatedButton(
                 onPressed: () {
                   _pageController.nextPage(
-                      duration: const Duration(seconds: 1), curve: Curves.ease);
+                      duration: const Duration(milliseconds: 250), curve: Curves.ease);
                 },
                 child: const Text('Skip'))
           ],
@@ -76,31 +77,18 @@ class QuizQuestion extends ConsumerWidget {
                               QuestionCard(
                                 pageController: _pageController,
                                 question: data[quizName][index]['question'],
+                                questionCount: data[quizName].length,
                                 option: data[quizName][index]['choices'],
                                 answer: data[quizName][index]
                                     ['correctAnswerIndex'],
                               ),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    showDialog(context: context, builder: ((context) {
-                                      return AlertDialog(
-                                        title: Text('End of quiz!'),
-                                        content: Text('You got $score out of ${data[quizName].length} questions right!'),
-                                        actions: [
-                                         TextButton(onPressed: (){
-                                            Navigator.pop(context);
-                                            
-                                         }, child: Text('Done'))
-                                        ],
-                                      );
-                                    }),
-                                    );
-                                  }, child: Text('Check score'))
+                             
                             ],
                           );
                         } else {
                           return QuestionCard(
                             pageController: _pageController,
+                            questionCount: data[quizName].length,
                             question: data[quizName][index]['question'],
                             option: data[quizName][index]['choices'],
                             answer: data[quizName][index]['correctAnswerIndex'],

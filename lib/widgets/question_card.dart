@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class QuestionCard extends ConsumerWidget {
   QuestionCard(
       {required this.question,
+      required this.questionCount,
       required this.option,
       required this.answer,
       required this.pageController});
@@ -16,15 +17,22 @@ class QuestionCard extends ConsumerWidget {
   final List<dynamic> option;
   final String answer;
   final PageController pageController;
+  final int questionCount;
 
   final colorProvider = StateProvider<bool>((ref) => false);
   final isAlreadySelected = StateProvider<bool>((ref) => false);
+  final selectedIndex = StateProvider((ref) => 0);
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colorController = ref.read(colorProvider.notifier);
     final colorValue = ref.watch(colorProvider);
     final scoreController = ref.read(scoreProvider.notifier);
+    final select = ref.read(selectedIndex.notifier);
+    final selectValue = ref.watch(selectedIndex);
+
+    final score = ref.watch(scoreProvider);
 
     return Padding(
       padding: const EdgeInsets.all(10.0),
@@ -40,40 +48,70 @@ class QuestionCard extends ConsumerWidget {
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               ...List.generate(option.length, (index) {
+                
                 return Choice(
                     index: index + 1,
                     option: option[index],
-                    onTap: ()  async{
+                    onTap: ()  {
+                    
                       if (colorValue == true) {
-                        return ;
+                        return;
                       } else {
-                        colorController.state = true; // Update color first
+                        colorController.state = true;
+                        select.state = index; // Update color first
 
-                        await Future.delayed(const Duration(seconds: 1));
+                        //await Future.delayed(const Duration(seconds: 1));
 
                         if ((index + 1).toString() == answer) {
                           // Update score if the answer is correct
                           ref.read(scoreProvider.notifier).state++;
                         }
-                        
-                       if(pageController.page! == index-1){
-                         
-                       }
-                       else{
-                        pageController.nextPage(
-                          duration: const Duration(milliseconds: 250),
-                          curve: Curves.ease,
-                        );
-                       }
 
-                        print(ref.read(scoreProvider.notifier).state);
+                        if (pageController.page! == questionCount - 1) {
+                          if ((index + 1).toString() == answer) {
+                          // Update score if the answer is correct
+                          ref.read(scoreProvider.notifier).state++;
+                        }
+                          showDialog(
+                            context: context,
+                            builder: ((context) {
+                              return AlertDialog(
+                                title: Text('End of quiz!'),
+                                content: Text(
+                                    'You got ${score} out of ${questionCount} questions right!'),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text('Done'))
+                                ],
+                              );
+                            }),
+                          );
+                          print("correct $score" );
+                        } else {
+                          
+                          
+                          pageController.nextPage(
+                            duration: const Duration(milliseconds: 250),
+                            curve: Curves.ease,
+                          );
+                        }
+
+                        
                       }
                     },
                     color: colorValue
                         ? ((index + 1).toString() == answer)
                             ? Colors.greenAccent
                             : Colors.redAccent
-                        : Colors.white);
+                        : Colors.white,
+                     selectColor: colorValue ?
+                     (index == selectValue) ? Colors.blue : Colors.white : Colors.white,
+                        
+                );
               })
             ],
           )),
