@@ -1,3 +1,4 @@
+import 'package:edulearn/screens/leaderboard_page.dart';
 import 'package:edulearn/screens/quiz_page.dart';
 import 'package:flutter/material.dart';
 
@@ -41,11 +42,7 @@ class TabBarWidget extends StatelessWidget {
           controller: _tabController,
           children: [
           QuizPage(),
-           Container(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text('Leaderboard')
-            ,
-          )
+          Leaderboard()
 
         ],)
         )

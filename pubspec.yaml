@@ -73,6 +73,7 @@ flutter:
     - images/lang/
     - assets/category.json
     - assets/quiz.json
+    - images/podium.png
     
   #   - images/a_dot_ham.jpeg
 
