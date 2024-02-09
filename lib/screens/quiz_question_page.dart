@@ -28,7 +28,7 @@ class QuizQuestion extends ConsumerWidget {
             ElevatedButton(
                 onPressed: () {
                   _pageController.nextPage(
-                      duration: const Duration(milliseconds: 250), curve: Curves.ease);
+                      duration: const Duration(milliseconds: 500), curve: Curves.ease);
                 },
                 child: const Text('Skip'))
           ],
