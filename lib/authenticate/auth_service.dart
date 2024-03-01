@@ -30,7 +30,8 @@ class AuthService {
           'password': user.password,
           'pfp': photoUrl,
           'rating': [],
-          'fav_course': {} 
+          'fav_course': {},
+          'ranking' :[] 
         });
        }else{
         print('Error uploading pic');

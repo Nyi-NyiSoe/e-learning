@@ -1,147 +1,445 @@
 {
-  "HTML": [
-    {
-      "question": "What does HTML stand for?",
-      "choices": ["Hyper Text Markup Language", "Highly Typed Modeling Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "Which tag is used to create a hyperlink in HTML?",
-      "choices": ["<a>", "<link>", "<hlink>", "<url>"],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "What does the DOCTYPE declaration in HTML do?",
-      "choices": ["Specifies the version of HTML in use", "Defines the document type and structure", "Declares a document to be HTML5", "None of the above"],
-      "correctAnswerIndex": "3"
-    },
-    {
-      "question": "In HTML, which attribute is used to specify an alternate text for an image if it cannot be displayed?",
-      "choices": ["alt", "title", "description", "caption"],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "What does the HTML tag <em> represent?",
-      "choices": ["Emphasis", "Italic", "Element", "Emphasized"],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "Which HTML element is used to define the structure of an HTML document?",
-      "choices": ["<header>", "<main>", "<article>", "<body>"],
-      "correctAnswerIndex": "3"
-    },
-    {
-      "question": "What is the purpose of the HTML <meta> tag?",
-      "choices": ["Defines metadata about an HTML document", "Creates a navigation link", "Specifies a paragraph", "Formats text as bold"],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "Which HTML element is used to define a table?",
-      "choices": ["<table>", "<tr>", "<td>", "<th>"],
-      "correctAnswerIndex": "1"
-    }
-  ],
-  "CSS":[
-    {
-      "question": "What does CSS stand for?",
-      "choices": [
-        "Counter Strike: Source",
-        "Cascading Style Sheets",
-        "Computer Style Sheets",
-        "Creative Style System"
-      ],
-      "correctAnswerIndex": "2"
-    },
-    {
-      "question": "Which CSS property is used for changing the text color of an element?",
-      "choices": [
-        "color",
-        "text-color",
-        "font-color",
-        "foreground-color"
-      ],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "What does the 'box-sizing' property do in CSS?",
-      "choices": [
-        "Defines the size of the box",
-        "Specifies whether the padding should be included in the total width/height of the element",
-        "Sets the border style of the box",
-        "Adjusts the transparency of the box"
-      ],
-      "correctAnswerIndex": "2"
-    },
-    {
-      "question": "Which CSS selector targets all elements of a specific type?",
-      "choices": [
-        "class selector",
-        "ID selector",
-        "element selector",
-        "descendant selector"
-      ],
-      "correctAnswerIndex": "3"
-    },
-    {
-      "question": "In CSS, what is the purpose of the 'z-index' property?",
-      "choices": [
-        "Defines the zoom level of an element",
-        "Sets the order of the stacking context",
-        "Adjusts the opacity of an element",
-        "Specifies the background color of an element"
-      ],
-      "correctAnswerIndex": "2"
-    },
-    {
-      "question": "What is the default value of the 'position' property in CSS?",
-      "choices": [
-        "static",
-        "relative",
-        "absolute",
-        "fixed"
-      ],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "Which CSS property is used to control the space between elements?",
-      "choices": [
-        "margin",
-        "padding",
-        "spacing",
-        "border-spacing"
-      ],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "What does the 'float' property in CSS do?",
-      "choices": [
-        "Makes an element 'float' in water",
-        "Positions an element to the left or right with text flowing around it",
-        "Sets the opacity of an element",
-        "Changes the font style of an element"
-      ],
-      "correctAnswerIndex": "2"
-    },
-    {
-      "question": "Which CSS property is used to create rounded corners?",
-      "choices": [
-        "border-radius",
-        "corner-radius",
-        "round-corners",
-        "box-corners"
-      ],
-      "correctAnswerIndex": "1"
-    },
-    {
-      "question": "What does the 'display: none;' property do in CSS?",
-      "choices": [
-        "Hides the element",
-        "Displays the element with no styling",
-        "Sets the element to full width",
-        "Applies a border to the element"
-      ],
-      "correctAnswerIndex": "1"
-    }
-
-  ]
+  "Web Development":{
+    "HTML": [
+      {
+        "question": "What does HTML stand for?",
+        "choices": ["Hyper Text Markup Language", "Highly Typed Modeling Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which tag is used to create a hyperlink in HTML?",
+        "choices": ["<a>", "<link>", "<hlink>", "<url>"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What does the DOCTYPE declaration in HTML do?",
+        "choices": ["Specifies the version of HTML in use", "Defines the document type and structure", "Declares a document to be HTML5", "None of the above"],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "In HTML, which attribute is used to specify an alternate text for an image if it cannot be displayed?",
+        "choices": ["alt", "title", "description", "caption"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What does the HTML tag <em> represent?",
+        "choices": ["Emphasis", "Italic", "Element", "Emphasized"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which HTML element is used to define the structure of an HTML document?",
+        "choices": ["<header>", "<main>", "<article>", "<body>"],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "What is the purpose of the HTML <meta> tag?",
+        "choices": ["Defines metadata about an HTML document", "Creates a navigation link", "Specifies a paragraph", "Formats text as bold"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which HTML element is used to define a table?",
+        "choices": ["<table>", "<tr>", "<td>", "<th>"],
+        "correctAnswerIndex": "1"
+      }
+    ],
+    "CSS":[
+      {
+        "question": "What does CSS stand for?",
+        "choices": [
+          "Counter Strike: Source",
+          "Cascading Style Sheets",
+          "Computer Style Sheets",
+          "Creative Style System"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which CSS property is used for changing the text color of an element?",
+        "choices": [
+          "color",
+          "text-color",
+          "font-color",
+          "foreground-color"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What does the 'box-sizing' property do in CSS?",
+        "choices": [
+          "Defines the size of the box",
+          "Specifies whether the padding should be included in the total width/height of the element",
+          "Sets the border style of the box",
+          "Adjusts the transparency of the box"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which CSS selector targets all elements of a specific type?",
+        "choices": [
+          "class selector",
+          "ID selector",
+          "element selector",
+          "descendant selector"
+        ],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "In CSS, what is the purpose of the 'z-index' property?",
+        "choices": [
+          "Defines the zoom level of an element",
+          "Sets the order of the stacking context",
+          "Adjusts the opacity of an element",
+          "Specifies the background color of an element"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What is the default value of the 'position' property in CSS?",
+        "choices": [
+          "static",
+          "relative",
+          "absolute",
+          "fixed"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which CSS property is used to control the space between elements?",
+        "choices": [
+          "margin",
+          "padding",
+          "spacing",
+          "border-spacing"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What does the 'float' property in CSS do?",
+        "choices": [
+          "Makes an element 'float' in water",
+          "Positions an element to the left or right with text flowing around it",
+          "Sets the opacity of an element",
+          "Changes the font style of an element"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which CSS property is used to create rounded corners?",
+        "choices": [
+          "border-radius",
+          "corner-radius",
+          "round-corners",
+          "box-corners"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What does the 'display: none;' property do in CSS?",
+        "choices": [
+          "Hides the element",
+          "Displays the element with no styling",
+          "Sets the element to full width",
+          "Applies a border to the element"
+        ],
+        "correctAnswerIndex": "1"
+      }
+  
+    ],
+    "JavaScript": [
+      {
+        "question": "What is the purpose of 'setTimeout' in JavaScript?",
+        "choices": [
+          "To execute a function after a specified delay",
+          "To set a timer for animation",
+          "To schedule a recurring task",
+          "To pause the execution of the script"
+        ],
+        "correctAnswerIndex": "4"
+      },
+      {
+        "question": "What does the term 'DOM' stand for in JavaScript?",
+        "choices": [
+          "Document Object Model",
+          "Data Output Mechanism",
+          "Dynamic Object Manipulation",
+          "Document Object Manipulation"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "How can you declare a variable in JavaScript?",
+        "choices": [
+          "variable myVar;",
+          "var myVar;",
+          "let myVar;",
+          "const myVar;"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What does the acronym 'AJAX' stand for in web development?",
+        "choices": [
+          "Asynchronous JavaScript and XML",
+          "Advanced JavaScript and XML",
+          "Asynchronous JSON and XML",
+          "Advanced JSON and XML"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What is the purpose of the 'let' keyword in JavaScript?",
+        "choices": [
+          "To declare a variable with block scope",
+          "To declare a constant variable",
+          "To declare a variable with function scope",
+          "To declare a global variable"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which method is used to remove the last element from an array in JavaScript?",
+        "choices": [
+          "pop()",
+          "shift()",
+          "slice()",
+          "unshift()"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What is the purpose of the 'this' keyword in JavaScript?",
+        "choices": [
+          "To refer to the current function",
+          "To refer to the global object",
+          "To refer to the object that owns the current method",
+          "To refer to the prototype object"
+        ],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "In JavaScript, what is a closure?",
+        "choices": [
+          "A function that has access to variables from its outer (enclosing) scope",
+          "A built-in method for closing files",
+          "A way to terminate the execution of a script",
+          "A type of loop"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which event is triggered when a user clicks on an HTML element?",
+        "choices": [
+          "onmouseover",
+          "onclick",
+          "onchange",
+          "onsubmit"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What is the purpose of the 'JSON.stringify()' method in JavaScript?",
+        "choices": [
+          "To parse a JSON string into an object",
+          "To convert a JavaScript object into a JSON string",
+          "To validate the structure of a JSON object",
+          "To compare two JSON objects"
+        ],
+        "correctAnswerIndex": "2"
+      }
+    ]
+    
+    
+  },
+  "Mobile Development":{
+    "Flutter": [
+      {
+        "question": "What programming language is Flutter primarily based on?",
+        "choices": ["Java", "Dart", "Swift", "JavaScript"],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which widget is used to create a button in Flutter?",
+        "choices": ["Text", "Button", "FlatButton", "WidgetButton"],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "What is the purpose of the 'pubspec.yaml' file in a Flutter project?",
+        "choices": [
+          "To define the project's dependencies",
+          "To specify the project's authors",
+          "To configure the project's build settings",
+          "To declare the project's main class"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "In Flutter, what is the main function responsible for?",
+        "choices": [
+          "Handling user input",
+          "Rendering the UI",
+          "Initializing the application",
+          "Managing state"
+        ],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "What is the purpose of the 'setState' method in Flutter?",
+        "choices": [
+          "To define the state of a widget",
+          "To update the UI when the state changes",
+          "To create a new instance of a widget",
+          "To handle user interactions"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which widget is used to create a scrollable list of widgets in Flutter?",
+        "choices": ["ListView", "ScrollView", "ListTile", "Column"],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What is the purpose of the 'BuildContext' in Flutter?",
+        "choices": [
+          "To build the UI hierarchy",
+          "To manage app navigation",
+          "To handle user input",
+          "To provide information about the widget's location in the widget tree"
+        ],
+        "correctAnswerIndex": "4"
+      },
+      {
+        "question": "What does the term 'Hot Reload' refer to in Flutter development?",
+        "choices": [
+          "Restarting the entire application",
+          "Refreshing the browser window",
+          "Updating the app's state without restarting the app",
+          "Compiling the code to native machine code"
+        ],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "Which package is commonly used for state management in Flutter?",
+        "choices": ["redux", "provider", "stateful", "flutter_bloc"],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What is the purpose of the 'Flutter Inspector' tool?",
+        "choices": [
+          "To debug network requests",
+          "To inspect and modify the UI hierarchy",
+          "To analyze code performance",
+          "To create custom widgets"
+        ],
+        "correctAnswerIndex": "2"
+      }
+      
+    ]
+  },
+  "Database Development":{
+    "SQL": [
+      {
+        "question": "What does SQL stand for?",
+        "choices": [
+          "Structured Language",
+          "Standardized Query Language",
+          "Sequential Query Language",
+          "Structured Query Language"
+        ],
+        "correctAnswerIndex": "4"
+      },
+      {
+        "question": "Which SQL clause is used to filter the results of a query?",
+        "choices": [
+          "FILTER",
+          "SORT",
+          "WHERE",
+          "LIMIT"
+        ],
+        "correctAnswerIndex": "3"
+      },
+      {
+        "question": "In SQL, which statement is used to insert new data into a database?",
+        "choices": [
+          "ADD",
+          "INSERT",
+          "CREATE",
+          "UPDATE"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What is the purpose of the SQL JOIN clause?",
+        "choices": [
+          "To filter rows based on a condition",
+          "To combine rows from two or more tables",
+          "To order the result set",
+          "To update existing records"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which SQL statement is used to delete data from a database?",
+        "choices": [
+          "REMOVE",
+          "DELETE",
+          "DROP",
+          "ERASE"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "What does the SQL acronym 'DDL' stand for?",
+        "choices": [
+          "Data Definition Language",
+          "Database Design Language",
+          "Data Description Language",
+          "Dynamic Data Loading"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "Which SQL function is used to find the total number of rows in a table?",
+        "choices": [
+          "COUNT(*)",
+          "SUM()",
+          "AVG()",
+          "TOTAL()"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "In SQL, which operator is used to compare values?",
+        "choices": [
+          "=",
+          "<>",
+          "LIKE",
+          "BETWEEN"
+        ],
+        "correctAnswerIndex": "1"
+      },
+      {
+        "question": "What is the purpose of the SQL GROUP BY clause?",
+        "choices": [
+          "To filter results based on a condition",
+          "To group rows that have the same values in specified columns",
+          "To order the result set",
+          "To update existing records"
+        ],
+        "correctAnswerIndex": "2"
+      },
+      {
+        "question": "Which SQL keyword is used to retrieve unique records from a result set?",
+        "choices": [
+          "UNIQUE",
+          "DISTINCT",
+          "DIFFERENT",
+          "SINGLE"
+        ],
+        "correctAnswerIndex": "2"
+      }
+      
+    ]
+  }
+    
+  
 }

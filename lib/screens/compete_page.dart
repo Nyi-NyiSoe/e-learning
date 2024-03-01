@@ -18,7 +18,7 @@ class _CompetePageState extends State<CompetePage> with TickerProviderStateMixin
       appBar: AppBar(
         title: const Text('Test your knowledge!'),
       ),
-      body: TabBarWidget(tabController: _tabController,),
+      body: TabBarWidget(),
     ));
   }
 }
