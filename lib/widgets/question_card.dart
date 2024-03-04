@@ -52,7 +52,6 @@ class QuestionCard extends ConsumerWidget {
                     if ((index + 1).toString() == answer) {
                       // Update score if the answer is correct
                       ref.read(scoreProvider.notifier).state++;
-
                     }
 
                     if (colorValue == true) {
@@ -61,15 +60,7 @@ class QuestionCard extends ConsumerWidget {
                       colorController.state = true;
                       select.state = index; // Update color first
 
-                      //await Future.delayed(const Duration(seconds: 1));
-
                       if (pageController.page! == questionCount - 1) {
-//await Future.delayed(const Duration(seconds: 1));
-                        // if ((index + 1).toString() == answer) {
-                        //   // Update score if the answer is correct
-                        //   ref.read(scoreProvider.notifier).state++;
-                        // }
-
                         showDialog(
                           context: context,
                           builder: ((context) {
