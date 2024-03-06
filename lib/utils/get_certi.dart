@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Ranking {
+class Certi {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -14,15 +14,17 @@ class Ranking {
     }
     return result;
   }
-  Future<String> setRanking(String categoryName,int score, String quizName) async {
+  Future<String> setCerti(String categoryName, String quizName,bool isCertified) async {
     String result;
     try {
       if (_auth.currentUser != null) {
         await _firestore.collection('users').doc(_auth.currentUser!.uid).set({
-          'ranking': {
-            categoryName:[quizName,score]
+          'certificate': {
+            categoryName:[quizName,isCertified]
           },
-        }, SetOptions(merge: true));
+         },
+        SetOptions(merge: true)
+        );
         result = 'success';
         return result;
       }

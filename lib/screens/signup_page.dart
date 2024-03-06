@@ -215,7 +215,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     const SizedBox(
                                       height: 15,
                                     ),
-                                    Row(
+                                  Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [

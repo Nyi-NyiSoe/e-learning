@@ -71,9 +71,10 @@ class QuizPage extends ConsumerWidget {
                         ),
                         Positioned(
                           left: 3,
+                          top: 3,
                           child: Transform.rotate(
                             angle: 25,
-                            child: Icon(FontAwesomeIcons.crown,size: 20,)),
+                            child: Icon(FontAwesomeIcons.crown,size: 20,color: Colors.yellowAccent.shade700,)),
                           )
                       ],
                       ),

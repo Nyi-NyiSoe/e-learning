@@ -1,11 +1,7 @@
-import 'package:edulearn/authenticate/auth_service.dart';
-import 'package:edulearn/models/user.dart';
 import 'package:edulearn/screens/compete_page.dart';
 import 'package:edulearn/screens/fav_page.dart';
 import 'package:edulearn/screens/home_page.dart';
-
-import 'package:edulearn/screens/profile_page.dart';
-import 'package:edulearn/screens/quiz_page.dart';
+import 'package:edulearn/screens/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

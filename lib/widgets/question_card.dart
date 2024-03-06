@@ -2,6 +2,7 @@ import 'package:edulearn/utils/score.dart';
 import 'package:edulearn/widgets/choice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:edulearn/utils/get_certi.dart';
 
 class QuestionCard extends ConsumerWidget {
   QuestionCard(
@@ -9,13 +10,19 @@ class QuestionCard extends ConsumerWidget {
       required this.questionCount,
       required this.option,
       required this.answer,
-      required this.pageController});
+      required this.pageController,
+      required this.quizCategory,
+      required this.quizName
+      });
 
   final String question;
   final List<dynamic> option;
   final String answer;
   final PageController pageController;
   final int questionCount;
+  final String quizCategory;
+  final String quizName;
+  
 
   final colorProvider = StateProvider<bool>((ref) => false);
   final isAlreadySelected = StateProvider<bool>((ref) => false);
@@ -75,7 +82,15 @@ class QuestionCard extends ConsumerWidget {
                               ),
                               actions: [
                                 TextButton(
-                                    onPressed: () {
+                                    onPressed: () async {
+                                      if(score== questionCount+1){
+                                        var result = await Certi().setCerti(quizCategory, quizName, true);
+                                       
+                                        
+                                      }else{
+                                        var result = await Certi().setCerti(quizCategory, quizName, false);
+                                        print(result);
+                                      }
                                       Navigator.pop(context);
                                       Navigator.pop(context);
                                     },
