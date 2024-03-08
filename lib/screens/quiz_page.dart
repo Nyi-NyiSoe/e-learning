@@ -57,26 +57,21 @@ class QuizPage extends ConsumerWidget {
                               );
                             });
                       },
-                      child: Stack(children: [
-                        Padding(
-                          padding: EdgeInsets.all(10),
-                          child: Card(
-                            child: ListTile(
-                              leading: Text(data.keys.elementAt(index)),
-                              //subtitle: Icon(Icons.diamond_outlined),
-                              trailing: Text(
-                                  '${data[data.keys.elementAt(index)].length} Questions'),
+                      child: Stack(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Card(
+                              child: ListTile(
+                                leading: Text(data.keys.elementAt(index)),
+                                //subtitle: Icon(Icons.diamond_outlined),
+                                trailing: Text(
+                                    '${data[data.keys.elementAt(index)].length} Questions'),
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                          left: 3,
-                          top: 3,
-                          child: Transform.rotate(
-                            angle: 25,
-                            child: Icon(FontAwesomeIcons.crown,size: 20,color: Colors.yellowAccent.shade700,)),
-                          )
-                      ],
+                         
+                        ],
                       ),
                     );
                   }))),

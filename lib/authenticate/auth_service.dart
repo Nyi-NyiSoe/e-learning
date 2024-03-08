@@ -33,7 +33,7 @@ class AuthService {
             'pfp': photoUrl,
             'rating': [],
             'fav_course': {},
-            'ranking': []
+            'certi': []
           });
         } else {
           print('Error uploading pic');
