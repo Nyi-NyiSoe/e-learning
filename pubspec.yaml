@@ -44,6 +44,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   image_picker: ^1.0.7
   font_awesome_flutter: ^10.7.0
+  cached_network_image: ^3.3.1
   
 
 dev_dependencies:
