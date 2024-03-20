@@ -82,6 +82,7 @@ class CoursePage extends StatelessWidget {
                             }
                           },
                           child: const Text('Remove from Fav'))),
+                         
                 ];
               })
             ],
@@ -205,6 +206,7 @@ class CoursePage extends StatelessWidget {
                                         ConnectionState.waiting) {
                                       const CircularProgressIndicator();
                                     } else {
+                                     print('rating${snapshot.data}');
                                       return Text(
                                           snapshot.data!.toStringAsFixed(1));
                                     }

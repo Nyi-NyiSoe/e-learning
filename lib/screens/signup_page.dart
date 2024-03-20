@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:edulearn/models/user.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:edulearn/authenticate/auth_service.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:image_cropper/image_cropper.dart';
 class SignUpPage extends StatefulWidget {
     final void Function() toggleView;
   const SignUpPage({super.key,required this.toggleView});
@@ -29,11 +30,20 @@ class _SignUpPageState extends State<SignUpPage> {
 
   Uint8List? _image ;
   void selectImage() async{
-    Uint8List img= await pickImage(ImageSource.gallery);
-    setState(() {
-      _image = img;
+    try{
+      File? img= await pickImage(ImageSource.gallery);
+    CroppedFile? croppedFile = await ImageCropper().cropImage(sourcePath: img!.path);
+    if(croppedFile != null){
+      Uint8List bytes = await croppedFile.readAsBytes();
+      setState(() {
+      _image = bytes;
 
     });
+    }
+    }catch (e){
+      print(e.toString());
+    }
+    
   }
 
 
@@ -201,14 +211,12 @@ class _SignUpPageState extends State<SignUpPage> {
                                     CustomButton(
                                       buttonName: 'SIGNUP',
                                       onPressed: () async {
-                                        print(nameController.text);
-                                        print(emailController.text);
-                                        print(passwordController.text);
+                                
                                         await AuthService().signUp(MyUser(
                                           name: nameController.text,
                                           email: emailController.text,
                                           password: passwordController.text,
-                                          pfp: _image.toString()
+                                          pfp: _image
                                         ));
                                       },
                                     ),

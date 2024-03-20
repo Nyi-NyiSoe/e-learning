@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -21,7 +22,7 @@ class UserData {
         user_data = MyUser(
             name: userData.get('username') ?? '',
             email: userData.get('email') ?? '',
-            pfp: userData.get('pfp') ,
+            pfp:  Uint8List.fromList(utf8.encode(userData.get('pfp'))),
             favCourse: userData.get('fav_course')?? '');
       }
 

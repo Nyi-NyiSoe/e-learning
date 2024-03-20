@@ -1,3 +1,4 @@
+import 'package:edulearn/authenticate/auth_service.dart';
 import 'package:edulearn/models/category.dart';
 import 'package:edulearn/screens/course_detail.dart';
 import 'package:edulearn/utils/load_json.dart';
@@ -62,7 +63,11 @@ class Homepage extends ConsumerWidget {
                         }));
                   }
                 })),
-          )
+          ),
+           TextButton(onPressed: (){
+                          AuthService().signOut();
+
+                        }, child: Text('Log out')),
         ],
       ),
     ));

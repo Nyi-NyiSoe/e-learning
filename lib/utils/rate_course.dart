@@ -10,8 +10,6 @@ class RateCourse {
   Future<double> getAverageRatingValue(String title) async {
     await getAverageRating(title);
     double r = 0;
-    double a = 0;
-    double b = 0;
     print('user count $userCount');
     result.forEach((key, value) {
       if (key== title) {
@@ -53,7 +51,8 @@ class RateCourse {
         String uid = documentSnapshot.id;
 
         // Access the 'rating' field
-        Map<String, double> ratingMap =
+        try{
+          Map<String, double> ratingMap =
             Map<String, double>.from(userData['rating']);
         ratingMap.forEach(
           (key, value) {
@@ -67,6 +66,9 @@ class RateCourse {
         if (userData.containsKey('rating') &&
             userData['rating'].containsKey(title)) {
           userCount += 1;
+        }
+        }catch (e){
+          print(e.toString());
         }
      
        
